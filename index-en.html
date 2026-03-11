@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="⚡ Build Trinity — S.T.A.L.K.E.R. ANOMALY">
+  <meta property="og:description" content="Three Faces of the Zone. One Path. | Official mod list of the Build Trinity pack by Ivan Danko. DX11 Exclusive • 90+ weather cycles • Hardcore Survival">
+  <meta property="og:image" content="https://buildtrinity.netlify.app/Trinity.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:url" content="https://buildtrinity.netlify.app/">
+  <meta property="og:site_name" content="STALKER: ZONE EDITION">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="⚡ Build Trinity — S.T.A.L.K.E.R. ANOMALY">
+  <meta name="twitter:description" content="Three Faces of the Zone. One Path. Official mod list by Ivan Danko.">
+  <meta name="twitter:image" content="https://buildtrinity.netlify.app/Trinity.jpg">
+  <meta name="description" content="Build Trinity — official mod list of the S.T.A.L.K.E.R. Anomaly pack by Ivan Danko. DX11 Exclusive, 90+ weather cycles, Hardcore Survival.">
+<title>S.T.A.L.K.E.R. Anomaly — Build Trinity | Ivan Danko</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap');
+  :root{
+    --red:#C0392B;--dark:#111122;--navy:#16213E;--blue:#0F3460;
+    --mid:#1E4080;--gold:#E2B04A;--row1:#EEF2FF;--row2:#FFFFFF;
+    --border:#B0BCD8;--text:#1A1A2E;--muted:#5A6080;--green:#1A7A40;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Open Sans',Arial,sans-serif;background:#D8DFF0;color:var(--text);padding:24px 14px 64px;}
+  .page{max-width:1280px;margin:0 auto;background:#fff;border-radius:6px;box-shadow:0 8px 48px rgba(0,0,0,.18);overflow:hidden;}
+  .hero{background:linear-gradient(160deg,rgba(10,10,26,.92) 0%,rgba(26,26,46,.88) 50%,rgba(15,24,48,.92) 100%),url("Trinity.jpg") center/cover no-repeat;padding:0;border-bottom:5px solid var(--red);position:relative;overflow:hidden;}
+  .hero::before{content:'☢';position:absolute;right:-30px;top:-30px;font-size:260px;opacity:.04;color:#fff;line-height:1;}
+  .hero-top{padding:36px 44px 28px;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;}
+  .title-block{text-align:center;}
+  .title-block .tagline{font-family:'Oswald',sans-serif;font-size:.85rem;color:#C0392B;letter-spacing:6px;text-transform:uppercase;margin-bottom:10px;opacity:.85;}
+  .title-block h1{font-family:'Oswald',sans-serif;font-size:3.2rem;color:var(--red);letter-spacing:4px;line-height:1;text-transform:uppercase;text-shadow:0 0 40px rgba(192,57,43,.4);}
+  .title-block .edition{font-family:'Oswald',sans-serif;font-size:.9rem;color:#667799;letter-spacing:5px;text-transform:uppercase;margin-top:6px;}
+  .title-block .build-name{font-family:'Oswald',sans-serif;font-size:2rem;color:var(--gold);letter-spacing:4px;margin-top:10px;text-transform:uppercase;text-shadow:0 0 30px rgba(226,176,74,.35);}
+  .meta-block{display:none;}
+  .contacts{background:linear-gradient(90deg,#0A0A18 0%,#0F1428 50%,#0A0A18 100%);padding:14px 44px;display:flex;gap:0;flex-wrap:wrap;align-items:center;justify-content:center;border-top:1px solid #C0392B;border-bottom:2px solid #C0392B;}
+  .contact-item{display:flex;align-items:center;gap:8px;font-size:.85rem;padding:6px 20px;border-right:1px solid #1E2A50;position:relative;}
+  .contact-item:last-child{border-right:none;}
+  .contact-item .ico{font-size:1.15rem;}
+  .contact-item span:not(.ico){color:#556688;font-size:.75rem;text-transform:uppercase;letter-spacing:1px;}
+  .contact-item a{color:#E2B04A;text-decoration:none;font-family:'Oswald',sans-serif;font-size:.95rem;letter-spacing:1.5px;font-weight:600;transition:color .2s,text-shadow .2s;}
+  .contact-item a:hover{color:#fff;text-shadow:0 0 12px rgba(226,176,74,.8);}
+  .contacts{flex-direction:column;gap:0;padding:12px 44px;}
+  .contacts-row{display:flex;justify-content:center;align-items:center;gap:0;}
+  .contacts-row-top{border-bottom:1px solid #1E2A50;padding-bottom:8px;margin-bottom:8px;}
+  .sysreq{background:linear-gradient(90deg,#0D0D20 0%,#111830 100%);padding:20px 44px;border-bottom:2px solid #1E2A50;}
+  .sysreq-title{font-family:'Oswald',sans-serif;font-size:.85rem;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
+  .sysreq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px 20px;}
+  .sysreq-item{display:flex;flex-direction:column;gap:2px;}
+  .sysreq-item .label{font-size:.68rem;color:#556688;text-transform:uppercase;letter-spacing:1.5px;}
+  .sysreq-item .value{font-size:.82rem;color:#99AACC;font-weight:600;}
+  .sysreq-note{margin-top:12px;font-size:.75rem;color:#445577;font-style:italic;line-height:1.5;}
+  .project-desc{background:linear-gradient(160deg,#0E0E22 0%,#12182E 100%);padding:28px 44px 32px;border-bottom:3px solid var(--blue);}
+  .project-desc .sect-title{font-family:'Oswald',sans-serif;font-size:1rem;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+  .project-desc .sect-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);}
+  .desc-main{color:#8899BB;font-size:.88rem;line-height:1.75;margin-bottom:18px;}
+  .desc-main strong{color:var(--gold);}
+  .tech-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+  .tech-pill{background:#1A2040;border:1px solid #2A3460;color:#8899CC;font-size:.73rem;padding:4px 12px;border-radius:2px;font-family:'Oswald',sans-serif;letter-spacing:1px;}
+  .tech-pill.hot{border-color:var(--red);color:#CC6666;}
+  .epochs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid #1A2A50;}
+  .epoch{padding:20px 24px;border-right:1px solid #1A2A50;position:relative;overflow:hidden;}
+  .epoch:last-child{border-right:none;}
+  .epoch.frozen{background:linear-gradient(160deg,#0C1828 0%,#0A1220 100%);}
+  .epoch.dead{background:linear-gradient(160deg,#1A1408 0%,#120E04 100%);}
+  .epoch.sunrise{background:linear-gradient(160deg,#0A1810 0%,#060E06 100%);}
+  .epoch-icon{font-size:1.8rem;margin-bottom:8px;}
+  .epoch-title{font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+  .epoch.frozen .epoch-title{color:#66AADD;}
+  .epoch.dead .epoch-title{color:#AA7744;}
+  .epoch.sunrise .epoch-title{color:#66AA55;}
+  .epoch-author{font-size:.7rem;color:var(--gold);letter-spacing:1px;font-family:'Oswald',sans-serif;margin-bottom:8px;text-transform:uppercase;}
+  .epoch p{font-size:.78rem;color:#778899;line-height:1.6;}
+  .legend{background:var(--navy);display:flex;border-top:3px solid var(--mid);border-bottom:2px solid var(--mid);position:sticky;top:0;z-index:10;}
+  .lc{padding:9px 14px;font-family:'Oswald',sans-serif;font-size:.76rem;letter-spacing:1.5px;color:#8899CC;text-transform:uppercase;border-right:1px solid #2A3060;}
+  .lc:last-child{border-right:none;}
+  .lc-num{flex:0 0 52px;text-align:center;}
+  .lc-name{flex:2.2;}
+  .lc-auth{flex:1.5;}
+  .lc-desc{flex:3.3;}
+  .category{border-bottom:2px solid var(--mid);}
+  .cat-header{background:var(--blue);padding:11px 20px;display:flex;align-items:center;gap:10px;}
+  .cat-header span{font-family:'Oswald',sans-serif;font-size:1.05rem;color:#fff;letter-spacing:1.5px;text-transform:uppercase;}
+  .cat-count{margin-left:auto;background:rgba(255,255,255,.12);color:#AAC4FF;font-size:.73rem;padding:2px 10px;border-radius:12px;font-family:'Oswald',sans-serif;letter-spacing:1px;}
+  .mod-row{display:flex;align-items:stretch;border-bottom:1px solid var(--border);transition:background .12s;}
+  .mod-row:last-child{border-bottom:none;}
+  .mod-row:nth-child(odd){background:var(--row1);}
+  .mod-row:nth-child(even){background:var(--row2);}
+  .mod-row:hover{background:#D4DFFF;}
+  .col{padding:9px 13px;font-size:.82rem;line-height:1.5;border-right:1px solid var(--border);display:flex;align-items:flex-start;}
+  .col:last-child{border-right:none;}
+  .col-num{flex:0 0 52px;justify-content:center;align-items:center;font-family:'Oswald',sans-serif;font-size:.88rem;color:var(--muted);font-weight:600;}
+  .col-name{flex:2.2;font-weight:700;color:var(--navy);font-size:.85rem;flex-direction:column;gap:3px;}
+  .col-auth{flex:1.5;color:var(--red);font-style:italic;font-size:.8rem;font-weight:600;align-items:center;}
+  .col-desc{flex:3.3;color:var(--text);font-size:.8rem;}
+  .tag{display:inline-block;font-size:.63rem;padding:2px 7px;border-radius:2px;font-family:'Oswald',sans-serif;letter-spacing:1px;margin-top:4px;text-transform:uppercase;}
+  .tag-own{background:var(--green);color:#fff;}
+  .tag-req{background:#2C3E7A;color:#AAC4FF;}
+  .footer{background:var(--dark);padding:22px 44px;border-top:4px solid var(--red);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  .footer p{color:#5566AA;font-size:.78rem;line-height:1.6;}
+  .footer strong{color:var(--gold);}
+  .video-block{background:linear-gradient(160deg,#0A0A18 0%,#0E1220 100%);padding:28px 44px 32px;border-top:2px solid #1E2A50;border-bottom:3px solid var(--red);}
+  .video-title{font-family:'Oswald',sans-serif;font-size:1rem;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .video-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);}
+  .video-frame-wrap{width:100%;max-width:900px;margin:0 auto;}
+  .video-thumb{display:block;position:relative;width:100%;border:2px solid #C0392B;border-radius:4px;overflow:hidden;box-shadow:0 0 40px rgba(192,57,43,.35);background:#000;text-decoration:none;cursor:pointer;}
+  .video-thumb img{display:block;width:100%;height:auto;transition:transform .3s,opacity .3s;}
+  .video-thumb:hover img{transform:scale(1.03);opacity:.85;}
+  .video-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);width:72px;height:72px;background:rgba(192,57,43,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#fff;box-shadow:0 0 30px rgba(192,57,43,.6);transition:transform .2s,background .2s;}
+  .video-thumb:hover .video-play-btn{transform:translate(-50%,-55%) scale(1.12);background:var(--red);}
+  .video-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#E2B04A;font-family:'Oswald',sans-serif;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;padding:18px 20px 10px;text-align:center;}
+  .video-iframe-mode{position:relative;padding-top:62%;border:2px solid #C0392B;border-radius:4px;overflow:hidden;box-shadow:0 0 40px rgba(192,57,43,.35);background:#000;}
+  .video-iframe-mode iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+  .install-block{background:linear-gradient(160deg,#0A0A18 0%,#0D1220 100%);padding:28px 44px 32px;border-top:2px solid #1E2A50;border-bottom:3px solid var(--red);}
+  .install-title{font-family:'Oswald',sans-serif;font-size:1rem;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+  .install-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);}
+  .install-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+  .install-section{background:#0E1428;border:1px solid #1E3060;border-radius:4px;padding:18px 20px;}
+  .install-section-title{font-family:'Oswald',sans-serif;font-size:.88rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1E3060;display:flex;align-items:center;gap:8px;}
+  .install-step{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start;}
+  .install-step:last-child{margin-bottom:0;}
+  .install-num{flex:0 0 24px;height:24px;background:var(--red);color:#fff;font-family:'Oswald',sans-serif;font-size:.78rem;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;flex-shrink:0;}
+  .install-dot{flex:0 0 8px;height:8px;background:#C0392B;border-radius:50%;margin-top:6px;flex-shrink:0;}
+  .install-step p{color:#8899BB;font-size:.8rem;line-height:1.6;}
+  .install-step p strong{color:#AAC4FF;}
+  .install-step p em{color:#E2B04A;font-style:normal;}
+  .install-warn{background:#1A0A08;border:1px solid #C0392B;border-radius:4px;padding:12px 16px;color:#CC8877;font-size:.78rem;line-height:1.6;margin-top:8px;display:flex;gap:10px;align-items:flex-start;}
+  .install-btns{display:flex;gap:16px;justify-content:center;margin-top:20px;flex-wrap:wrap;}
+  .install-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#C0392B,#8B1A1A);color:#fff;font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:2px;text-transform:uppercase;padding:12px 32px;border-radius:3px;text-decoration:none;border:1px solid #E0392B;box-shadow:0 0 20px rgba(192,57,43,.3);transition:all .2s;flex:0 0 auto;}
+  .install-btn:hover{background:linear-gradient(135deg,#E0392B,#A0291B);box-shadow:0 0 30px rgba(192,57,43,.6);transform:translateY(-1px);}
+  .winprep-block{background:linear-gradient(160deg,#0A0A14 0%,#0D1018 100%);border-top:2px solid var(--gold);border-bottom:2px solid rgba(226,176,74,.3);box-shadow:0 -2px 20px rgba(226,176,74,.1);}
+  .winprep-toggle{width:100%;background:linear-gradient(90deg,rgba(226,176,74,.08),transparent);border:none;border-left:3px solid var(--gold);padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+  .winprep-toggle:hover{background:rgba(255,255,255,.02);}
+  .winprep-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;flex:1;text-shadow:0 0 12px rgba(226,176,74,.4);}
+  .winprep-toggle-arrow{color:var(--gold);font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;text-shadow:0 0 8px rgba(226,176,74,.6);}
+  .winprep-toggle-arrow.open{transform:rotate(180deg);}
+  .winprep-body{display:none;padding:0 44px 24px;}
+  .winprep-body.open{display:block;}
+  .winprep-item{background:#0E1428;border:1px solid #1E3060;border-radius:4px;padding:14px 18px;margin-bottom:10px;display:flex;align-items:flex-start;gap:16px;}
+  .winprep-item:last-child{margin-bottom:0;}
+  .winprep-num{font-family:'Oswald',sans-serif;font-size:1.1rem;color:var(--gold);flex:0 0 28px;margin-top:1px;}
+  .winprep-info{flex:1;}
+  .winprep-name{font-family:'Oswald',sans-serif;font-size:.88rem;color:#AAC4FF;letter-spacing:1px;margin-bottom:4px;}
+  .winprep-note{font-size:.76rem;color:#556688;line-height:1.5;margin-bottom:8px;}
+  .winprep-links{display:flex;gap:8px;flex-wrap:wrap;}
+  .winprep-btn{display:inline-flex;align-items:center;gap:6px;background:#0F1E40;border:1px solid #2A4080;color:#8AABEE;font-size:.75rem;font-family:'Oswald',sans-serif;letter-spacing:1px;padding:5px 12px;border-radius:2px;text-decoration:none;transition:all .2s;}
+  .winprep-btn:hover{background:#1A3060;color:#fff;border-color:#4A70C0;}
+  .winprep-final{background:#0A1808;border:1px solid #1A4020;border-radius:4px;padding:10px 16px;color:#6A9A70;font-size:.76rem;margin-top:12px;}
+  .tips-block{background:linear-gradient(160deg,#080810 0%,#0A0E1A 100%);padding:28px 44px 32px;border-top:2px solid #1E2A50;border-bottom:3px solid var(--red);}
+  .tips-main-title{font-family:'Oswald',sans-serif;font-size:1rem;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+  .tips-main-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);}
+  .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px;}
+  .tips-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:14px;}
+  .tips-card{background:#0A0E1E;border:1px solid #1A2A50;border-radius:4px;padding:16px 18px;position:relative;overflow:hidden;}
+  .tips-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+  .tips-card.cold::before{background:linear-gradient(90deg,#2A6090,transparent);}
+  .tips-card.med::before{background:linear-gradient(90deg,#2A7040,transparent);}
+  .tips-card.ctrl::before{background:linear-gradient(90deg,#7A4020,transparent);}
+  .tips-card.contact::before{background:linear-gradient(90deg,#4A2080,transparent);}
+  .tips-card.loc::before{background:linear-gradient(90deg,#806020,transparent);}
+  .tips-card-title{font-family:'Oswald',sans-serif;font-size:.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .tips-card.cold .tips-card-title{color:#6AAADD;}
+  .tips-card.med .tips-card-title{color:#6AAA80;}
+  .tips-card.ctrl .tips-card-title{color:#DD9955;}
+  .tips-card.contact .tips-card-title{color:#AA88DD;}
+  .tips-card.loc .tips-card-title{color:#DDAA44;}
+  .tips-item{display:flex;gap:8px;margin-bottom:7px;align-items:flex-start;}
+  .tips-item:last-child{margin-bottom:0;}
+  .tips-dot{flex:0 0 5px;height:5px;border-radius:50%;margin-top:6px;flex-shrink:0;}
+  .tips-card.cold .tips-dot{background:#6AAADD;}
+  .tips-card.med .tips-dot{background:#6AAA80;}
+  .tips-card.ctrl .tips-dot{background:#DD9955;}
+  .tips-card.contact .tips-dot{background:#AA88DD;}
+  .tips-card.loc .tips-dot{background:#DDAA44;}
+  .tips-item p{color:#778899;font-size:.76rem;line-height:1.55;}
+  .tips-item p strong{color:#AAC4CC;}
+  .tips-item p em{color:#E2B04A;font-style:normal;}
+  .tips-sub{margin-left:16px;margin-top:5px;}
+  .tips-sub .tips-item p{color:#5A6A78;font-size:.73rem;}
+  .tips-kbd{display:inline-block;background:#1A2030;border:1px solid #2A3A60;color:#AAC4FF;font-family:'Oswald',sans-serif;font-size:.7rem;padding:1px 7px;border-radius:2px;letter-spacing:1px;}
+  .tips-footer{text-align:center;margin-top:18px;font-family:'Oswald',sans-serif;font-size:.9rem;color:#445566;letter-spacing:2px;font-style:italic;}
+  .tips-footer span{color:#C0392B;}
+  .cold-block{background:linear-gradient(160deg,#060C14 0%,#08101C 100%);border-top:2px solid #1E2A50;border-bottom:3px solid #2A6090;}
+  .cold-toggle{width:100%;background:linear-gradient(90deg,rgba(100,160,220,.06),transparent);border:none;border-left:3px solid #6AAADD;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+  .cold-toggle:hover{background:linear-gradient(90deg,rgba(100,160,220,.1),transparent);}
+  .cold-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#6AAADD;letter-spacing:2px;text-transform:uppercase;flex:1;}
+  .cold-toggle-arrow{color:#6AAADD;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+  .cold-toggle-arrow.open{transform:rotate(180deg);}
+  .cold-body{display:none;padding:0 44px 28px;}
+  .cold-body.open{display:block;}
+  .cold-hero{display:grid;grid-template-columns:320px 1fr;gap:24px;margin-bottom:20px;align-items:start;}
+  .cold-hero-img{width:100%;border-radius:4px;border:2px solid #1A3A60;box-shadow:0 0 30px rgba(42,96,144,.4);}
+  .cold-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#6AAADD;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;}
+  .cold-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#445566;letter-spacing:3px;margin-bottom:10px;}
+  .cold-authors{font-size:.75rem;color:#445A6A;margin-bottom:12px;line-height:1.6;border-left:2px solid #2A5070;padding-left:10px;}
+  .cold-authors strong{color:#6A9ABB;}
+  .cold-intro{font-size:.8rem;color:#6A8A9A;line-height:1.65;margin-bottom:14px;font-style:italic;}
+  .cold-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+  .cold-section{background:#060E18;border:1px solid #142030;border-radius:3px;padding:12px 14px;}
+  .cold-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#5A9ABB;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #142030;}
+  .cold-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+  .cold-row:last-child{margin-bottom:0;}
+  .cold-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+  .cold-row p{font-size:.75rem;color:#5A7080;line-height:1.5;}
+  .cold-row p strong{color:#7AAABB;}
+  .cold-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#2A4A5A;font-style:italic;letter-spacing:1px;}
+  .fire-block{background:linear-gradient(160deg,#0A0806 0%,#100C08 100%);border-top:2px solid #3A2010;border-bottom:2px solid #3A2010;}
+  .fire-toggle{width:100%;background:linear-gradient(90deg,rgba(200,100,30,.06),transparent);border:none;border-left:3px solid #C06020;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+  .fire-toggle:hover{background:linear-gradient(90deg,rgba(200,100,30,.1),transparent);}
+  .fire-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#E08040;letter-spacing:2px;text-transform:uppercase;flex:1;text-shadow:0 0 12px rgba(200,100,30,.4);}
+  .fire-toggle-arrow{color:#E08040;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+  .fire-toggle-arrow.open{transform:rotate(180deg);}
+  .fire-body{display:none;padding:0 44px 28px;}
+  .fire-body.open{display:block;}
+  .fire-hero{display:grid;grid-template-columns:300px 1fr;gap:24px;margin-bottom:16px;align-items:start;}
+  .fire-hero-img{width:100%;border-radius:4px;border:2px solid #3A2010;box-shadow:0 0 30px rgba(200,100,30,.3);}
+  .fire-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#E08040;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;}
+  .fire-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#504030;letter-spacing:3px;margin-bottom:10px;}
+  .fire-authors{font-size:.75rem;color:#504030;margin-bottom:10px;line-height:1.6;border-left:2px solid #6A3010;padding-left:10px;}
+  .fire-authors strong{color:#A06030;}
+  .fire-intro{font-size:.8rem;color:#7A5A40;line-height:1.65;margin-bottom:14px;font-style:italic;}
+  .fire-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+  .fire-section{background:#0A0806;border:1px solid #2A1808;border-radius:3px;padding:12px 14px;}
+  .fire-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#C06830;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #2A1808;}
+  .fire-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+  .fire-row:last-child{margin-bottom:0;}
+  .fire-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+  .fire-row p{font-size:.75rem;color:#6A5040;line-height:1.5;}
+  .fire-row p strong{color:#A07050;}
+  .fire-tip{background:#0E0A06;border:1px solid #3A2010;border-radius:3px;padding:10px 14px;margin-top:12px;display:flex;gap:10px;align-items:flex-start;}
+  .fire-tip p{font-size:.75rem;color:#7A5030;line-height:1.5;font-style:italic;}
+  .fire-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#3A2810;font-style:italic;letter-spacing:1px;}
+  .unified-block{background:linear-gradient(160deg,#080A10 0%,#0A0E18 100%);border-top:2px solid #1A2A40;border-bottom:2px solid #1A2A40;}
+  .unified-toggle{width:100%;background:linear-gradient(90deg,rgba(80,140,200,.06),transparent);border:none;border-left:3px solid #4A8ABB;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+  .unified-toggle:hover{background:linear-gradient(90deg,rgba(80,140,200,.1),transparent);}
+  .unified-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#7AADD0;letter-spacing:2px;text-transform:uppercase;flex:1;text-shadow:0 0 12px rgba(80,140,200,.3);}
+  .unified-toggle-arrow{color:#7AADD0;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+  .unified-toggle-arrow.open{transform:rotate(180deg);}
+  .unified-body{display:none;padding:0 44px 28px;}
+  .unified-body.open{display:block;}
+  .unified-intro{background:#080C14;border:1px solid #1A2A40;border-left:3px solid #4A8ABB;padding:14px 18px;margin-bottom:16px;font-size:.8rem;color:#6A8A9A;line-height:1.65;}
+  .unified-intro strong{color:#8AAABB;}
+  .unified-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  .unified-col-title{font-family:'Oswald',sans-serif;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;padding-bottom:8px;display:flex;align-items:center;gap:8px;}
+  .unified-col-title.opt{color:#4AAACC;border-bottom:1px solid #1A3A50;}
+  .unified-col-title.winter{color:#7AADD0;border-bottom:1px solid #1A3060;}
+  .unified-img-block{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+  .unified-img{width:100%;border-radius:3px;border:1px solid #1A3050;box-shadow:0 0 20px rgba(74,138,187,.2);}
+  .unified-modules{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
+  .unified-mod{background:#080C14;border:1px solid #1A2A3A;border-radius:3px;padding:10px 12px;}
+  .unified-mod-num{font-family:'Share Tech Mono','Oswald',monospace;font-size:.65rem;color:#3A6A8A;letter-spacing:1px;margin-bottom:4px;}
+  .unified-mod-name{font-family:'Oswald',sans-serif;font-size:.78rem;color:#7AAABB;letter-spacing:1px;margin-bottom:4px;text-transform:uppercase;}
+  .unified-mod-desc{font-size:.7rem;color:#4A6070;line-height:1.45;}
+  .unified-winter-modes{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0;}
+  .unified-pill{padding:4px 14px;border:1px solid #1A2A40;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;}
+  .unified-pill.frozen{border-color:#2A4A70;color:#6AAADD;}
+  .unified-pill.dead{border-color:#3A2A1A;color:#B08060;}
+  .unified-pill.sunrise{border-color:#2A3A1A;color:#6AAA70;}
+  .unified-features{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-bottom:12px;}
+  .unified-feat{background:#080C14;border:1px solid #131C28;padding:7px 12px;font-size:.72rem;color:#4A6070;display:flex;gap:8px;align-items:flex-start;}
+  .unified-feat span{color:#3A7AAA;font-size:.65rem;margin-top:2px;flex-shrink:0;}
+  .unified-specs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:12px;}
+  .unified-spec{background:#080C14;border:1px solid #131C28;padding:8px 12px;}
+  .unified-spec-label{font-size:.62rem;color:#3A5060;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;}
+  .unified-spec-val{font-family:'Oswald',sans-serif;font-size:.82rem;color:#7AAABB;letter-spacing:1px;}
+  .unified-author{background:#080C14;border:1px solid #1A2A40;border-top:2px solid #4A8ABB;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+  .unified-author-name{font-family:'Oswald',sans-serif;font-size:1rem;color:#AAC4DD;letter-spacing:2px;}
+  .unified-author-name span{color:#7AADD0;}
+  .unified-sig{font-size:.7rem;color:#3A5060;text-align:right;line-height:1.8;}
+  .unified-sig em{color:#4A8ABB;font-style:normal;}
+  @media(max-width:900px){
+    .epochs{grid-template-columns:1fr;}
+    .epoch{border-right:none;border-bottom:1px solid #1A2A50;}
+    .col-auth,.col-desc{display:none;}
+    .col-name{flex:1;}
+    .contacts{padding:10px 20px;}
+    .hero-top,.project-desc,.sysreq{padding-left:20px;padding-right:20px;}
+  }
+  @media print{body{background:white;padding:0;}.page{box-shadow:none;}.legend{position:static;}}
+</style>
+
+<style>
+  #lang-switcher {
+    position: fixed;
+    top: 30px;
+    left: 20px;
+    z-index: 9999;
+    display: flex;
+    gap: 0;
+    border: 1px solid #c0392b;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(192, 57, 43, 0.4);
+  }
+  .lang-btn {
+    padding: 7px 14px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #0d1117;
+    color: #888;
+    transition: all 0.2s;
+    font-family: inherit;
+    line-height: 1;
+  }
+  .lang-btn:first-child {
+    border-right: 1px solid #c0392b;
+  }
+  .lang-btn.active {
+    background: #c0392b;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255,100,80,0.8);
+  }
+  .lang-btn:hover:not(.active) {
+    background: #1a1f2e;
+    color: #c0392b;
+  }
+</style>
+</head>
+<body>
+<div id="lang-switcher">
+<button class="lang-btn" onclick="location.href='index.html'">UA</button>
+<button class="lang-btn active">ENG</button>
+</div>
+<div class="page">
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="hero-top">
+    <div class="title-block">
+      <h1>☢ S.T.A.L.K.E.R. ANOMALY ☢</h1>
+      <div class="build-name">⚡ Build Trinity</div>
+      <div class="tagline">Three Faces of the Zone. One Path.</div>
+      <div class="edition">[ EXCLUSIVE DX11 EDITION | HARDCORE SURVIVAL ]</div>
+    </div>
+    <p id="total-line" style="display:none;"></p>
+  </div>
+
+  <div class="contacts">
+    <div class="contacts-row contacts-row-top">
+      <div class="contact-item"><span class="ico">🎥</span><span>YouTube:</span><a href="https://www.youtube.com/@STALKERDEADZONE" target="_blank" rel="noopener">STALKER DEAD ZONE</a></div>
+      <div class="contact-item"><span class="ico">📢</span><span>Telegram:</span><a href="https://t.me/stalket_frozen_zone" target="_blank" rel="noopener">STALKER: ZONE EDITION</a></div>
+      <div class="contact-item"><span class="ico">💬</span><span>Discord:</span><a href="https://discord.gg/baQqfVAE" target="_blank" rel="noopener">Dead Zone</a></div>
+    </div>
+    <div class="contacts-row contacts-row-bottom">
+      <div class="contact-item"><span class="ico">💳</span><span>MonoBank:</span><a href="https://send.monobank.ua/jar/5mRV7ZrdxD" target="_blank" rel="noopener">Send a donation</a></div>
+      <div class="contact-item"><span class="ico">💳</span><span>Donatello:</span><a href="http://donatello.to/FrozenZone" target="_blank" rel="noopener">Support the project</a></div>
+    </div>
+  </div>
+
+  <div class="sysreq">
+    <div class="sysreq-title">🖥️ System Requirements (Guaranteed 50+ FPS)</div>
+    <div class="sysreq-grid">
+      <div class="sysreq-item"><span class="label">CPU</span><span class="value">Intel Core i6-6600 @ 3.60GHz</span></div>
+      <div class="sysreq-item"><span class="label">RAM</span><span class="value">16.0 GB</span></div>
+      <div class="sysreq-item"><span class="label">GPU</span><span class="value">NVIDIA GTX 1080 TI (11 GB)</span></div>
+      <div class="sysreq-item"><span class="label">Disk Space</span><span class="value">130 GB</span></div>
+      <div class="sysreq-item"><span class="label">Renderer</span><span class="value">DX11 Only</span></div>
+      <div class="sysreq-item"><span class="label">Localization</span><span class="value">Ukrainian, English</span></div>
+    </div>
+    <div class="sysreq-note">⚠️ All mods in the MCM menu are optimally configured — changing parameters is not recommended.<br>⚠️ MANDATORY: read the RECOMMENDATIONS section before starting a new game.</div>
+  </div>
+
+  <div class="project-desc">
+    <div class="sect-title">Project Description</div>
+    <div class="desc-main">
+      <strong>Lead Editor and Visual Base Author: Ivan Danko</strong><br><br>
+      Build Trinity is not just a modification — it is a monumental overhaul of the visual and gameplay experience. At the core of the project lies over a hundred carefully selected and integrated modifications, forming a single, seamlessly functioning ecosystem. This is a world where every texture is soaked in history, and every step could be your last.
+    </div>
+    <div class="tech-list">
+      <span class="tech-pill hot">DX11 Exclusive</span>
+      <span class="tech-pill hot">SSS Shaders</span>
+      <span class="tech-pill">PBR Textures</span>
+      <span class="tech-pill">45 Weather Cycles</span>
+      <span class="tech-pill">Monolith 64-bit Engine</span>
+      <span class="tech-pill">X-Ray Fork</span>
+      <span class="tech-pill">Anomaly 1.5.3</span>
+    </div>
+
+    <div class="sect-title" style="margin-bottom:0;">🌍 Three Epochs of the Exclusion Zone</div>
+    <div class="epochs">
+      <div class="epoch frozen">
+        <div class="epoch-icon">❄️</div>
+        <div class="epoch-title">Frozen Zone — Icy Captivity</div>
+        <div class="epoch-author">✦ Author: Ivan Danko</div>
+        <p>Time itself has frozen here along with every breath. This is a world of white silence, ruled by fierce frosts and blinding blizzards. Thanks to custom shader settings, the ice and frost on abandoned machinery look physically tangible. Survival becomes a fight for every breath of warm air.</p>
+      </div>
+      <div class="epoch dead">
+        <div class="epoch-icon">🍂</div>
+        <div class="epoch-title">Dead Zone — Canonical Decay</div>
+        <div class="epoch-author">✦ Author: Ivan Danko</div>
+        <p>The classic spirit of the Zone, where eternal autumn reigns. Here you will see no rays of sunshine — only a heavy leaden sky, endless rains, thunderstorms and oppressive drizzle. Deep corrosion and thick fog create the atmosphere of old-school S.T.A.L.K.E.R.</p>
+      </div>
+      <div class="epoch sunrise">
+        <div class="epoch-icon">🌿</div>
+        <div class="epoch-title">Sun Rise — Deceptive Bloom</div>
+        <div class="epoch-author">✦ Author: Ivan Danko</div>
+        <p>A rare moment when nature tries to reclaim what is hers. Bright summer sunlight illuminates what is usually hidden in darkness. You will hear birdsong and the rustle of lush greenery swallowing the ruins of civilization.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-block">
+    <div class="video-title">🎬 Pack Preview</div>
+    <div id="video-container" class="video-frame-wrap"></div>
+  </div>
+  <script>
+  (function(){
+    var container = document.getElementById('video-container');
+    container.innerHTML = '<iframe src="https://drive.google.com/file/d/15eHfudTllMZU3m_qyMcj3I6ODsD8MSzE/preview" title="Build Trinity Preview" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+    container.classList.add('video-iframe-mode');
+  })();
+  </script>
+</div>
+
+<!-- ══ INSTALL GUIDE ══ -->
+<div class="install-block">
+  <div class="install-title">📦 Installation and Setup Guide</div>
+  <div class="install-cols">
+    <div>
+      <div class="install-section">
+        <div class="install-section-title">⬇️ Downloading and Installing the Pack</div>
+        <div class="install-step"><div class="install-dot"></div><p>Download the official <strong>Build Trinity</strong> installer (TrinityInstaller.exe) using the button below</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>Run <strong>TrinityInstaller.exe</strong>, select your preferred interface language and installation directory</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>Click the install button and wait for the installer to finish. If 7-Zip is not installed, the installer will install it automatically</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>After installation, the main game folder will be named <em>Anomaly_build_TRINITY</em> — do not rename it</p></div>
+      </div>
+      <div class="install-section" style="margin-top:14px;">
+        <div class="install-section-title">🔧 Downloading and Installing the Fix</div>
+        <div class="install-step"><div class="install-dot"></div><p>Download the fix</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>Open and extract <strong>using 7z archiver only</strong></p></div>
+        <div class="install-step"><div class="install-dot"></div><p>Copy the archive contents to the game folder and confirm file replacement</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>All patches and fixes are available in the <a href="https://t.me/frozen_zone" target="_blank" rel="noopener" style="color:var(--gold);">Telegram channel</a></p></div>
+      </div>
+    </div>
+    <div>
+      <div class="install-section">
+        <div class="install-section-title">▶️ Launch Configuration Order</div>
+        <div class="install-step"><div class="install-num">1</div><p>Go to the game folder, open the <em>MO</em> subfolder and run <em>run_mo2.bat</em> — it will configure <strong>Mod Organizer</strong> for you</p></div>
+        <div class="install-step"><div class="install-num">2</div><p>Find <em>Launcher_TRINITY.exe</em> in the game folder and create a desktop shortcut for launching the pack. Always launch the game through the launcher.</p></div>
+        <div class="install-step"><div class="install-num">3</div><p>If step 1 did not work, go to the game folder's MO subfolder and run <em>ModOrganizer.exe</em>. If it asks for the game path, point it to <em>Anomaly_build_TRINITY</em>. If MO cannot find <em>AnomalyDX11AVX.exe</em>, click the executable selector at the top right next to the <em>RUN</em> button, choose Edit, click the + icon and select <em>Add from file</em>, navigate to the game folder, open bin and select <em>AnomalyDX11AVX.exe</em>, then click OK.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="install-btns">
+    <a class="install-btn" href="https://nx92699.your-storageshare.de/s/g7MwH8Nxgifr8PB" target="_blank" rel="noopener">⬇️&nbsp;Download Installer</a>
+    <a class="install-btn" href="https://t.me/frozen_zone" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#1A4080,#0F2A60);border-color:#2A5090;box-shadow:0 0 20px rgba(26,64,128,.3);">🔧 &nbsp;Download Fix</a>
+  </div>
+</div>
+
+<div class="winprep-block">
+  <button class="winprep-toggle" onclick="var b=document.getElementById('winprep-body');var a=this.querySelector('.winprep-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>🛠️</span>
+    <span class="winprep-toggle-title">Windows Preparation Guide for S.T.A.L.K.E.R.</span>
+    <span class="winprep-toggle-arrow">▼</span>
+  </button>
+  <div class="winprep-body" id="winprep-body">
+    <div class="winprep-item">
+      <div class="winprep-num">1️⃣</div>
+      <div class="winprep-info">
+        <div class="winprep-name">Microsoft Visual C++ Redistributable (2015–2022)</div>
+        <div class="winprep-note">Both versions must be installed — the game engine uses 32-bit components even on 64-bit systems.</div>
+        <div class="winprep-links">
+          <a class="winprep-btn" href="https://aka.ms/vs/17/release/vc_redist.x64.exe" target="_blank" rel="noopener">📥 Download x64</a>
+          <a class="winprep-btn" href="https://aka.ms/vs/17/release/vc_redist.x86.exe" target="_blank" rel="noopener">📥 Download x86</a>
+        </div>
+      </div>
+    </div>
+    <div class="winprep-item">
+      <div class="winprep-num">2️⃣</div>
+      <div class="winprep-info">
+        <div class="winprep-name">DirectX End-User Runtime</div>
+        <div class="winprep-links">
+          <a class="winprep-btn" href="https://www.microsoft.com/en-us/download/details.aspx?id=35" target="_blank" rel="noopener">📥 Download DirectX Web Installer</a>
+        </div>
+      </div>
+    </div>
+    <div class="winprep-item">
+      <div class="winprep-num">3️⃣</div>
+      <div class="winprep-info">
+        <div class="winprep-name">OpenAL (Audio Engine)</div>
+        <div class="winprep-note">After downloading, extract the archive and run oalinst.exe.</div>
+        <div class="winprep-links">
+          <a class="winprep-btn" href="https://www.openal.org/downloads/oalinst.zip" target="_blank" rel="noopener">📥 Download OpenAL (Zip)</a>
+        </div>
+      </div>
+    </div>
+    <div class="winprep-item">
+      <div class="winprep-num">4️⃣</div>
+      <div class="winprep-info">
+        <div class="winprep-name">.NET Framework 4.8</div>
+        <div class="winprep-note">Install for stable launcher and modification operation.</div>
+        <div class="winprep-links">
+          <a class="winprep-btn" href="https://go.microsoft.com/fwlink/?linkid=2088631" target="_blank" rel="noopener">📥 Download .NET Framework 4.8</a>
+        </div>
+      </div>
+    </div>
+    <div class="winprep-item">
+      <div class="winprep-num">5️⃣</div>
+      <div class="winprep-info">
+        <div class="winprep-name">7-Zip Archiver</div>
+        <div class="winprep-links">
+          <a class="winprep-btn" href="https://drive.google.com/file/d/13nzs0EUpIlEv1qDQUICfnUDpMzGfu3UK/view?usp=drive_link" target="_blank" rel="noopener">📥 Download 7-Zip</a>
+        </div>
+      </div>
+    </div>
+    <div class="winprep-final">📝 After installing all components, make sure to restart your computer.</div>
+  </div>
+</div>
+
+<!-- ══ SUN RISE ══ -->
+<div class="sun-block">
+  <button class="sun-toggle" onclick="var b=document.getElementById('sun-body');var a=this.querySelector('.sun-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>☀️</span>
+    <span class="sun-toggle-title">Sun Rise: Weather System</span>
+    <span class="sun-toggle-arrow">▼</span>
+  </button>
+  <div class="sun-body" id="sun-body">
+    <div class="sun-img-container">
+      <img class="sun-hero-img" src="Summer.jpg" alt="Sun Rise">
+    </div>
+    <div class="sun-hero">
+      <div class="sun-hero-right">
+        <div class="sun-main-title">☀️ Sun Rise - Weather System</div>
+        <div class="sun-sub">[Global Dynamic Weather]</div>
+        <div class="sun-authors"><strong>Editor:</strong> Ivan Danko</div>
+        <div class="sun-intro">The sky tries to stay clear — at least in summer. More light, shorter nights, heavy storms instead of prolonged rains. The Zone doesn't become kinder. It just burns differently.</div>
+        <div class="sun-sections">
+          <div class="sun-section">
+            <div class="sun-section-title">⛅ Summer Weather Cycles</div>
+            <div class="sun-row"><div class="sun-row-ico">☀️</div><p><strong>Clear:</strong> More sunny days — this is the Zone's true summer.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🌤️</div><p><strong>Variable clouds:</strong> Appears more often than in other seasons.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">☁️</div><p><strong>Overcast:</strong> The Zone never fully lets go, even in summer.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🌧️</div><p><strong>Rain & storms:</strong> Unlimited — heavy and sudden downpours.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🌫️</div><p><strong>Fog:</strong> Rare in summer — brief and fleeting appearances.</p></div>
+          </div>
+          <div class="sun-section">
+            <div class="sun-section-title">⚡ Pre-Storm Events</div>
+            <div class="sun-row"><div class="sun-row-ico">🔔</div><p><strong>Emissions:</strong> The system automatically switches to pre-storm state.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">😰</div><p><strong>Tension:</strong> The sky turns ominous even before the siren sounds.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">☄️</div><p><strong>Meteors:</strong> More clear nights means meteors appear more frequently.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">⚡</div><p><strong>Distant lightning:</strong> Flashes on the horizon in the actual direction of the storm.</p></div>
+          </div>
+          <div class="sun-section">
+            <div class="sun-section-title">🌬️ Atmospheric Effects</div>
+            <div class="sun-row"><div class="sun-row-ico">💨</div><p><strong>Persistent haze:</strong> Two layers — atmospheric haze and dust veil.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🌙</div><p><strong>Night fog:</strong> From 01:00 to 03:00 — short summer night.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🍂</div><p><strong>Calm leaves:</strong> From 10:00 to 19:00 drifting slowly in the heat.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🌀</div><p><strong>Evening leaves:</strong> From 18:00 to 21:00 thermal wind lifts them higher.</p></div>
+          </div>
+          <div class="sun-section">
+            <div class="sun-section-title">🦟 Summer Details</div>
+            <div class="sun-row"><div class="sun-row-ico">🦟</div><p><strong>Midges:</strong> In swamps — Zaton, Amber, Marshes — from 09:00 to 20:00.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">✨</div><p><strong>Fireflies:</strong> From 18:00 to 05:00 in clear and variable weather.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">💧</div><p><strong>Humidity:</strong> Conveys the summer atmosphere of swampy locations.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🌅</div><p><strong>Summer mornings:</strong> Clear and bright — the essence of the season.</p></div>
+          </div>
+          <div class="sun-section">
+            <div class="sun-section-title">⛈️ Storms & Tornadoes</div>
+            <div class="sun-row"><div class="sun-row-ico">🌪️</div><p><strong>Dust storm:</strong> Dust veil activates during rain and thunderstorms.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🔥</div><p><strong>Hot air:</strong> A wave of hot air during summer storms.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🌀</div><p><strong>Whirlwind:</strong> Appears on the horizon every few minutes — far from the player.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">💥</div><p><strong>True elements:</strong> A summer storm feels different — more intense.</p></div>
+          </div>
+          <div class="sun-section">
+            <div class="sun-section-title">🏚️ Underground & Shelter</div>
+            <div class="sun-row"><div class="sun-row-ico">🕳️</div><p><strong>Underground:</strong> Dense underground fog and dust, as always.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">💨</div><p><strong>Leaves stay outside:</strong> Midges and fireflies remain outdoors.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🏠</div><p><strong>Indoors:</strong> Light dust effect of stale air.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">❄️</div><p><strong>No seasonal changes:</strong> Summer stays outside in any location.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sun-footer">Burn alongside the Zone, Stalker. This is the Sun Rise season. ☀️</div>
+  </div>
+</div>
+
+<style>
+.sun-block{background:linear-gradient(160deg,#1A140C 0%,#1C1810 100%);border-top:2px solid #5A4A30;border-bottom:3px solid #7A6A40;}
+.sun-toggle{width:100%;background:linear-gradient(90deg,rgba(212,168,96,.06),transparent);border:none;border-left:3px solid #D4A860;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+.sun-toggle:hover{background:linear-gradient(90deg,rgba(212,168,96,.1),transparent);}
+.sun-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#D4A860;letter-spacing:2px;text-transform:uppercase;flex:1;}
+.sun-toggle-arrow{color:#D4A860;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+.sun-toggle-arrow.open{transform:rotate(180deg);}
+.sun-body{display:none;padding:0 44px 28px;}
+.sun-body.open{display:block;}
+.sun-img-container{display:flex;justify-content:center;margin-bottom:20px;}
+.sun-hero-img{max-width:403px;width:100%;border-radius:4px;border:2px solid #5A5040;box-shadow:0 0 30px rgba(212,168,96,.3);}
+.sun-hero{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:20px;align-items:start;}
+.sun-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#D4A860;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;margin-top:12px;text-align:center;}
+.sun-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#665550;letter-spacing:3px;margin-bottom:10px;}
+.sun-authors{font-size:.75rem;color:#665A50;margin-bottom:12px;line-height:1.6;border-left:2px solid #5A5040;padding-left:10px;}
+.sun-authors strong{color:#B4947A;}
+.sun-intro{font-size:.8rem;color:#A49480;line-height:1.65;margin-bottom:14px;font-style:italic;}
+.sun-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.sun-section{background:#12100A;border:1px solid #3A3020;border-radius:3px;padding:12px 14px;}
+.sun-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#9A8060;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #3A3020;}
+.sun-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+.sun-row:last-child{margin-bottom:0;}
+.sun-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+.sun-row p{font-size:.75rem;color:#7A7060;line-height:1.5;}
+.sun-row p strong{color:#B4A490;}
+.sun-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#4A3A2A;font-style:italic;letter-spacing:1px;}
+</style>
+
+<!-- ══ DEAD ZONE ══ -->
+<div class="dead-block">
+  <button class="dead-toggle" onclick="var b=document.getElementById('dead-body');var a=this.querySelector('.dead-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>🌫️</span>
+    <span class="dead-toggle-title">Dead Zone: Weather System</span>
+    <span class="dead-toggle-arrow">▼</span>
+  </button>
+  <div class="dead-body" id="dead-body">
+    <div class="dead-img-container">
+      <img class="dead-hero-img" src="Dead Zone.jpg" alt="Dead Zone">
+    </div>
+    <div class="dead-hero">
+      <div class="dead-hero-right">
+        <div class="dead-main-title">🌫️ Dead Zone - Weather System</div>
+        <div class="dead-sub">[Global Dynamic Weather]</div>
+        <div class="dead-authors"><strong>Editor:</strong> Ivan Danko</div>
+        <div class="dead-intro">Forget about a static sky. The Zone breathes with living, unpredictable weather. Clear days are a rarity. Fog, rain and thunderstorms are the norm for the Anomalous Zone, where the atmosphere itself is part of the territory.</div>
+        <div class="dead-sections">
+          <div class="dead-section">
+            <div class="dead-section-title">⛅ Weather Cycles</div>
+            <div class="dead-row"><div class="dead-row-ico">🌤️</div><p><strong>Clear:</strong> A rarity in the Zone — sunny days are limited in frequency.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">☁️</div><p><strong>Clouds:</strong> Variable and overcast weather alternate naturally over hours.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🌧️</div><p><strong>Rain:</strong> Duration from a few to many in-game hours.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">⛈️</div><p><strong>Thunderstorm:</strong> Six main weather types with 10–20 unique presets each.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🌫️</div><p><strong>Fog:</strong> The most unsettling type — the sky becomes thick and heavy.</p></div>
+          </div>
+          <div class="dead-section">
+            <div class="dead-section-title">⚡ Pre-Storm Phenomena</div>
+            <div class="dead-row"><div class="dead-row-ico">🔔</div><p><strong>Siren:</strong> The system automatically switches to pre-storm state.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">😰</div><p><strong>Atmosphere:</strong> The sky turns ominous before an emission or psi-storm.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">☄️</div><p><strong>Meteors:</strong> Visible on clear nights from 22:00 to 04:00 in open locations.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">💫</div><p><strong>Distant storms:</strong> Lightning on the horizon unfolds in the real direction.</p></div>
+          </div>
+          <div class="dead-section">
+            <div class="dead-section-title">🌫️ Atmospheric Particles</div>
+            <div class="dead-row"><div class="dead-row-ico">💨</div><p><strong>Persistent haze:</strong> Two atmospheric layers — smoke haze and dust veil.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🌙</div><p><strong>Night fog:</strong> From 00:00 to 04:00 a third, denser fog layer.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🍂</div><p><strong>Leaves:</strong> Drift during evening hours (17:00–20:00) in open locations.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🔥</div><p><strong>Fireflies:</strong> Torchbugs appear from 17:00 to 05:00 in clear weather.</p></div>
+          </div>
+          <div class="dead-section">
+            <div class="dead-section-title">🌧️ Rain & Storms</div>
+            <div class="dead-row"><div class="dead-row-ico">💧</div><p><strong>Dust veil:</strong> Activates during rain and storms from graupel.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🔥☁️</div><p><strong>Hot fog:</strong> During thunderstorms an effect is added that emphasizes tension.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">💦</div><p><strong>Turbulent leaves:</strong> During storms leaves move chaotically.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">⚡🌪️</div><p><strong>Dynamics:</strong> Every storm is unique thanks to the variety of variants.</p></div>
+          </div>
+          <div class="dead-section">
+            <div class="dead-section-title">🏚️ Underground & Buildings</div>
+            <div class="dead-row"><div class="dead-row-ico">🕳️</div><p><strong>Bunkers:</strong> Atmospheric particles are replaced by underground layers.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">💨</div><p><strong>Underground smog:</strong> Several levels of dense dust fog in laboratories.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🏠</div><p><strong>Indoors:</strong> Light dust effect conveys the stuffy air of enclosed spaces.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🔒</div><p><strong>Locations:</strong> Leaves and fireflies do not appear underground or indoors.</p></div>
+          </div>
+          <div class="dead-section">
+            <div class="dead-section-title">🎨 Brightness & Renderer</div>
+            <div class="dead-row"><div class="dead-row-ico">⚙️</div><p><strong>Auto correction:</strong> The system adjusts brightness depending on weather.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🌙</div><p><strong>Night scenes:</strong> Custom parameters for the R4 renderer.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🕳️</div><p><strong>Underground:</strong> Separate brightness settings for enclosed spaces.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🎭</div><p><strong>Atmosphere:</strong> Time of day and location affect scene rendering.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dead-footer">Live with the weather, Stalker. The Zone dictates the rules. 🌫️</div>
+  </div>
+</div>
+
+<style>
+.dead-block{background:linear-gradient(160deg,#0A0806 0%,#100C08 100%);border-top:2px solid #3A2010;border-bottom:3px solid #4A3020;}
+.dead-toggle{width:100%;background:linear-gradient(90deg,rgba(200,100,30,.06),transparent);border:none;border-left:3px solid #C06020;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+.dead-toggle:hover{background:linear-gradient(90deg,rgba(200,100,30,.1),transparent);}
+.dead-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#E08040;letter-spacing:2px;text-transform:uppercase;flex:1;text-shadow:0 0 12px rgba(200,100,30,.4);}
+.dead-toggle-arrow{color:#E08040;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+.dead-toggle-arrow.open{transform:rotate(180deg);}
+.dead-body{display:none;padding:0 44px 28px;}
+.dead-body.open{display:block;}
+.dead-img-container{display:flex;justify-content:center;margin-bottom:20px;}
+.dead-hero-img{max-width:403px;width:100%;border-radius:4px;border:2px solid #3A2010;box-shadow:0 0 30px rgba(200,100,30,.3);}
+.dead-hero{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:20px;align-items:start;}
+.dead-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#E08040;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;margin-top:12px;text-align:center;}
+.dead-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#504030;letter-spacing:3px;margin-bottom:10px;}
+.dead-authors{font-size:.75rem;color:#504030;margin-bottom:12px;line-height:1.6;border-left:2px solid #6A3010;padding-left:10px;}
+.dead-authors strong{color:#A06030;}
+.dead-intro{font-size:.8rem;color:#7A5A40;line-height:1.65;margin-bottom:14px;font-style:italic;}
+.dead-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.dead-section{background:#0A0806;border:1px solid #2A1808;border-radius:3px;padding:12px 14px;}
+.dead-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#C06830;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #2A1808;}
+.dead-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+.dead-row:last-child{margin-bottom:0;}
+.dead-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+.dead-row p{font-size:.75rem;color:#6A5040;line-height:1.5;}
+.dead-row p strong{color:#A07050;}
+.dead-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#3A2810;font-style:italic;letter-spacing:1px;}
+</style>
+
+<!-- ══ TRINITY UNIFIED ══ -->
+<div class="unified-block">
+  <button class="unified-toggle" onclick="var b=document.getElementById('unified-body');var a=this.querySelector('.unified-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>⚙️</span>
+    <span class="unified-toggle-title">Frozen Zone: Weather System</span>
+    <span class="unified-toggle-arrow">▼</span>
+  </button>
+  <div class="unified-body" id="unified-body">
+    <div class="unified-intro">
+      The script adds <strong>dynamic visual effects of snow, fog and dust</strong> that change in real time depending on weather, time of day and wind direction. All effects are tied to the character's position and <strong>disappear immediately upon entering a building or shelter</strong>. Only outdoors. Only when it matters.
+    </div>
+    <div class="unified-hero" style="display:grid;grid-template-columns:280px 1fr;gap:20px;margin-bottom:16px;align-items:start;">
+     <img style="width:100%;border-radius:4px;border:2px solid #1A3050;box-shadow:0 0 30px rgba(74,138,187,.25);" src="Winter.jpg">
+      <div>
+        <div class="unified-col-title opt" style="margin-bottom:8px;">🌨 Weather Behavior</div>
+        <div style="background:#080C14;border:1px solid #1A2A3A;border-radius:3px;margin-bottom:10px;overflow:hidden;">
+          <table style="width:100%;border-collapse:collapse;font-size:.73rem;">
+            <thead><tr style="background:#0A1020;border-bottom:1px solid #1A2A40;">
+              <th style="padding:6px 12px;text-align:left;color:#4A8ABB;font-family:Oswald,sans-serif;letter-spacing:1px;font-weight:600;">WEATHER</th>
+              <th style="padding:6px 12px;text-align:left;color:#4A8ABB;font-family:Oswald,sans-serif;letter-spacing:1px;font-weight:600;">EFFECTS</th>
+            </tr></thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #111820;"><td style="padding:5px 12px;color:#5A7080;">Clear / Variable</td><td style="padding:5px 12px;color:#4A6070;">Light snow</td></tr>
+              <tr style="border-bottom:1px solid #111820;background:#09111A;"><td style="padding:5px 12px;color:#5A7080;">Fog</td><td style="padding:5px 12px;color:#4A6070;">Light snow + foggy dust + dust with wind</td></tr>
+              <tr style="border-bottom:1px solid #111820;"><td style="padding:5px 12px;color:#5A7080;">Overcast</td><td style="padding:5px 12px;color:#4A6070;">Medium snowfall + fog + sidewind</td></tr>
+              <tr style="border-bottom:1px solid #111820;background:#09111A;"><td style="padding:5px 12px;color:#5A7080;">Rain / Sleet</td><td style="padding:5px 12px;color:#4A6070;">Diagonal snow left and right + fog</td></tr>
+              <tr><td style="padding:5px 12px;color:#5A7080;">Blizzard</td><td style="padding:5px 12px;color:#4A6070;">Snowstorm + dust + heat fog + wind gusts</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div class="unified-mod">
+            <div class="unified-mod-name" style="color:#7AAABB;">🌙 Night Effects</div>
+            <div class="unified-mod-desc">00:00–04:00 — night fog above the ground</div>
+            <div class="unified-mod-desc">17:00–05:00 — fireflies in the evening and at night</div>
+          </div>
+          <div class="unified-mod">
+            <div class="unified-mod-name" style="color:#7AAABB;">📦 Requirements</div>
+            <div class="unified-mod-desc">Particle packs: <strong style="color:#7AAABB;">YAWM, GRAUPEL, Expedition</strong></div>
+            <div class="unified-mod-desc" style="margin-top:4px;">Without them effects will not display — no crash will occur.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="unified-col-title opt" style="margin-bottom:8px;">▸ Technical Details</div>
+    <div class="unified-features">
+      <div class="unified-feat"><span>&gt;&gt;</span>Particle position update — no more than once every 200 ms</div>
+      <div class="unified-feat"><span>&gt;&gt;</span>Only if the character has actually moved more than 5 cm</div>
+      <div class="unified-feat"><span>&gt;&gt;</span>Weather and time check — once per actor update tick</div>
+      <div class="unified-feat"><span>&gt;&gt;</span>Heavy functions are cache-protected — no extra overhead</div>
+      <div class="unified-feat"><span>&gt;&gt;</span>Safe file loading — missing file does not cause a crash</div>
+      <div class="unified-feat"><span>&gt;&gt;</span>Compatible with 60+ weather presets: YAWM, GRAUPEL, Expedition, Misery, Paradox, NLC and others</div>
+      <div class="unified-feat"><span>&gt;&gt;</span>Disappears on entering buildings, underground or shelters</div>
+      <div class="unified-feat"><span>&gt;&gt;</span>Does not affect NPCs, items or gameplay — visual layer only</div>
+    </div>
+    <div class="unified-author">
+      <div>
+        <div style="font-size:.65rem;color:#3A5060;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;">// Mod Author</div>
+        <div class="unified-author-name"><span>Ivan</span> Danko</div>
+        <div style="font-size:.72rem;color:#3A5060;margin-top:2px;">Build Trinity — pack for STALKER Anomaly 1.5.3</div>
+      </div>
+      <div class="unified-sig">
+        <div><em>COMPAT</em> 60+ weather presets</div>
+        <div><em>RENDER</em> R4 DX11 + SSS</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ COLD SYSTEM ══ -->
+<div class="cold-block">
+  <button class="cold-toggle" onclick="var b=document.getElementById('cold-body');var a=this.querySelector('.cold-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>❄️</span>
+    <span class="cold-toggle-title">Cold System: Life and Death — Cold System</span>
+    <span class="cold-toggle-arrow">▼</span>
+  </button>
+  <div class="cold-body" id="cold-body">
+    <div class="cold-hero">
+     <img class="cold-hero-img" src="Cold System.jpg">
+      <div class="cold-hero-right">
+        <div class="cold-main-title">❄️ Cold System: Life and Death</div>
+        <div class="cold-sub">[ Life and Death in a Zone Below Zero ]</div>
+        <div class="cold-authors"><strong>Authors:</strong> bvcx, arti, RavenAscendant<br><strong>Ivan Danko additions:</strong> Added teeth-chattering sound, shaking effect and frost on the visor when the character freezes.</div>
+        <div class="cold-intro">Forget about warm evenings by the PDA. The Zone now breathes frost down the back of your neck. Cold has become just as real a threat as a sniper's bullet or a Monolith ambush.</div>
+        <div class="cold-sections">
+          <div class="cold-section">
+            <div class="cold-section-title">🌡️ Thermodynamics</div>
+            <div class="cold-row"><div class="cold-row-ico">☢️</div><p><strong>Climate:</strong> Wind, rain and night drain body heat.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">☀️</div><p><strong>Sun:</strong> Direct sunlight is your free heater.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">💧</div><p><strong>Water:</strong> Wet feet are a direct step toward meeting your ancestors.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">🔥</div><p><strong>Heat:</strong> Find fire. It's what separates you from eternal sleep.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">🏃</div><p><strong>Movement is life:</strong> Running speeds up metabolism. Standing still in the cold is lethal.</p></div>
+          </div>
+          <div class="cold-section">
+            <div class="cold-section-title">🧥 Equipment</div>
+            <div class="cold-row"><div class="cold-row-ico">🛡️</div><p><strong>Armor:</strong> Only exoskeletons and SEVA suits have proper thermal insulation.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">✨</div><p><strong>Artifacts:</strong> "Crystal" or "Eye" will keep you warm even in the harshest cold.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">🎒</div><p><strong>Metabolism:</strong> A well-fed stalker resists cold much better.</p></div>
+          </div>
+          <div class="cold-section">
+            <div class="cold-section-title">🍲 Nutrition</div>
+            <div class="cold-row"><div class="cold-row-ico">🥘</div><p><strong>Hot food:</strong> Eat immediately after cooking — only hot food warms from within.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">📱</div><p><strong>Indicator:</strong> Red icon — hot; yellow — warm; no color — ice cold.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">☕</div><p><strong>Stimulants:</strong> Tea and vodka are Plan B. But alcohol only gives a temporary effect.</p></div>
+          </div>
+          <div class="cold-section">
+            <div class="cold-section-title">☣️ Hypothermia Effects</div>
+            <div class="cold-row"><div class="cold-row-ico">🥶</div><p><strong>Symptoms:</strong> Chattering teeth, shaking, frost on the helmet — find fire urgently.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">📉</div><p><strong>Resistance:</strong> Frostbite threshold — 4000 units. Effects are long-lasting.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">🤒</div><p><strong>Illness:</strong> Fever: stamina zero, health fading.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">💤</div><p><strong>Recovery:</strong> Bed, blanket, sleep. Antibiotics won't hurt.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cold-footer">Good luck, Stalker. Don't let yourself freeze! ❄️</div>
+  </div>
+</div>
+
+<!-- ══ CAMPFIRE SYSTEM ══ -->
+<div class="fire-block">
+  <button class="fire-toggle" onclick="var b=document.getElementById('fire-body');var a=this.querySelector('.fire-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>🪓</span>
+    <span class="fire-toggle-title">Campfire & Woodcutting System — Campfire and Woodcutting System</span>
+    <span class="fire-toggle-arrow">▼</span>
+  </button>
+  <div class="fire-body" id="fire-body">
+    <div class="fire-hero">
+      <img class="fire-hero-img" src="camp.jpg">
+      <div>
+        <div class="fire-main-title">🪓 Campfire & Woodcutting System</div>
+        <div class="fire-sub">[ The Art of Survival: From Gathering to Fire ]</div>
+        <div class="fire-authors"><strong>Authors:</strong> bvcx, arti, RavenAscendant<br><strong>Ivan Danko additions:</strong> Implemented wood gathering mechanics via axe strikes and dynamic tool wear.</div>
+        <div class="fire-intro">A campfire is no longer just an item in your backpack — it's the result of your labor. Want to warm up? Grab an axe and get ready to work.</div>
+        <div class="fire-sections">
+          <div class="fire-section">
+            <div class="fire-section-title">🌲 Wood Gathering</div>
+            <div class="fire-row"><div class="fire-row-ico">🪓</div><p><strong>Manual labor:</strong> Find a tree or stump and swing at it. No magical firewood appearance.</p></div>
+            <div class="fire-row"><div class="fire-row-ico">🎯</div><p><strong>Hit accuracy:</strong> 10 solid strikes — and a bundle of firewood is in your hands.</p></div>
+            <div class="fire-row"><div class="fire-row-ico">🔧</div><p><strong>Tool wear:</strong> Every strike wears down the weapon. Repair your axe and choose the right tool!</p></div>
+          </div>
+          <div class="fire-section">
+            <div class="fire-section-title">🔥 Starting a Campfire</div>
+            <div class="fire-row"><div class="fire-row-ico">📐</div><p><strong>Level surface:</strong> 5-point terrain scan. Fire cannot be lit on a slope.</p></div>
+            <div class="fire-row"><div class="fire-row-ico">⏳</div><p><strong>Time:</strong> 5 to 10 in-game minutes to set up and light a fire.</p></div>
+            <div class="fire-row"><div class="fire-row-ico">⚠️</div><p><strong>Area clearing:</strong> Old fixtures and abandoned campfires are removed (if enabled in MCM).</p></div>
+          </div>
+          <div class="fire-section">
+            <div class="fire-section-title">🎒 Tools (Efficiency)</div>
+            <div class="fire-row"><div class="fire-row-ico">🪓</div><p><strong>Tomahawk:</strong> Worst choice — enormous wear.</p></div>
+            <div class="fire-row"><div class="fire-row-ico">🪓</div><p><strong>Tourist axe:</strong> Average reliability for ordinary stalkers.</p></div>
+            <div class="fire-row"><div class="fire-row-ico">⚔️</div><p><strong>Heavy axe:</strong> Minimum wear, maximum output.</p></div>
+          </div>
+          <div class="fire-section">
+            <div class="fire-section-title">📱 Notification System</div>
+            <div class="fire-row"><div class="fire-row-ico">🔔</div><p>When you've gathered enough wood, the PDA signals: <strong>"You have gathered enough wood for a campfire"</strong>. Time to rest.</p></div>
+          </div>
+        </div>
+        <div class="fire-tip">
+          <span>💡</span>
+          <p>Survival tip: Keep an eye on your axe condition! If you bring it to a critical state during woodcutting, it may become unusable in combat at the worst possible moment.</p>
+        </div>
+      </div>
+    </div>
+    <div class="fire-footer">🔥 Good luck in the forests, Stalker. May your fire never go out! 🔥</div>
+  </div>
+</div>
+
+<!-- ══ GRASS STEALTH MOD ══ -->
+<div class="grass-block">
+  <button class="grass-toggle" onclick="var b=document.getElementById('grass-body');var a=this.querySelector('.grass-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>🌿</span>
+    <span class="grass-toggle-title">Grass Stealth Mod: Realistic Stealth Mechanics</span>
+    <span class="grass-toggle-arrow">▼</span>
+  </button>
+  <div class="grass-body" id="grass-body">
+    <div class="grass-img-container">
+      <img class="grass-hero-img" src="Grass Stealth Mod.jpg" alt="Grass Stealth Mod">
+    </div>
+    <div class="grass-hero">
+      <div class="grass-hero-right">
+        <div class="grass-main-title">🌿 Grass Stealth Mod</div>
+        <div class="grass-sub">[ Realistic Stealth Mechanics for Build Trinity ]</div>
+        <div class="grass-authors"><strong>Author:</strong> Ivan Danko</div>
+        <div class="grass-intro">Forget clumsy ambushes in empty rooms. Now tall grass is your best ally in survival. Crouch, wait and watch. The enemy won't stand a chance.</div>
+        <div class="grass-sections">
+          <div class="grass-section">
+            <div class="grass-section-title">👤 Dynamic Camouflage</div>
+            <div class="grass-row"><div class="grass-row-ico">🧍</div><p><strong>Standing upright:</strong> Maximum visibility — enemies will easily spot your silhouette.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🤐</div><p><strong>Crouching in grass:</strong> Visibility drops dramatically — you become part of the landscape.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">📊</div><p><strong>Visibility gradient:</strong> The lower you crouch, the less chance of being detected.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">⏱️</div><p><strong>Adaptation:</strong> The enemy needs time to acclimate to your position.</p></div>
+          </div>
+          <div class="grass-section">
+            <div class="grass-section-title">🧠 AI Logic</div>
+            <div class="grass-row"><div class="grass-row-ico">🎯</div><p><strong>NPC factions:</strong> Snipers spot better, scouts watch more actively, garrison troops are less alert.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🐺</div><p><strong>Mutant types:</strong> Pseudodogs sniff through grass, but bloodsuckers rely on vision.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🌙</div><p><strong>Time of day:</strong> Night is 40% better — enemies are less attentive in low visibility.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">💨</div><p><strong>Wind:</strong> Tailwind carries your scent further — be careful.</p></div>
+          </div>
+          <div class="grass-section">
+            <div class="grass-section-title">📡 Feedback</div>
+            <div class="grass-row"><div class="grass-row-ico">✅</div><p><strong>Success:</strong> Green PDA icon — grass has hidden you from the enemy.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">⚠️</div><p><strong>Alert:</strong> Yellow icon — enemy is searching but hasn't found your exact position.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">❌</div><p><strong>Detected:</strong> Red icon — enemies found you, need to move or shoot.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🔔</div><p><strong>Notifications:</strong> Optional PDA alerts for camouflage status changes.</p></div>
+          </div>
+          <div class="grass-section">
+            <div class="grass-section-title">⚙️ MCM Settings</div>
+            <div class="grass-row"><div class="grass-row-ico">📏</div><p><strong>Stealth distance:</strong> Adjust from 20 to 150 meters depending on difficulty.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🎛️</div><p><strong>Stealth multiplier:</strong> From 0.5× (nearly impossible) to 2.0× (too easy) — choose your level.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🌾</div><p><strong>Grass height:</strong> The mod takes into account vegetation density in each area.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🎮</div><p><strong>In-game menu:</strong> All settings available directly in MCM without reloading.</p></div>
+          </div>
+          <div class="grass-section">
+            <div class="grass-section-title">🎯 Tactical Tips</div>
+            <div class="grass-row"><div class="grass-row-ico">🏹</div><p><strong>Ambush:</strong> A sniper hidden in grass is a lethal weapon in the right hands.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🤫</div><p><strong>Silence:</strong> Stealth in grass + silenced pistol = trouble-free mission.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🚀</div><p><strong>Breakthrough:</strong> If detected — attack from position or find next cover.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🧑‍🤝‍🧑</div><p><strong>Group tactics:</strong> Several stalkers in grass will spread the enemy's fire.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grass-footer">Good luck, Stalker. Don't get detected! 🌿</div>
+  </div>
+</div>
+
+<style>
+.grass-block{background:linear-gradient(160deg,#0C1420 0%,#0E1828 100%);border-top:2px solid #2A4A50;border-bottom:3px solid #2A7060;}
+.grass-toggle{width:100%;background:linear-gradient(90deg,rgba(100,180,140,.06),transparent);border:none;border-left:3px solid #5ABB88;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+.grass-toggle:hover{background:linear-gradient(90deg,rgba(100,180,140,.1),transparent);}
+.grass-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#5ABB88;letter-spacing:2px;text-transform:uppercase;flex:1;}
+.grass-toggle-arrow{color:#5ABB88;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+.grass-toggle-arrow.open{transform:rotate(180deg);}
+.grass-body{display:none;padding:0 44px 28px;}
+.grass-body.open{display:block;}
+.grass-img-container{display:flex;justify-content:center;margin-bottom:20px;}
+.grass-hero-img{max-width:575px;width:100%;border-radius:4px;border:2px solid #2A5A40;box-shadow:0 0 30px rgba(42,150,100,.4);}
+.grass-hero{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:20px;align-items:start;}
+.grass-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#5ABB88;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;margin-top:12px;text-align:center;}
+.grass-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#445560;letter-spacing:3px;margin-bottom:10px;}
+.grass-authors{font-size:.75rem;color:#445A60;margin-bottom:12px;line-height:1.6;border-left:2px solid #2A5060;padding-left:10px;}
+.grass-authors strong{color:#6A9A8B;}
+.grass-intro{font-size:.8rem;color:#6A9A80;line-height:1.65;margin-bottom:14px;font-style:italic;}
+.grass-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.grass-section{background:#0A0E18;border:1px solid #1A3A30;border-radius:3px;padding:12px 14px;}
+.grass-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#5A9A80;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #1A3A30;}
+.grass-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+.grass-row:last-child{margin-bottom:0;}
+.grass-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+.grass-row p{font-size:.75rem;color:#5A7070;line-height:1.5;}
+.grass-row p strong{color:#7AAAA0;}
+.grass-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#2A4A50;font-style:italic;letter-spacing:1px;}
+</style>
+
+<style>
+.pet-block{background:linear-gradient(160deg,#0E0A18 0%,#120E20 100%);border-top:2px solid #3A2A5A;border-bottom:3px solid #5A3A8A;}
+.pet-toggle{width:100%;background:linear-gradient(90deg,rgba(160,100,220,.06),transparent);border:none;border-left:3px solid #A064DC;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+.pet-toggle:hover{background:linear-gradient(90deg,rgba(160,100,220,.1),transparent);}
+.pet-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#C090F0;letter-spacing:2px;text-transform:uppercase;flex:1;}
+.pet-toggle-arrow{color:#C090F0;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+.pet-toggle-arrow.open{transform:rotate(180deg);}
+.pet-body{display:none;padding:0 44px 28px;}
+.pet-body.open{display:block;}
+.pet-img-container{display:flex;justify-content:center;margin-bottom:20px;}
+.pet-hero-img{max-width:575px;width:100%;border-radius:4px;border:2px solid #4A2A70;box-shadow:0 0 30px rgba(120,60,200,.4);}
+.pet-hero{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:20px;align-items:start;}
+.pet-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#C090F0;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;margin-top:12px;text-align:center;}
+.pet-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#504060;letter-spacing:3px;margin-bottom:10px;}
+.pet-authors{font-size:.75rem;color:#504060;margin-bottom:12px;line-height:1.6;border-left:2px solid #4A2A70;padding-left:10px;}
+.pet-authors strong{color:#9A70B0;}
+.pet-intro{font-size:.8rem;color:#8A6AA0;line-height:1.65;margin-bottom:14px;font-style:italic;}
+.pet-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.pet-section{background:#0A0814;border:1px solid #2A1A40;border-radius:3px;padding:12px 14px;}
+.pet-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#9060C0;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #2A1A40;}
+.pet-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+.pet-row:last-child{margin-bottom:0;}
+.pet-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+.pet-row p{font-size:.75rem;color:#605070;line-height:1.5;}
+.pet-row p strong{color:#9A80B0;}
+.pet-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#3A2A50;font-style:italic;letter-spacing:1px;}
+</style>
+
+<div class="pet-block">
+  <button class="pet-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.pet-toggle-arrow').classList.toggle('open')">
+    <span class="pet-toggle-title">🐾 Personal Pet — Personal Companion</span>
+    <span class="pet-toggle-arrow">▼</span>
+  </button>
+  <div class="pet-body">
+    <div class="pet-img-container">
+      <img class="pet-hero-img" src="dog.jpg" alt="Personal Pet">
+    </div>
+    <div class="pet-hero">
+      <div class="pet-hero-right">
+        <div class="pet-main-title">🐾 Personal Pet</div>
+        <div class="pet-sub">COMPANION SYSTEM · ANOMALY · STALKER</div>
+        <div class="pet-authors">
+          <strong>Author:</strong> Leer &nbsp;·&nbsp;
+          <strong>Version:</strong> 1.0 &nbsp;·&nbsp;
+          <strong>Support:</strong> Anomaly 1.5.2+
+        </div>
+        <div class="pet-intro">
+          The Zone is a cruel place. But even here you can find a loyal friend. Personal Pet adds a real companion to the game — a dog, pseudodog or cat that accompanies you on every raid, obeys commands and becomes an integral part of your survival.
+        </div>
+        <div class="pet-sections">
+          <div class="pet-section">
+            <div class="pet-section-title">🐕 Available Companions</div>
+            <div class="pet-row"><div class="pet-row-ico">🐩</div><p><strong>Dogs:</strong> white, red, brown, bull terrier, black</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🐺</div><p><strong>Pseudodogs:</strong> variant A and B</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🐱</div><p><strong>Cats:</strong> five different color variants</p></div>
+            <div class="pet-row"><div class="pet-row-ico">⚙️</div><p>Choose companion and name — through the <strong>MCM menu</strong></p></div>
+          </div>
+          <div class="pet-section">
+            <div class="pet-section-title">🎮 Controls (MCM keys)</div>
+            <div class="pet-row"><div class="pet-row-ico">📍</div><p><strong>Call / teleport</strong> — summon companion to you</p></div>
+            <div class="pet-row"><div class="pet-row-ico">❌</div><p><strong>Dismiss</strong> — remove companion from the world</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🚩</div><p><strong>Patrol</strong> — designate a guard point</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🔕</div><p><strong>Ignore threats</strong> — passive mode</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🎯</div><p><strong>Attack target</strong> — designate a specific enemy</p></div>
+            <div class="pet-row"><div class="pet-row-ico">📦</div><p><strong>Fetch item</strong> — pick up loot from the ground</p></div>
+          </div>
+          <div class="pet-section">
+            <div class="pet-section-title">🧠 Companion Behavior</div>
+            <div class="pet-row"><div class="pet-row-ico">🏃</div><p>Automatically <strong>follows the player</strong>, runs or walks depending on distance</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🌀</div><p><strong>Teleports</strong> nearby if left behind and out of sight</p></div>
+            <div class="pet-row"><div class="pet-row-ico">💤</div><p><strong>Sits / lies down</strong> next to player in calm moments</p></div>
+            <div class="pet-row"><div class="pet-row-ico">⚔️</div><p>Attacks the actor's enemies, <strong>ignores friendly</strong> NPCs</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🛡️</div><p><strong>Does not trigger anomalies</strong> — protected from Zone traps</p></div>
+          </div>
+          <div class="pet-section">
+            <div class="pet-section-title">📦 Loot Delivery System</div>
+            <div class="pet-row"><div class="pet-row-ico">👁️</div><p>Point at an item with your gaze — the pet will <strong>run and bring</strong> it to you</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🗂️</div><p>If no item specified — <strong>collects all items</strong> within 20m radius</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🚫</div><p>Ignores bolts, artifacts with rank and items with <strong>can_take = false</strong></p></div>
+            <div class="pet-row"><div class="pet-row-ico">💬</div><p>HUD notification about <strong>delivery status</strong></p></div>
+          </div>
+          <div class="pet-section">
+            <div class="pet-section-title">🏷️ Name Tag</div>
+            <div class="pet-row"><div class="pet-row-ico">✏️</div><p>The pet's <strong>name</strong> set in MCM is displayed above its head</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🌫️</div><p>Tag <strong>fades gradually</strong> with distance (configurable)</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🖥️</div><p>Can be shown even <strong>without HUD</strong> (separate option)</p></div>
+          </div>
+          <div class="pet-section">
+            <div class="pet-section-title">💾 State Saving</div>
+            <div class="pet-row"><div class="pet-row-ico">🔄</div><p>Companion state <strong>saved between sessions</strong> — patrol, target, loot</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🗺️</div><p>On level change — <strong>automatically transferred</strong> to the new location</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🔧</div><p>Changing pet type in MCM — <strong>automatically replaces</strong> current one</p></div>
+          </div>
+        </div>
+        <div class="pet-footer">🐾 Find a friend in the Zone once — and the Zone is no longer so lonely · Personal Pet by Leer 🐾</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.nep-block{background:linear-gradient(160deg,#0A1014 0%,#0C1418 100%);border-top:2px solid #1A3A4A;border-bottom:3px solid #1A6070;}
+.nep-toggle{width:100%;background:linear-gradient(90deg,rgba(60,160,200,.06),transparent);border:none;border-left:3px solid #3CA0C8;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+.nep-toggle:hover{background:linear-gradient(90deg,rgba(60,160,200,.1),transparent);}
+.nep-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#60C0E0;letter-spacing:2px;text-transform:uppercase;flex:1;}
+.nep-toggle-arrow{color:#60C0E0;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+.nep-toggle-arrow.open{transform:rotate(180deg);}
+.nep-body{display:none;padding:0 44px 28px;}
+.nep-body.open{display:block;}
+.nep-img-container{display:flex;justify-content:center;margin-bottom:20px;}
+.nep-hero-img{max-width:575px;width:100%;border-radius:4px;border:2px solid #1A4A60;box-shadow:0 0 30px rgba(30,120,160,.4);}
+.nep-hero{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:20px;align-items:start;}
+.nep-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#60C0E0;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;margin-top:12px;text-align:center;}
+.nep-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#304050;letter-spacing:3px;margin-bottom:10px;text-align:center;}
+.nep-authors{font-size:.75rem;color:#405060;margin-bottom:12px;line-height:1.6;border-left:2px solid #1A4A60;padding-left:10px;}
+.nep-authors strong{color:#5A90A0;}
+.nep-intro{font-size:.8rem;color:#507080;line-height:1.65;margin-bottom:14px;font-style:italic;}
+.nep-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.nep-section{background:#080C10;border:1px solid #142830;border-radius:3px;padding:12px 14px;}
+.nep-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#3A90B0;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #142830;}
+.nep-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+.nep-row:last-child{margin-bottom:0;}
+.nep-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+.nep-row p{font-size:.75rem;color:#405060;line-height:1.5;}
+.nep-row p strong{color:#6AAABB;}
+.nep-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#1A3A4A;font-style:italic;letter-spacing:1px;}
+</style>
+
+<div class="nep-block">
+  <button class="nep-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.nep-toggle-arrow').classList.toggle('open')">
+    <span class="nep-toggle-title">🏥 NEP — NPC Enhancement Project</span>
+    <span class="nep-toggle-arrow">▼</span>
+  </button>
+  <div class="nep-body">
+    <div class="nep-img-container">
+      <img class="nep-hero-img" src="people.jpg" alt="NEP — NPC Enhancement Project">
+    </div>
+    <div class="nep-hero">
+      <div class="nep-hero-right">
+        <div class="nep-main-title">🏥 NPC Enhancement Project</div>
+        <div class="nep-sub">STALKER ANOMALY · NPC OVERHAUL · IMMERSION</div>
+        <div class="nep-authors">
+          <strong>Authors:</strong> explorerbee, Longreed, bvcx, VodoXleb &nbsp;·&nbsp;
+          <strong>Version:</strong> 2024 &nbsp;·&nbsp;
+          <strong>License:</strong> Proprietary
+        </div>
+        <div class="nep-intro">
+          The Zone is alive — and now it truly feels that way. NEP populates every corner of the world with living characters: medics who treat the wounded and mechanics who repair equipment. Every NPC has their place, their faction and their role in stalker survival.
+        </div>
+        <div class="nep-sections">
+          <div class="nep-section">
+            <div class="nep-section-title">🗺️ Locations & NPCs</div>
+            <div class="nep-row"><div class="nep-row-ico">🔵</div><p><strong>Cordon</strong> — stalker medic near smart terrain 5_7</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🔵</div><p><strong>Dark Valley</strong> — stalker medic + shelter for wounded</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🔵</div><p><strong>Garbage</strong> — stalker medic and mechanic in their corner</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🔴</div><p><strong>Amber</strong> — mercenary medic (night shift)</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🟡</div><p><strong>Machinery Graveyard</strong> — bandit medic</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🟡</div><p><strong>Jupiter</strong> — bandit and ecologist medics</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🔴</div><p><strong>Zaton</strong> — mercenary medic</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🔵</div><p><strong>Outskirts</strong> — stalker and mercenary medics</p></div>
+          </div>
+          <div class="nep-section">
+            <div class="nep-section-title">⚙️ Technical System</div>
+            <div class="nep-row"><div class="nep-row-ico">🧩</div><p><strong>Dynamic smart covers</strong> — shelters spawn via script on first load</p></div>
+            <div class="nep-row"><div class="nep-row-ico">📦</div><p>At Garbage a <strong>workbench (vise)</strong> spawns for the mechanic via separate script</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🔗</div><p>Integration via <strong>DXML</strong> — dialogs added without overwriting original files</p></div>
+            <div class="nep-row"><div class="nep-row-ico">💾</div><p>Spawn state saved via <strong>alife_info</strong> — NPCs do not duplicate between sessions</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🛡️</div><p>Override of <strong>se_smart_cover</strong> via metatable for compatibility with other mods</p></div>
+          </div>
+          <div class="nep-section">
+            <div class="nep-section-title">💊 Medic — Quest & Dialog</div>
+            <div class="nep-row"><div class="nep-row-ico">🗣️</div><p>The medic in Dark Valley has <strong>unique dialogs</strong> and tasks for the player</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🎒</div><p>Quest requires bringing a <strong>medkit (itm_drugkit)</strong> for the wounded</p></div>
+            <div class="nep-row"><div class="nep-row-ico">✅</div><p>After completion — <strong>task closes</strong> with a separate completion dialog</p></div>
+            <div class="nep-row"><div class="nep-row-ico">📋</div><p>Dialogs added via <strong>DXML</strong> to character <em>dasc_trade_mlr</em></p></div>
+          </div>
+          <div class="nep-section">
+            <div class="nep-section-title">🪑 Animations & Behavior</div>
+            <div class="nep-row"><div class="nep-row-ico">🧍</div><p><strong>animpoint_stay_wall</strong> — stands near wall (Dark Valley, Zaton)</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🪑</div><p><strong>animpoint_sit_normal</strong> — sits in natural pose (most medics)</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🛋️</div><p><strong>animpoint_sit_low / sit_high</strong> — sitting variations for mechanic and medics</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🎭</div><p>Each NPC is tied to a <strong>specific smart terrain</strong> of their faction</p></div>
+          </div>
+        </div>
+        <div class="nep-footer">🏥 The Zone becomes more alive with every medic and mechanic in it · NPC Enhancement Project by explorerbee & team 🔧</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.soul-block{background:linear-gradient(160deg,#120808 0%,#180A0A 100%);border-top:2px solid #4A1A1A;border-bottom:3px solid #8A2020;}
+.soul-toggle{width:100%;background:linear-gradient(90deg,rgba(200,40,40,.06),transparent);border:none;border-left:3px solid #C03030;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+.soul-toggle:hover{background:linear-gradient(90deg,rgba(200,40,40,.1),transparent);}
+.soul-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#E05050;letter-spacing:2px;text-transform:uppercase;flex:1;}
+.soul-toggle-arrow{color:#E05050;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+.soul-toggle-arrow.open{transform:rotate(180deg);}
+.soul-body{display:none;padding:0 44px 28px;}
+.soul-body.open{display:block;}
+.soul-img-container{display:flex;justify-content:center;margin-bottom:20px;}
+.soul-hero-img{max-width:575px;width:100%;border-radius:4px;border:2px solid #4A1A1A;box-shadow:0 0 30px rgba(180,30,30,.4);}
+.soul-hero{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:20px;align-items:start;}
+.soul-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#E05050;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;margin-top:12px;text-align:center;}
+.soul-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#503030;letter-spacing:3px;margin-bottom:10px;text-align:center;}
+.soul-authors{font-size:.75rem;color:#503030;margin-bottom:12px;line-height:1.6;border-left:2px solid #6A2020;padding-left:10px;}
+.soul-authors strong{color:#A05050;}
+.soul-intro{font-size:.8rem;color:#7A4040;line-height:1.65;margin-bottom:14px;font-style:italic;}
+.soul-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.soul-section{background:#0E0606;border:1px solid #2A1010;border-radius:3px;padding:12px 14px;}
+.soul-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#B03A3A;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #2A1010;}
+.soul-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+.soul-row:last-child{margin-bottom:0;}
+.soul-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+.soul-row p{font-size:.75rem;color:#604040;line-height:1.5;}
+.soul-row p strong{color:#A06060;}
+.soul-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#3A1A1A;font-style:italic;letter-spacing:1px;}
+</style>
+
+<div class="soul-block">
+  <button class="soul-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.soul-toggle-arrow').classList.toggle('open')">
+    <span class="soul-toggle-title">💀 Soulslike — Death Has a Price</span>
+    <span class="soul-toggle-arrow">▼</span>
+  </button>
+  <div class="soul-body">
+    <div class="soul-img-container">
+      <img class="soul-hero-img" src="soul.jpg" alt="Soulslike for STALKER Anomaly">
+    </div>
+    <div class="soul-hero">
+      <div class="soul-hero-right">
+        <div class="soul-main-title">💀 Soulslike Death System</div>
+        <div class="soul-sub">STALKER ANOMALY · HARDCORE · DEATH OVERHAUL</div>
+        <div class="soul-authors">
+          <strong>Author:</strong> Jabbers &nbsp;·&nbsp;
+          <strong>Support:</strong> Anomaly 1.5.2+ &nbsp;·&nbsp;
+          <strong>MCM:</strong> Yes, fully configurable &nbsp;·&nbsp;
+          <strong>Compatibility:</strong> item_parts, arszi_psy, magazine_binder
+        </div>
+        <div class="soul-intro">
+          The Zone no longer forgives mistakes. Soulslike turns every death into an event: you lose gear, rank and reputation — while your items end up in a stash, surrounded by enemies waiting for you. Inspired by the Dark Souls series, this mod makes survival a true ordeal.
+        </div>
+        <div class="soul-sections">
+          <div class="soul-section">
+            <div class="soul-section-title">☠️ What Happens on Death</div>
+            <div class="soul-row"><div class="soul-row-ico">🎒</div><p>Player's items are <strong>transferred to a stash</strong> at the death location</p></div>
+            <div class="soul-row"><div class="soul-row-ico">📉</div><p>Loss of <strong>rank and reputation</strong> — percentage configurable in MCM</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🔧</div><p>Equipment <strong>degrades</strong> — weapons, armor and other items lose condition</p></div>
+            <div class="soul-row"><div class="soul-row-ico">💊</div><p>Player <strong>respawns with partial health</strong> and cleared radiation</p></div>
+            <div class="soul-row"><div class="soul-row-ico">💰</div><p>Possible <strong>money loss</strong> — chance and percentage configurable</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🌙</div><p>Option to <strong>forbid nighttime respawn</strong> — time automatically advances to morning</p></div>
+          </div>
+          <div class="soul-section">
+            <div class="soul-section-title">📦 Stash Scenarios</div>
+            <div class="soul-row"><div class="soul-row-ico">📍</div><p><strong>Default</strong> — backpack drops at death location, marked on PDA</p></div>
+            <div class="soul-row"><div class="soul-row-ico">📻</div><p><strong>RF Detector</strong> — items go into a <strong>hidden stash</strong>, only findable with RF detector</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🗺️</div><p><strong>Hidden Stash</strong> — stash hides nearby, but <strong>PDA marker</strong> given immediately</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🛡️</div><p><strong>No Loss</strong> — all items returned without loss (easy difficulty mode)</p></div>
+          </div>
+          <div class="soul-section">
+            <div class="soul-section-title">⚔️ Ambush System</div>
+            <div class="soul-row"><div class="soul-row-ico">🐺</div><p>If killed by a <strong>mutant</strong> — a new pack of mutants may spawn at the death site</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🔫</div><p>If killed by a <strong>stalker</strong> — a squad of the same faction appears waiting for you</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🎲</div><p>Ambush chance and type determined by <strong>weighted randomness</strong> from spawn tables</p></div>
+            <div class="soul-row"><div class="soul-row-ico">⚙️</div><p>Each enemy type can be <strong>enabled or disabled separately</strong> via MCM</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🗂️</div><p>All factions supported: <strong>Stalkers, Bandits, Monolith, Army, Freedom, Duty, Sin, UNISG</strong> and others</p></div>
+          </div>
+          <div class="soul-section">
+            <div class="soul-section-title">🎛️ MCM Settings</div>
+            <div class="soul-row"><div class="soul-row-ico">🔩</div><p>Separate <strong>loss chance</strong> for weapons, armor, artifacts, helmets, tools and other items</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🛡️</div><p>Options to <strong>keep equipped items</strong> on death</p></div>
+            <div class="soul-row"><div class="soul-row-ico">📋</div><p>Ignore list for <strong>bolts, knives, PDA, bandages, medkits</strong> and key items</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🏅</div><p>Option to <strong>include or ignore rank</strong> in loss calculation</p></div>
+            <div class="soul-row"><div class="soul-row-ico">💾</div><p>Hardcore mode: <strong>forced save</strong> after respawn</p></div>
+          </div>
+          <div class="soul-section">
+            <div class="soul-section-title">🧟 Enemy Looting</div>
+            <div class="soul-row"><div class="soul-row-ico">🔪</div><p><strong>Stalker looter</strong> — takes items to inventory and is marked on PDA</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🐗</div><p><strong>Mutant looter</strong> — eats food, mutant meat and belts as <strong>"bait"</strong></p></div>
+            <div class="soul-row"><div class="soul-row-ico">🎰</div><p><strong>Tarkov looter</strong> — 1% chance: enemy breaks out a <strong>random weapon part</strong></p></div>
+            <div class="soul-row"><div class="soul-row-ico">📌</div><p>Looter can be <strong>marked on the map</strong> for revenge</p></div>
+          </div>
+          <div class="soul-section">
+            <div class="soul-section-title">🔗 Compatibility & Technical</div>
+            <div class="soul-row"><div class="soul-row-ico">🧩</div><p>Support for <strong>item_parts</strong> — degradation by weapon components</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🧠</div><p>Support for <strong>arszi_psy</strong> — reset mental health on respawn</p></div>
+            <div class="soul-row"><div class="soul-row-ico">📎</div><p>Support for <strong>magazine_binder</strong> — pre-disassemble magazines before death</p></div>
+            <div class="soul-row"><div class="soul-row-ico">⏱️</div><p>Timer system <strong>(demonized_time_events)</strong> for correct stash spawn</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🌊</div><p>Death in water: <strong>no item loss</strong> — separate handling logic</p></div>
+          </div>
+        </div>
+        <div class="soul-footer">💀 Every death is a lesson. Every respawn is a new chance · Soulslike Death System for STALKER Anomaly 💀</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ RE:D MOON ══ -->
+<div class="moon-block">
+  <button class="moon-toggle" onclick="var b=document.getElementById('moon-body');var a=this.querySelector('.moon-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>🌕</span>
+    <span class="moon-toggle-title">RE:D Moon: Blood Moon Event</span>
+    <span class="moon-toggle-arrow">▼</span>
+  </button>
+  <div class="moon-body" id="moon-body">
+    <div class="moon-img-container">
+      <img class="moon-hero-img" src="moon.jpg" alt="RE:D Moon">
+    </div>
+    <div class="moon-hero">
+      <div class="moon-hero-right">
+        <div class="moon-main-title">🌕 RE:D Moon — Blood Moon</div>
+        <div class="moon-sub">[New Global Zone Event]</div>
+        <div class="moon-authors">
+          <strong>Author:</strong> EtongSayo &nbsp;|&nbsp;
+          <strong>Co-author:</strong> DrSergei &nbsp;|&nbsp;
+          <strong>Testing:</strong> Sanguiynaire &nbsp;|&nbsp;
+          <strong>Zombies:</strong> Hades@DK &nbsp;|&nbsp;
+          <strong>Organizer:</strong> eAkman
+        </div>
+        <div class="moon-intro">From the creators of RE:Done, RE:Spawn, RE:Pack, RE:Tune and RE:Bound — a new horror under the blood-red skies of the Anomalous Zone. The blood moon rises, and with it — hordes of the undead. Prepare to endure the darkest night in the Zone.</div>
+        <div class="moon-sections">
+          <div class="moon-section">
+            <div class="moon-section-title">🌕 Blood Moon</div>
+            <div class="moon-row"><div class="moon-row-ico">🌑</div><p><strong>New event:</strong> The blood moon is a separate event alongside emissions and psi-storms.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🔴</div><p><strong>Sky:</strong> The horizon floods with crimson light, and a bright red moon rises over the Zone.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">⏱️</div><p><strong>Dynamics:</strong> The event occurs naturally, without a fixed schedule.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">📻</div><p><strong>News:</strong> The dynamic news system will warn you about an approaching blood moon.</p></div>
+          </div>
+          <div class="moon-section">
+            <div class="moon-section-title">🧟 Exclusive Zombies</div>
+            <div class="moon-row"><div class="moon-row-ico">💀</div><p><strong>Unique types:</strong> Several zombie variants created exclusively for this mod — found nowhere else.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🧠</div><p><strong>Model author:</strong> Exclusive zombies designed by Hades@DK personally for RE:D Moon.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🩸</div><p><strong>Spawn:</strong> The undead appear specifically during the blood moon event.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">👁️</div><p><strong>Behavior:</strong> Zombies sense your presence and move toward you relentlessly.</p></div>
+          </div>
+          <div class="moon-section">
+            <div class="moon-section-title">⚔️ Dynamic Attacks</div>
+            <div class="moon-row"><div class="moon-row-ico">🌊</div><p><strong>Waves:</strong> Relentless waves of undead pursue you throughout the entire event.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🎯</div><p><strong>Aggression:</strong> Zombies deliberately target the player — sitting it out won't work.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">📈</div><p><strong>Intensity:</strong> Pressure builds with every wave — survival becomes a true test.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🏃</div><p><strong>Tactics:</strong> Move, shoot, survive — standing still is as good as death.</p></div>
+          </div>
+          <div class="moon-section">
+            <div class="moon-section-title">⚙️ Settings & Compatibility</div>
+            <div class="moon-row"><div class="moon-row-ico">🎛️</div><p><strong>MCM support:</strong> Customize the event — frequency, intensity, spawn parameters.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🤝</div><p><strong>RE:Bound:</strong> Install alongside RE:Bound Encounters for additional features.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🏠</div><p><strong>Shelter system:</strong> In safe zones zombies will not pursue you during the blood moon.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🔗</div><p><strong>Compatibility:</strong> Designed as part of the RE: mod ecosystem for Anomaly.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="moon-footer">The moon rises. The dead awaken. Stalker — this is your last night. 🌕</div>
+  </div>
+</div>
+
+<style>
+.moon-block{background:linear-gradient(160deg,#0A0608 0%,#100810 100%);border-top:2px solid #4A1020;border-bottom:3px solid #6A1830;}
+.moon-toggle{width:100%;background:linear-gradient(90deg,rgba(180,20,50,.08),transparent);border:none;border-left:3px solid #C01840;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+.moon-toggle:hover{background:linear-gradient(90deg,rgba(180,20,50,.14),transparent);}
+.moon-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#E03050;letter-spacing:2px;text-transform:uppercase;flex:1;text-shadow:0 0 12px rgba(200,20,50,.5);}
+.moon-toggle-arrow{color:#E03050;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+.moon-toggle-arrow.open{transform:rotate(180deg);}
+.moon-body{display:none;padding:0 44px 28px;}
+.moon-body.open{display:block;}
+.moon-img-container{display:flex;justify-content:center;margin-bottom:20px;}
+.moon-hero-img{max-width:403px;width:100%;border-radius:4px;border:2px solid #4A1020;box-shadow:0 0 30px rgba(180,20,50,.4);}
+.moon-hero{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:20px;align-items:start;}
+.moon-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#E03050;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;margin-top:12px;text-align:center;text-shadow:0 0 20px rgba(200,20,50,.6);}
+.moon-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#502030;letter-spacing:3px;margin-bottom:10px;text-align:center;}
+.moon-authors{font-size:.75rem;color:#502030;margin-bottom:12px;line-height:1.6;border-left:2px solid #7A1030;padding-left:10px;}
+.moon-authors strong{color:#A02040;}
+.moon-intro{font-size:.8rem;color:#7A3040;line-height:1.65;margin-bottom:14px;font-style:italic;}
+.moon-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.moon-section{background:#0A0608;border:1px solid #2A0818;border-radius:3px;padding:12px 14px;}
+.moon-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#C01840;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #2A0818;}
+.moon-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+.moon-row:last-child{margin-bottom:0;}
+.moon-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+.moon-row p{font-size:.75rem;color:#6A2030;line-height:1.5;}
+.moon-row p strong{color:#A04050;}
+.moon-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#3A1020;font-style:italic;letter-spacing:1px;}
+</style>
+
+<!-- ══ TIPS BLOCK ══ -->
+<div class="tips-block">
+  <div class="tips-main-title">❄️ Recommendations for Starting a New Game</div>
+  <div class="tips-grid">
+    <div class="tips-card cold">
+      <div class="tips-card-title">🧤 How Not to Freeze in the Zone</div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Equipment:</strong> Always take firewood and an axe. Do not allow critical hypothermia!</p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Heat sources:</strong> Warm up regularly by a campfire — it is your main chance to survive.</p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Sleep:</strong> A rested body resists cold better. Sleep is essential for a stalker.</p></div>
+    </div>
+    <div class="tips-card med">
+      <div class="tips-card-title">💊 Medicine & Nutrition</div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Treating a cold:</strong> Use specialized medications, but not excessively — too many drugs accumulate toxins.</p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Food:</strong> In winter conditions food only warms when hot. Cook only as much as you will eat at once.</p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Drug intoxication:</strong> Can be cleared in three ways:</p></div>
+      <div class="tips-sub">
+        <div class="tips-item"><div class="tips-dot"></div><p><em>Drinks:</em> clean water, hot tea or detox drinks</p></div>
+        <div class="tips-item"><div class="tips-dot"></div><p><em>Medical means:</em> sorbents (activated charcoal) or antidotes</p></div>
+        <div class="tips-item"><div class="tips-dot"></div><p><em>Time:</em> stop the drugs and let your body rest</p></div>
+      </div>
+    </div>
+    <div class="tips-card ctrl">
+      <div class="tips-card-title">🛠 Controls & Equipment</div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Limb condition:</strong> Press <span class="tips-kbd">H</span> or open inventory</p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Laser sight:</strong> <span class="tips-kbd">B</span></p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Change reticle:</strong> <span class="tips-kbd">Z</span></p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>If weapon jams, quickly press twice:</strong> <span class="tips-kbd">F</span></p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Check toxins:</strong> <span class="tips-kbd">⌫Backspace</span></p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Quick strike:</strong> <span class="tips-kbd">V</span></p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Quick device switch</strong> — arrow keys on the right side of keyboard:</p></div>
+      <div class="tips-sub">
+        <div class="tips-item"><div class="tips-dot"></div><p>↑ Geiger counter &nbsp;|&nbsp; ↓ Anomaly detector</p></div>
+        <div class="tips-item"><div class="tips-dot"></div><p>← Radio receiver &nbsp;|&nbsp; → Activity detector</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="tips-grid-2">
+    <div class="tips-card contact">
+      <div class="tips-card-title">🛰 Working with Contacts</div>
+      <div class="tips-item"><div class="tips-dot"></div><p>No need to run to every character! Tasks can be taken <strong>remotely via PDA</strong> if the character is within your action range.</p></div>
+    </div>
+  </div>
+  <div class="tips-footer"><span>☢</span> &nbsp;Good hunting, Stalker! Try not to turn into an icicle.&nbsp; <span>☢</span></div>
+</div>
+
+<!-- ══ LEGEND ══ -->
+<div class="legend">
+  <div class="lc lc-num">#</div>
+  <div class="lc lc-name">Mod Name</div>
+  <div class="lc lc-auth">Author (nick)</div>
+  <div class="lc lc-desc">Description</div>
+</div>
+
+<div id="mod-list"></div>
+
+<!-- ══ FOOTER ══ -->
+<div class="footer">
+  <p>☢ All rights to mods belong to their authors. This list was compiled solely to describe the Build Trinity pack.</p>
+  <p>Pack Editor: <strong>Ivan Danko</strong> &nbsp;|&nbsp; 📢 Telegram: <strong><a href="https://t.me/stalket_frozen_zone" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;">STALKER: ZONE EDITION</a></strong> &nbsp;|&nbsp; YouTube: <strong><a href="https://www.youtube.com/@STALKERDEADZONE" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;">STALKER DEAD ZONE</a></strong> &nbsp;|&nbsp; 2025–2026</p>
+</div>
+
+</div><!-- .page -->
+<script>
+const CATS = [
+  {
+    icon:'🔧', name:'CORE / SYSTEM MODS',
+    mods:[
+      {n:'MCM — Mod Configuration Menu',         a:'RavenAscendant',        req:true,  d:'Centralized configuration menu for all compatible addons. Mandatory foundation for most mods in the pack.'},
+      {n:'DLTX — Dynamic LTX Patcher',            a:'nltp_ashes',            req:true,  d:'Dynamic config patching system. Allows multiple mods to modify the same files without conflicts.'},
+      {n:'DLTX JSRS 4.0 (compatibility patch)',   a:'Solarint / adaptation',             d:'DLTX-compatible version of the JSRS 4.0 sound pack to eliminate conflicts between addons.'},
+      {n:'DLTX MiniMod Pack (Demonized)',          a:'Demonized',                   d:'Large pack of small DLTX-compatible minimods: A-Life fixes, loot balancing, radioactive air tweaks, etc.'},
+      {n:'Trinity Launcher',                        a:'Ivan Danko',            own:true,  d:'Original development. Launcher for starting the game with season selection: automatically activates the required mods in MO, clears shader cache and applies the corresponding graphics config — no need to enter Mod Organizer before each launch.'},
+      {n:'Trinity Installer',                       a:'Ivan Danko',            own:true,  d:'Original development. Automatic installer for the Build Trinity pack. Simply download TrinityInstaller.exe, run it, specify the install location — the installer will automatically download the pack archives and install everything to the selected directory. No need to manually download files or extract archives.'},
+      {n:'Mod Organizer 2 Launch Automation',      a:'Serhii Olasiuk',                       d:'Automatically connects the mods folder regardless of where you installed the pack.'},
+    ]
+  },
+  {
+    icon:'🌦', name:'WEATHER & ATMOSPHERE',
+    mods:[
+      {n:'Winter Atmosphere',                      a:'Daedalus-Prime, Ivan Danko',      d:'Editor: Ivan Danko. Scripted component. Live weather particles for the Zone — only outdoors, only when it matters. Snow, fog, dust and fireflies change in real time based on weather, time of day and wind. Disappear on entering buildings. Compatible with 35+ weather presets.'},
+      {n:'Sun Rise',                               a:'Ivan Danko',            own:true,  d:'Original texture modification. Full replacement of environment textures (excluding NPCs, monsters and sky): cinematic sunrises and sunsets.'},
+      {n:'Dead Zone',                              a:'Ivan Danko',            own:true,  d:'Original texture modification. Full replacement of environment textures (excluding NPCs, monsters and sky): eternal autumn, leaden sky, endless rain, oppressive drizzle.'},
+      {n:'Frozen Zone',                            a:'Ivan Danko',            own:true,  d:'Original texture modification. Full replacement of environment textures (excluding NPCs, monsters and sky): fierce frosts, blinding blizzards, ice and frost on machinery.'},
+      {n:'Grass And trees by PanceRide',           a:'PanceRide',                        d:'Full replacement of tree crown and branch-with-leaves textures for Sun Rise. Editor: Ivan Danko — some grass textures and tree crowns used, original work and project textures added. Textures reduced to 4K, sufficient quality.'},
+      {n:'Atmospherics',                           a:'Hipp_0',                         d:'Professional weather mod, calibrated on a color-accurate monitor. Natural and atmospheric weather presentation.'},
+      {n:'Weather Expansion',                      a:'Screwed_up',                       d:'Expansion for Atmospherics: 14 hand-crafted weather cycles. 36 unique weathers total. <em>Pack editor: Ivan Danko</em> — adaptation of three weather mods into one, configured separately for each season.'},
+      {n:'C Consciousness Grass & Trees v0.71',    a:'Huh_?',                           d:'Replacement of some grass textures for all three seasons. Editor: Ivan Danko — level.details files used, grass textures modified, original work and project textures added. Tree crowns borrowed from Dead Zone. New water textures for Dead Zone and Sun Rise.'},
+      {n:'Trees Winter INVERNO (Optional)',        a:'Aiden',                d:'Optional winter mode component. Winter tree and vegetation textures for the Zone.'},
+    ]
+  },
+  {
+    icon:'🖥', name:'SHADERS & GRAPHICS',
+    mods:[
+      {n:'Screen Space Shaders (SSS)',             a:'Ascii1457',                        d:'Revolutionary shader collection: Ambient Occlusion, SSR reflections, interactive grass (reacts to player/NPC/explosions), rain puddles, Depth of Field, TAA, parallax effects. The graphical backbone of the pack.'},
+      {n:'Enhanced Shaders and Color Grading',    a:'KennShade',                        d:'Gamma-correct lighting, PBR specular effects, ACES tone-mapping. ReShade-level visual quality without FPS loss.'},
+      {n:'ShaderLens',                             a:'Anonimiet',                d:'Shader effects for optics: glare, chromatic aberration, vignetting in scopes.'},
+      {n:"Grok's Masks & Reflections",            a:'Grok',                             d:'Realistic reflections and masks for helmets and gas masks — wet glass effect.'},
+      {n:"Beef's NVGs",                           a:'Beef',                             d:'Shader night vision devices with realistic image intensification effect and characteristic green glow.'},
+      {n:'Dynamic Zoom Enabler',                  a:'Anomaly Team',                d:'Dynamic camera zoom when aiming for compatible scopes.'},
+      {n:'XENON Light',                           a:'Xenon',                d:'Xenon lighting for flashlights — bright cold blue tone.'},
+      {n:'Heat Vision v1.3',                      a:'Screwed_up',                d:'Thermal vision mode for compatible scopes and devices.'},
+      {n:'Blood Pools',                           a:'Spuchel',                          d:'Realistic blood puddles on the ground after character and mutant deaths.'},
+      {n:'Realistic Blood HQ Redone',             a:'Spuchel',                          d:'HD blood textures with realistic splatter and drip effects.'},
+      {n:'ShaderDriven Scopes',                   a:'party_50',                         d:'Scope shaders — realistic parallax and optical magnification effects.'},
+    ]
+  },
+  {
+    icon:'🎵', name:'SOUND',
+    mods:[
+      {n:'JSRS Sound Mod 4.0',                    a:'Solarint',                         d:'Complete gunfire sound remake. 8 audio layers per weapon, new distance sounds, surround audio. Port of the legendary JSRS from ARMA 3.'},
+      {n:'JSRS Cracks & Impacts Patch',           a:'Solarint',                         d:'JSRS addon: realistic bullet whiz sounds near the player and impact sounds on different surfaces.'},
+      {n:'Dark signal Amplified footsteps v5 Extended', a:'Shr¡ke',                  d:'Dark Signal Amplified — a 2.0 update of the original Dark Signal audio pack.'},
+      {n:'Dark Signal Audio Pack',                a:'Shrike',                           d:'Original sound pack: unique shooting and reload sounds for compatible weapons.'},
+    ]
+  },
+  {
+    icon:'🔫', name:'WEAPONS & BALLISTICS',
+    mods:[
+      {n:'Boomsticks and Sharpsticks (BaS)',      a:'Mich_Cartman',                     d:'The largest weapon mod for Anomaly. Dozens of new guns, knives, scopes and accessories with unique HD animations. Major contributions from Mortan, Blindside, Ghost_Neverbloom.'},
+      {n:'Grok Ballistics Overhaul',              a:'Grok',                             d:'Full ballistics overhaul: realistic kinetic energy, armor penetration, projectile speed drop at range.'},
+      {n:'WPO — Weapon Parts Overhaul',           a:'Solarint',                d:'Expanded weapon parts and modification system.'},
+      {n:'Modular Attachment System',             a:'Solarint',                d:'Modular accessory mounting system — flexible equipment customization.'},
+      {n:'MarkSwitch',                            a:'Demonized',                d:'Switch aiming modes (day/night/thermal) with one button.'},
+      {n:"Pizza's Ultimate Sight",               a:'Pizza',                            d:'Pack of quality scope textures and improved aiming system.'},
+      {n:'RWAP — Real Weapon Attachment Pack',    a:'Borer',                d:'Realistic models and textures for weapon attachments.'},
+      {n:'3DSS RWAP',                             a:'Borer',                d:'3D shadows and improved rendering for RWAP accessories.'},
+      {n:'Anomaly Tacticool Scopes',              a:'jaymorrow',                        d:'Set of tactical scopes with realistic reticles and overlays.'},
+      {n:'ToggleScope',                           a:'Ishmaeel',                d:'Switch scope magnification (x1/xN) without opening inventory.'},
+      {n:'Knife, Pistol & Binoculars Slots',      a:'Anomaly Team',                d:'Separate inventory slots for knife, pistol and binoculars.'},
+      {n:'Quick Melee Reworked',                  a:'Anomaly Team',                d:'Rework of quick melee attack — improved animations and hit timings.'},
+    ]
+  },
+  {
+    icon:'🎬', name:'ANIMATIONS',
+    mods:[
+      {n:'Camera Reanimation — I.N.E.R.T.I.A.',  a:'Borer',                            d:'Cinematic camera inertia during movement, jumps and shooting.'},
+      {n:'1st Person Visible Body',               a:'Anomaly community',                d:'First-person body visibility — legs and torso visible when looking down.'},
+      {n:'STALKER 2 Backpack Anim',               a:'Feel_there',                d:'Backpack animation in the spirit of S.T.A.L.K.E.R. 2 — gear reacts to player movement.'},
+      {n:'Food, Drug & Drink Animations (FDDA)', a:'Feel_there',         d:'Animated consumption of food, medications and drinks from first person.'},
+      {n:'FDDA Enhanced',                         a:'Feel_there',                       d:'FDDA extension: ballistic plates, NVGs, flashlight — new animations.'},
+      {n:'FDDA Redone',                           a:'Feel_there',                       d:'Complete FDDA script overhaul — better stability and smoother transitions.'},
+      {n:'Enhanced Animations Food & Drinks',    a:'BarryBogs',                d:'Additional pack of improved food and drink animations.'},
+      {n:'Animations STALKER 2',                  a:'Anomaly community',                d:'Port of animations from S.T.A.L.K.E.R. 2 for NPCs and environment.'},
+      {n:'Reanimation Actor',                     a:'Anomaly community',                d:'Reworked character animations: walking, running, crouching.'},
+      {n:'Torch Reanimation',                     a:'Ishtar',                           d:'New smooth animations for the flashlight.'},
+      {n:'Lowered Weapon Sprint Animation',      a:'Bordhard',                d:'Weapon lowering animation during sprint.'},
+      {n:'New Medkits & Exo Animations',          a:'Anomaly community',                d:'New animations for medkit use and exoskeleton suits.'},
+      {n:'Cooking Animation System',              a:'Feel_there',                d:'Animated cooking by the campfire.'},
+      {n:'Glowsticks',                            a:'Trokair',                d:'Glow sticks as a portable light source.'},
+      {n:'Glowsticks Reanimated',                 a:'Trokair',                d:'Improved animations for glow sticks.'},
+      {n:'NPC Art Anim Light',                    a:'Demonized',                d:'Improved NPC animations when using weapons and interacting with the environment.'},
+    ]
+  },
+  {
+    icon:'🗺', name:'WORLD, LOCATIONS & STASH',
+    mods:[
+      {n:'ReDone North Maps',                     a:'ReDone Team',                      d:'Reworked northern locations: improved object placement and detail.'},
+      {n:'ReDone South Maps',                     a:'ReDone Team',                      d:'Reworked southern locations with updated content.'},
+      {n:'Furniture',                             a:'Anomaly community',                d:'Additional furniture in existing buildings — more detail and inhabited atmosphere.'},
+      {n:'Hideout Furniture',                     a:'Anomaly community',                d:'Furniture and interior items for the personal hideout.'},
+      {n:'Hideout Furniture Expansion',           a:'Balmo',                d:'Expanded hideout furniture selection.'},
+      {n:'HFE Ammo Box Patch',                    a:'Balmo',                            d:'Ammo box compatibility patch for HFE.'},
+      {n:'Even More Hideout Furniture',           a:'Sclera',                d:'Even more decor and furniture options for the hideout.'},
+      {n:'Hideout Furniture Crafting Sandbox',    a:'Sclera',                d:'Crafting and furniture placement system in free-build mode.'},
+    ]
+  },
+  {
+    icon:'👾', name:'AI, A-LIFE & COMBAT SYSTEM',
+    mods:[
+      {n:'Performance A-Life',                    a:'Anomaly community',                d:'A-Life optimization for stable FPS with large numbers of active NPCs.'},
+      {n:'REBOUND A-Life',                        a:'Skelote',                d:'A-Life overhaul: realistic stalker behavior, patrol routes, reactions to Zone events.'},
+      {n:'ReDone Combat Semi-Radiant',            a:'ReDone Team',                      d:'Improved combat system with procedural combat event generation elements.'},
+      {n:'ReDone Combat AI',                      a:'Radiantby',                      d:'Combat AI overhaul: tactics, cover usage, flanking maneuvers.'},
+      {n:'Stealth',                               a:'xcvb',                             d:'Stealth overhaul: detection depends on lighting, distance and movement. Stealth actually works now.'},
+      {n:'NPC Vision Through Vegetation Fix',    a:'Rama',                d:'NPCs can no longer see the player through bushes and vegetation.'},
+      {n:"Arszi's Controller Overhaul",          a:'Arszi',                            d:'Complete controller overhaul — new attack mechanics, psychic influence, terrifying aura.'},
+      {n:'Night Mutants',                         a:'TDLemon',                d:'Mutants are more aggressive at night — increases the danger of nighttime excursions.'},
+      {n:'Mutant Replacement Pack (REPACK)',      a:'Anomaly community',                d:'Replacement of mutant models with more detailed and frightening versions.'},
+      {n:'The Walking Dead',                      a:'Anomaly community',                d:'Zombie mode — increased aggression of zombie mutants.'},
+    ]
+  },
+  {
+    icon:'🧪', name:'ANOMALIES & ARTIFACTS',
+    mods:[
+      {n:'Spatial Anomalies 1.0',                 a:'Anomaly community',                d:'New types of spatial anomalies with unique effects.'},
+      {n:'Anomaly Arrival',                       a:'Solarint',                d:'Anomaly appearance overhaul — more dynamic and unpredictable placement.'},
+      {n:'Artefact Renovation',                   a:'Deanon',            d:'Artifact characteristics overhaul, properties for "junk" artifacts.'},
+      {n:'Fixed Artefacts Visual',                a:'Deanon',                            d:'Artifact visual bug fixes — correct display and glow.'},
+      {n:'Fixed Artifact (Strogglet15)',          a:'Strogglet15',                      d:'Patch for artifacts with non-working effects.'},
+      {n:"Deanon's Artefact Pack",               a:'Deanon',                           d:'Original artifact pack with unique mechanics and balance.'},
+      {n:'Devices of Anomaly Redone',             a:'BarryBogs',                d:'Reworked anomaly detectors — improved mechanics and visualization.'},
+      {n:'Anomaly Lootboxes',                     a:'Anomaly community',                d:'Loot crates in anomalous zones — risk and reward.'},
+    ]
+  },
+  {
+    icon:'📋', name:'QUESTS, TASKS & DIALOGUES',
+    mods:[
+      {n:'Storylines v3 (Lost to the Zone)',      a:'DoctorX (DRX) / Anomaly Team',    d:'Storylines "Lost to the Zone": 4 parts — Living Legend, Mortal Sin, Operation Afterglow, Hollow Boundaries. Built into Anomaly 1.5.'},
+      {n:'New Tasks — iTheon',                    a:'iTheon',                           d:'Large pack of new tasks with varied content and interesting stories.'},
+      {n:'iTheon PDA Taskboard',                  a:'iTheon',                           d:'Improved PDA task board — convenient active quest interface.'},
+      {n:'RF Receiver Tasks',                     a:'Anomaly community',                d:'Tasks via radio receiver — intercepting signals, finding stashes.'},
+      {n:'Dynamic Dialog UI',                     a:'Demonized',                   d:'Dialog interface overhaul: list on the right, smooth transitions, focus on the NPC.'},
+    ]
+  },
+  {
+    icon:'💊', name:'SURVIVAL & HEALTH',
+    mods:[
+      {n:'Grok Body Health System Redux (BHS)',   a:'Grok',                             d:'Body part injuries: fractures, bleeding, concussions. Each limb healed separately.'},
+      {n:'EFT Interface for BHS',                 a:'Anomaly community',                d:'Escape from Tarkov-style interface for BHS.'},
+      {n:'Food Degradation',                      a:'Arszi',                d:'Food spoils over time — encourages realistic supply management.'},
+      {n:'Fillable Canteens',                     a:'RavenAscendant',                d:'Reusable flasks — fill with water from Zone water bodies.'},
+      {n:'System of Toxins (Optional)',           a:'Arszi',                d:'Poison and toxin system: contaminated areas, chemical threats, antidotes.'},
+      {n:'Radioactive & Toxic Air',               a:'Arszi',                d:'Radioactive and toxic air in certain locations — respiratory protection required.'},
+      {n:'Drunks Enhanced Toxic',                 a:'Anomaly community',                d:'Improved intoxication system with toxic effects from alcohol and drugs.'},
+    ]
+  },
+  {
+    icon:'🎒', name:'INVENTORY & EQUIPMENT',
+    mods:[
+      {n:'Backpacks of the Zone',                 a:'BarryBogs',                d:'Different backpack types with varying capacity characteristics.'},
+      {n:'Larger Consumables',                    a:'Anomaly community',                d:'Enlarged consumable icons in inventory.'},
+      {n:'Larger Devices',                        a:'Anomaly community',                d:'Enlarged device and detector icons in inventory.'},
+      {n:'Vanilla Models',                        a:'Anomaly Team',                     d:'Original item models with improved textures.'},
+      {n:'HD Models',                             a:'Azetrix / community',              d:'High-quality 3D item icons in inventory.'},
+      {n:'Icons',                                 a:'Anomaly community',                d:'Reworked item icons — sharper and more informative.'},
+      {n:'Icons Ammo',                            a:'Anomaly community',                d:'New ammo icons with distinction by type and caliber.'},
+      {n:"Cr3pi's Icons",                        a:'Cr3pi',                            d:'Original icon pack from Cr3pi in a unified detailed style.'},
+      {n:'New Mutant Icons & Parts',              a:'TDLemon',                          d:'New icons for mutant body parts and trophies.'},
+      {n:'Armor Nosorog Monolith Backpack',       a:'Anomaly community',                d:'Backpack model for the Monolith Nosorog exoskeleton.'},
+      {n:'Lockpicking Skill for Lootboxes',       a:'ahuyn',                d:'Lockpicking skill: open locked loot crates.'},
+    ]
+  },
+  {
+    icon:'📱', name:'PDA & INTERFACE',
+    mods:[
+      {n:'Reners PDA Renewed',                    a:'Rener',                            d:'Complete PDA interface overhaul — convenient, informative design.'},
+      {n:'Rener PDA Sounds & Vibrate',            a:'Rener',                            d:'Notification sounds and vibration simulation for PDA events.'},
+      {n:'PDA Hacking',                           a:'Demonized',                d:'Enemy PDA hacking mini-game — intel, stash coordinates.'},
+    ]
+  },
+  {
+    icon:'🏃', name:'PLAYER MECHANICS',
+    mods:[
+      {n:'Soulslike Gamemode',                    a:'Jabbers',                d:'New game type. Instead of simple death a random Zone stalker picks you up and heals your wounds — but you are left in his debt. Mechanics inspired by the Dark Souls series.'},
+      {n:'Ledge Grabbing / Mantling',             a:'Demonized',   d:'Ledge grabbing system — climbing up elevated surfaces by hand.'},
+      {n:'Anomaly Skill System',                  a:'Haru',                d:'Skill progression system: experience from actions, perk unlocking.'},
+      {n:'Skills Expansion',                      a:'Haru',                d:'Expanded skill tree — new branches and unique abilities.'},
+      {n:'Limited (And Paid) Fast Travel',        a:'Utjan',                d:'Limited paid fast travel — greater realism.'},
+      {n:'THAP Rework',                           a:'The_Un_Known',           d:'THAP rework: ~90% of hand models replaced, new camouflages, 2K/4K textures.'},
+      {n:'Dismemberment',                         a:'Ghen Tuong',                d:'Dismemberment system — realistic mutant limb damage.'},
+      {n:'Mugging Squads',                        a:'Mp_p',                   d:'Marauder gangs that attack with intent to rob.'},
+    ]
+  },
+  {
+    icon:'⚖', name:'BALANCE, FACTIONS & OTHER',
+    mods:[
+      {n:'Duty Expansion',                        a:'Anomaly Team',                d:'Duty faction expansion — new quests, dialogues, NPCs.'},
+      {n:"Desman's Horror Overhaul",             a:'Desman',                           d:'Horror atmosphere overhaul: frightening sounds, random events, psychic effects.'},
+      {n:'Ukrainian Voices (Radio & Text)',       a:'Anomaly community',                d:'Ukrainian voices for radio communications and text messages.'},
+      {n:'English Voices Complete',               a:'Anomaly community',                d:'Full English voiceover for all NPCs and radio communications.'},
+    ]
+  },
+];
+
+let num = 1;
+const container = document.getElementById('mod-list');
+CATS.forEach(cat => {
+  const sec = document.createElement('div');
+  sec.className = 'category';
+  const cnt = cat.mods.length;
+  const suffix = cnt===1?'mod':cnt<5?'mods':'mods';
+  const hdr = document.createElement('div');
+  hdr.className = 'cat-header';
+  hdr.innerHTML = `<span>${cat.icon}&nbsp;&nbsp;${cat.name}</span><span class="cat-count">${cnt} ${suffix}</span>`;
+  sec.appendChild(hdr);
+  cat.mods.forEach(mod => {
+    const row = document.createElement('div');
+    row.className = 'mod-row';
+    let tags = '';
+    if(mod.own) tags += '<span class="tag tag-own">✦ Original</span>';
+    if(mod.req) tags += '<span class="tag tag-req">Required</span>';
+    row.innerHTML = `
+      <div class="col col-num">${num++}</div>
+      <div class="col col-name">${mod.n}${tags?'<div>'+tags+'</div>':''}</div>
+      <div class="col col-auth">${mod.a}</div>
+      <div class="col col-desc">${mod.d}</div>`;
+    sec.appendChild(row);
+  });
+  container.appendChild(sec);
+});
+const total = num - 1;
+document.getElementById('total-line').innerHTML =
+  `Total mods: <strong>${total}</strong> | Categories: <strong>${CATS.length}</strong>`;
+
+const creditsText = document.createElement('div');
+creditsText.style.marginTop = '32px';
+creditsText.style.padding = '20px 24px';
+creditsText.style.background = '#f5f5f5';
+creditsText.style.borderLeft = '4px solid var(--red)';
+creditsText.style.fontSize = '0.9rem';
+creditsText.style.color = '#333';
+creditsText.style.lineHeight = '1.6';
+creditsText.innerHTML = `<strong>Acknowledgements:</strong> Friends, creating Build Trinity is the result of the work of an enormous community. If I accidentally missed your name or listed incorrect authorship for your mod, I apologize and invite you to reach out on Discord. Write to me and I will definitely add you to the authors list and acknowledgements section. Together we make the Zone better!`;
+container.parentElement.appendChild(creditsText);
+</script>
+</body>
+</html>

@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ══ OG META TAGS для превью в Telegram / Discord / VK ══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="⚡ Build Trinity — S.T.A.L.K.E.R. ANOMALY">
+  <meta property="og:description" content="Три обличчя Зони. Один шлях. | Офіційний список модів збірки Build Trinity від Ivan Danko. DX11 Exclusive • 90+ погодних циклів • Hardcore Survival">
+  <meta property="og:image" content="https://buildtrinity.netlify.app/Trinity.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <!-- Netlify/online: замінити og:image на пряме посилання до Trinity.jpg після деплою -->
+  <meta property="og:url" content="https://buildtrinity.netlify.app/">
+  <meta property="og:site_name" content="STALKER: ZONE EDITION">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="⚡ Build Trinity — S.T.A.L.K.E.R. ANOMALY">
+  <meta name="twitter:description" content="Три обличчя Зони. Один шлях. Офіційний список модів від Ivan Danko.">
+  <meta name="twitter:image" content="https://buildtrinity.netlify.app/Trinity.jpg">
+  <meta name="description" content="Build Trinity — офіційний список модів збірки S.T.A.L.K.E.R. Anomaly від Ivan Danko. DX11 Exclusive, 90+ погодних циклів, Hardcore Survival.">
+<title>S.T.A.L.K.E.R. Anomaly — Build Trinity | Ivan Danko</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap');
+  :root{
+    --red:#C0392B;--dark:#111122;--navy:#16213E;--blue:#0F3460;
+    --mid:#1E4080;--gold:#E2B04A;--row1:#EEF2FF;--row2:#FFFFFF;
+    --border:#B0BCD8;--text:#1A1A2E;--muted:#5A6080;--green:#1A7A40;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Open Sans',Arial,sans-serif;background:#D8DFF0;color:var(--text);padding:24px 14px 64px;}
+  .page{max-width:1280px;margin:0 auto;background:#fff;border-radius:6px;box-shadow:0 8px 48px rgba(0,0,0,.18);overflow:hidden;}
+
+  /* ══════ HERO HEADER ══════ */
+  .hero{background:linear-gradient(160deg,rgba(10,10,26,.92) 0%,rgba(26,26,46,.88) 50%,rgba(15,24,48,.92) 100%),url("Trinity.jpg") center/cover no-repeat;padding:0;border-bottom:5px solid var(--red);position:relative;overflow:hidden;}
+  .hero::before{content:'☢';position:absolute;right:-30px;top:-30px;font-size:260px;opacity:.04;color:#fff;line-height:1;}
+  .hero-top{padding:36px 44px 28px;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;}
+  .title-block{text-align:center;}
+  .title-block .tagline{font-family:'Oswald',sans-serif;font-size:.85rem;color:#C0392B;letter-spacing:6px;text-transform:uppercase;margin-bottom:10px;opacity:.85;}
+  .title-block h1{font-family:'Oswald',sans-serif;font-size:3.2rem;color:var(--red);letter-spacing:4px;line-height:1;text-transform:uppercase;text-shadow:0 0 40px rgba(192,57,43,.4);}
+  .title-block .edition{font-family:'Oswald',sans-serif;font-size:.9rem;color:#667799;letter-spacing:5px;text-transform:uppercase;margin-top:6px;}
+  .title-block .build-name{font-family:'Oswald',sans-serif;font-size:2rem;color:var(--gold);letter-spacing:4px;margin-top:10px;text-transform:uppercase;text-shadow:0 0 30px rgba(226,176,74,.35);}
+  .meta-block{display:none;}
+
+  /* ══════ CONTACTS BAR ══════ */
+  .contacts{background:linear-gradient(90deg,#0A0A18 0%,#0F1428 50%,#0A0A18 100%);padding:14px 44px;display:flex;gap:0;flex-wrap:wrap;align-items:center;justify-content:center;border-top:1px solid #C0392B;border-bottom:2px solid #C0392B;}
+  .contact-item{display:flex;align-items:center;gap:8px;font-size:.85rem;padding:6px 20px;border-right:1px solid #1E2A50;position:relative;}
+  .contact-item:last-child{border-right:none;}
+  .contact-item .ico{font-size:1.15rem;}
+  .contact-item span:not(.ico){color:#556688;font-size:.75rem;text-transform:uppercase;letter-spacing:1px;}
+  .contact-item a{color:#E2B04A;text-decoration:none;font-family:'Oswald',sans-serif;font-size:.95rem;letter-spacing:1.5px;font-weight:600;transition:color .2s,text-shadow .2s;}
+  .contact-item a:hover{color:#fff;text-shadow:0 0 12px rgba(226,176,74,.8);}
+  .contacts{flex-direction:column;gap:0;padding:12px 44px;}
+  .contacts-row{display:flex;justify-content:center;align-items:center;gap:0;}
+  .contacts-row-top{border-bottom:1px solid #1E2A50;padding-bottom:8px;margin-bottom:8px;}
+
+  /* ══════ SYSTEM REQ ══════ */
+  .sysreq{background:linear-gradient(90deg,#0D0D20 0%,#111830 100%);padding:20px 44px;border-bottom:2px solid #1E2A50;}
+  .sysreq-title{font-family:'Oswald',sans-serif;font-size:.85rem;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
+  .sysreq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px 20px;}
+  .sysreq-item{display:flex;flex-direction:column;gap:2px;}
+  .sysreq-item .label{font-size:.68rem;color:#556688;text-transform:uppercase;letter-spacing:1.5px;}
+  .sysreq-item .value{font-size:.82rem;color:#99AACC;font-weight:600;}
+  .sysreq-note{margin-top:12px;font-size:.75rem;color:#445577;font-style:italic;line-height:1.5;}
+
+  /* ══════ PROJECT DESCRIPTION ══════ */
+  .project-desc{background:linear-gradient(160deg,#0E0E22 0%,#12182E 100%);padding:28px 44px 32px;border-bottom:3px solid var(--blue);}
+  .project-desc .sect-title{font-family:'Oswald',sans-serif;font-size:1rem;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+  .project-desc .sect-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);}
+  .desc-main{color:#8899BB;font-size:.88rem;line-height:1.75;margin-bottom:18px;}
+  .desc-main strong{color:var(--gold);}
+  .tech-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+  .tech-pill{background:#1A2040;border:1px solid #2A3460;color:#8899CC;font-size:.73rem;padding:4px 12px;border-radius:2px;font-family:'Oswald',sans-serif;letter-spacing:1px;}
+  .tech-pill.hot{border-color:var(--red);color:#CC6666;}
+
+  /* ══════ THREE EPOCHS ══════ */
+  .epochs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid #1A2A50;}
+  .epoch{padding:20px 24px;border-right:1px solid #1A2A50;position:relative;overflow:hidden;}
+  .epoch:last-child{border-right:none;}
+  .epoch.frozen{background:linear-gradient(160deg,#0C1828 0%,#0A1220 100%);}
+  .epoch.dead{background:linear-gradient(160deg,#1A1408 0%,#120E04 100%);}
+  .epoch.sunrise{background:linear-gradient(160deg,#0A1810 0%,#060E06 100%);}
+  .epoch-icon{font-size:1.8rem;margin-bottom:8px;}
+  .epoch-title{font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+  .epoch.frozen .epoch-title{color:#66AADD;}
+  .epoch.dead .epoch-title{color:#AA7744;}
+  .epoch.sunrise .epoch-title{color:#66AA55;}
+  .epoch-author{font-size:.7rem;color:var(--gold);letter-spacing:1px;font-family:'Oswald',sans-serif;margin-bottom:8px;text-transform:uppercase;}
+  .epoch p{font-size:.78rem;color:#778899;line-height:1.6;}
+
+  /* ══════ LEGEND / TABLE HEADER ══════ */
+  .legend{background:var(--navy);display:flex;border-top:3px solid var(--mid);border-bottom:2px solid var(--mid);position:sticky;top:0;z-index:10;}
+  .lc{padding:9px 14px;font-family:'Oswald',sans-serif;font-size:.76rem;letter-spacing:1.5px;color:#8899CC;text-transform:uppercase;border-right:1px solid #2A3060;}
+  .lc:last-child{border-right:none;}
+  .lc-num{flex:0 0 52px;text-align:center;}
+  .lc-name{flex:2.2;}
+  .lc-auth{flex:1.5;}
+  .lc-desc{flex:3.3;}
+
+  /* ══════ CATEGORY ══════ */
+  .category{border-bottom:2px solid var(--mid);}
+  .cat-header{background:var(--blue);padding:11px 20px;display:flex;align-items:center;gap:10px;}
+  .cat-header span{font-family:'Oswald',sans-serif;font-size:1.05rem;color:#fff;letter-spacing:1.5px;text-transform:uppercase;}
+  .cat-count{margin-left:auto;background:rgba(255,255,255,.12);color:#AAC4FF;font-size:.73rem;padding:2px 10px;border-radius:12px;font-family:'Oswald',sans-serif;letter-spacing:1px;}
+
+  /* ══════ MOD ROW ══════ */
+  .mod-row{display:flex;align-items:stretch;border-bottom:1px solid var(--border);transition:background .12s;}
+  .mod-row:last-child{border-bottom:none;}
+  .mod-row:nth-child(odd){background:var(--row1);}
+  .mod-row:nth-child(even){background:var(--row2);}
+  .mod-row:hover{background:#D4DFFF;}
+  .col{padding:9px 13px;font-size:.82rem;line-height:1.5;border-right:1px solid var(--border);display:flex;align-items:flex-start;}
+  .col:last-child{border-right:none;}
+  .col-num{flex:0 0 52px;justify-content:center;align-items:center;font-family:'Oswald',sans-serif;font-size:.88rem;color:var(--muted);font-weight:600;}
+  .col-name{flex:2.2;font-weight:700;color:var(--navy);font-size:.85rem;flex-direction:column;gap:3px;}
+  .col-auth{flex:1.5;color:var(--red);font-style:italic;font-size:.8rem;font-weight:600;align-items:center;}
+  .col-desc{flex:3.3;color:var(--text);font-size:.8rem;}
+  .tag{display:inline-block;font-size:.63rem;padding:2px 7px;border-radius:2px;font-family:'Oswald',sans-serif;letter-spacing:1px;margin-top:4px;text-transform:uppercase;}
+  .tag-own{background:var(--green);color:#fff;}
+  .tag-req{background:#2C3E7A;color:#AAC4FF;}
+
+  /* ══════ FOOTER ══════ */
+  .footer{background:var(--dark);padding:22px 44px;border-top:4px solid var(--red);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  .footer p{color:#5566AA;font-size:.78rem;line-height:1.6;}
+  .footer strong{color:var(--gold);}
+
+  /* ══════ VIDEO BLOCK ══════ */
+  .video-block{background:linear-gradient(160deg,#0A0A18 0%,#0E1220 100%);padding:28px 44px 32px;border-top:2px solid #1E2A50;border-bottom:3px solid var(--red);}
+  .video-title{font-family:'Oswald',sans-serif;font-size:1rem;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .video-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);}
+  .video-frame-wrap{width:100%;max-width:900px;margin:0 auto;}
+  .video-thumb{display:block;position:relative;width:100%;border:2px solid #C0392B;border-radius:4px;overflow:hidden;box-shadow:0 0 40px rgba(192,57,43,.35);background:#000;text-decoration:none;cursor:pointer;}
+  .video-thumb img{display:block;width:100%;height:auto;transition:transform .3s,opacity .3s;}
+  .video-thumb:hover img{transform:scale(1.03);opacity:.85;}
+  .video-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);width:72px;height:72px;background:rgba(192,57,43,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#fff;box-shadow:0 0 30px rgba(192,57,43,.6);transition:transform .2s,background .2s;}
+  .video-thumb:hover .video-play-btn{transform:translate(-50%,-55%) scale(1.12);background:var(--red);}
+  .video-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#E2B04A;font-family:'Oswald',sans-serif;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;padding:18px 20px 10px;text-align:center;}
+  .video-iframe-mode{position:relative;padding-top:62%;border:2px solid #C0392B;border-radius:4px;overflow:hidden;box-shadow:0 0 40px rgba(192,57,43,.35);background:#000;}
+  .video-iframe-mode iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+
+  /* ══════ INSTALL GUIDE ══════ */
+  .install-block{background:linear-gradient(160deg,#0A0A18 0%,#0D1220 100%);padding:28px 44px 32px;border-top:2px solid #1E2A50;border-bottom:3px solid var(--red);}
+  .install-title{font-family:'Oswald',sans-serif;font-size:1rem;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+  .install-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);}
+  .install-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+  .install-section{background:#0E1428;border:1px solid #1E3060;border-radius:4px;padding:18px 20px;}
+  .install-section-title{font-family:'Oswald',sans-serif;font-size:.88rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1E3060;display:flex;align-items:center;gap:8px;}
+  .install-step{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start;}
+  .install-step:last-child{margin-bottom:0;}
+  .install-num{flex:0 0 24px;height:24px;background:var(--red);color:#fff;font-family:'Oswald',sans-serif;font-size:.78rem;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;flex-shrink:0;}
+  .install-dot{flex:0 0 8px;height:8px;background:#C0392B;border-radius:50%;margin-top:6px;flex-shrink:0;}
+  .install-step p{color:#8899BB;font-size:.8rem;line-height:1.6;}
+  .install-step p strong{color:#AAC4FF;}
+  .install-step p em{color:#E2B04A;font-style:normal;}
+  .install-warn{background:#1A0A08;border:1px solid #C0392B;border-radius:4px;padding:12px 16px;color:#CC8877;font-size:.78rem;line-height:1.6;margin-top:8px;display:flex;gap:10px;align-items:flex-start;}
+  .install-btns{display:flex;gap:16px;justify-content:center;margin-top:20px;flex-wrap:wrap;}
+  .install-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#C0392B,#8B1A1A);color:#fff;font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:2px;text-transform:uppercase;padding:12px 32px;border-radius:3px;text-decoration:none;border:1px solid #E0392B;box-shadow:0 0 20px rgba(192,57,43,.3);transition:all .2s;flex:0 0 auto;}
+  .install-btn:hover{background:linear-gradient(135deg,#E0392B,#A0291B);box-shadow:0 0 30px rgba(192,57,43,.6);transform:translateY(-1px);}
+
+  /* ══════ WINDOWS PREP ══════ */
+  .winprep-block{background:linear-gradient(160deg,#0A0A14 0%,#0D1018 100%);border-top:2px solid var(--gold);border-bottom:2px solid rgba(226,176,74,.3);box-shadow:0 -2px 20px rgba(226,176,74,.1);}
+  .winprep-toggle{width:100%;background:linear-gradient(90deg,rgba(226,176,74,.08),transparent);border:none;border-left:3px solid var(--gold);padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+  .winprep-toggle:hover{background:rgba(255,255,255,.02);}
+  .winprep-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;flex:1;text-shadow:0 0 12px rgba(226,176,74,.4);}
+  .winprep-toggle-arrow{color:var(--gold);font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;text-shadow:0 0 8px rgba(226,176,74,.6);}
+  .winprep-toggle-arrow.open{transform:rotate(180deg);}
+  .winprep-body{display:none;padding:0 44px 24px;}
+  .winprep-body.open{display:block;}
+  .winprep-item{background:#0E1428;border:1px solid #1E3060;border-radius:4px;padding:14px 18px;margin-bottom:10px;display:flex;align-items:flex-start;gap:16px;}
+  .winprep-item:last-child{margin-bottom:0;}
+  .winprep-num{font-family:'Oswald',sans-serif;font-size:1.1rem;color:var(--gold);flex:0 0 28px;margin-top:1px;}
+  .winprep-info{flex:1;}
+  .winprep-name{font-family:'Oswald',sans-serif;font-size:.88rem;color:#AAC4FF;letter-spacing:1px;margin-bottom:4px;}
+  .winprep-note{font-size:.76rem;color:#556688;line-height:1.5;margin-bottom:8px;}
+  .winprep-links{display:flex;gap:8px;flex-wrap:wrap;}
+  .winprep-btn{display:inline-flex;align-items:center;gap:6px;background:#0F1E40;border:1px solid #2A4080;color:#8AABEE;font-size:.75rem;font-family:'Oswald',sans-serif;letter-spacing:1px;padding:5px 12px;border-radius:2px;text-decoration:none;transition:all .2s;}
+  .winprep-btn:hover{background:#1A3060;color:#fff;border-color:#4A70C0;}
+  .winprep-final{background:#0A1808;border:1px solid #1A4020;border-radius:4px;padding:10px 16px;color:#6A9A70;font-size:.76rem;margin-top:12px;}
+
+  /* ══════ TIPS BLOCK ══════ */
+  .tips-block{background:linear-gradient(160deg,#080810 0%,#0A0E1A 100%);padding:28px 44px 32px;border-top:2px solid #1E2A50;border-bottom:3px solid var(--red);}
+  .tips-main-title{font-family:'Oswald',sans-serif;font-size:1rem;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+  .tips-main-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);}
+  .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px;}
+  .tips-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:14px;}
+  .tips-card{background:#0A0E1E;border:1px solid #1A2A50;border-radius:4px;padding:16px 18px;position:relative;overflow:hidden;}
+  .tips-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+  .tips-card.cold::before{background:linear-gradient(90deg,#2A6090,transparent);}
+  .tips-card.med::before{background:linear-gradient(90deg,#2A7040,transparent);}
+  .tips-card.ctrl::before{background:linear-gradient(90deg,#7A4020,transparent);}
+  .tips-card.contact::before{background:linear-gradient(90deg,#4A2080,transparent);}
+  .tips-card.loc::before{background:linear-gradient(90deg,#806020,transparent);}
+  .tips-card-title{font-family:'Oswald',sans-serif;font-size:.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .tips-card.cold .tips-card-title{color:#6AAADD;}
+  .tips-card.med .tips-card-title{color:#6AAA80;}
+  .tips-card.ctrl .tips-card-title{color:#DD9955;}
+  .tips-card.contact .tips-card-title{color:#AA88DD;}
+  .tips-card.loc .tips-card-title{color:#DDAA44;}
+  .tips-item{display:flex;gap:8px;margin-bottom:7px;align-items:flex-start;}
+  .tips-item:last-child{margin-bottom:0;}
+  .tips-dot{flex:0 0 5px;height:5px;border-radius:50%;margin-top:6px;flex-shrink:0;}
+  .tips-card.cold .tips-dot{background:#6AAADD;}
+  .tips-card.med .tips-dot{background:#6AAA80;}
+  .tips-card.ctrl .tips-dot{background:#DD9955;}
+  .tips-card.contact .tips-dot{background:#AA88DD;}
+  .tips-card.loc .tips-dot{background:#DDAA44;}
+  .tips-item p{color:#778899;font-size:.76rem;line-height:1.55;}
+  .tips-item p strong{color:#AAC4CC;}
+  .tips-item p em{color:#E2B04A;font-style:normal;}
+  .tips-sub{margin-left:16px;margin-top:5px;}
+  .tips-sub .tips-item p{color:#5A6A78;font-size:.73rem;}
+  .tips-kbd{display:inline-block;background:#1A2030;border:1px solid #2A3A60;color:#AAC4FF;font-family:'Oswald',sans-serif;font-size:.7rem;padding:1px 7px;border-radius:2px;letter-spacing:1px;}
+  .tips-footer{text-align:center;margin-top:18px;font-family:'Oswald',sans-serif;font-size:.9rem;color:#445566;letter-spacing:2px;font-style:italic;}
+  .tips-footer span{color:#C0392B;}
+
+/* ══════ COLD SYSTEM ══════ */
+  .cold-block{background:linear-gradient(160deg,#060C14 0%,#08101C 100%);border-top:2px solid #1E2A50;border-bottom:3px solid #2A6090;}
+  .cold-toggle{width:100%;background:linear-gradient(90deg,rgba(100,160,220,.06),transparent);border:none;border-left:3px solid #6AAADD;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+  .cold-toggle:hover{background:linear-gradient(90deg,rgba(100,160,220,.1),transparent);}
+  .cold-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#6AAADD;letter-spacing:2px;text-transform:uppercase;flex:1;}
+  .cold-toggle-arrow{color:#6AAADD;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+  .cold-toggle-arrow.open{transform:rotate(180deg);}
+  .cold-body{display:none;padding:0 44px 28px;}
+  .cold-body.open{display:block;}
+  .cold-hero{display:grid;grid-template-columns:320px 1fr;gap:24px;margin-bottom:20px;align-items:start;}
+  .cold-hero-img{width:100%;border-radius:4px;border:2px solid #1A3A60;box-shadow:0 0 30px rgba(42,96,144,.4);}
+  .cold-hero-right{}
+  .cold-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#6AAADD;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;}
+  .cold-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#445566;letter-spacing:3px;margin-bottom:10px;}
+  .cold-authors{font-size:.75rem;color:#445A6A;margin-bottom:12px;line-height:1.6;border-left:2px solid #2A5070;padding-left:10px;}
+  .cold-authors strong{color:#6A9ABB;}
+  .cold-intro{font-size:.8rem;color:#6A8A9A;line-height:1.65;margin-bottom:14px;font-style:italic;}
+  .cold-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+  .cold-section{background:#060E18;border:1px solid #142030;border-radius:3px;padding:12px 14px;}
+  .cold-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#5A9ABB;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #142030;}
+  .cold-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+  .cold-row:last-child{margin-bottom:0;}
+  .cold-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+  .cold-row p{font-size:.75rem;color:#5A7080;line-height:1.5;}
+  .cold-row p strong{color:#7AAABB;}
+  .cold-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#2A4A5A;font-style:italic;letter-spacing:1px;}
+  
+  /* ══════ CAMPFIRE SYSTEM ══════ */
+  .fire-block{background:linear-gradient(160deg,#0A0806 0%,#100C08 100%);border-top:2px solid #3A2010;border-bottom:2px solid #3A2010;}
+  .fire-toggle{width:100%;background:linear-gradient(90deg,rgba(200,100,30,.06),transparent);border:none;border-left:3px solid #C06020;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+  .fire-toggle:hover{background:linear-gradient(90deg,rgba(200,100,30,.1),transparent);}
+  .fire-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#E08040;letter-spacing:2px;text-transform:uppercase;flex:1;text-shadow:0 0 12px rgba(200,100,30,.4);}
+  .fire-toggle-arrow{color:#E08040;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+  .fire-toggle-arrow.open{transform:rotate(180deg);}
+  .fire-body{display:none;padding:0 44px 28px;}
+  .fire-body.open{display:block;}
+  .fire-hero{display:grid;grid-template-columns:300px 1fr;gap:24px;margin-bottom:16px;align-items:start;}
+  .fire-hero-img{width:100%;border-radius:4px;border:2px solid #3A2010;box-shadow:0 0 30px rgba(200,100,30,.3);}
+  .fire-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#E08040;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;}
+  .fire-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#504030;letter-spacing:3px;margin-bottom:10px;}
+  .fire-authors{font-size:.75rem;color:#504030;margin-bottom:10px;line-height:1.6;border-left:2px solid #6A3010;padding-left:10px;}
+  .fire-authors strong{color:#A06030;}
+  .fire-intro{font-size:.8rem;color:#7A5A40;line-height:1.65;margin-bottom:14px;font-style:italic;}
+  .fire-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+  .fire-section{background:#0A0806;border:1px solid #2A1808;border-radius:3px;padding:12px 14px;}
+  .fire-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#C06830;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #2A1808;}
+  .fire-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+  .fire-row:last-child{margin-bottom:0;}
+  .fire-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+  .fire-row p{font-size:.75rem;color:#6A5040;line-height:1.5;}
+  .fire-row p strong{color:#A07050;}
+  .fire-tip{background:#0E0A06;border:1px solid #3A2010;border-radius:3px;padding:10px 14px;margin-top:12px;display:flex;gap:10px;align-items:flex-start;}
+  .fire-tip p{font-size:.75rem;color:#7A5030;line-height:1.5;font-style:italic;}
+  .fire-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#3A2810;font-style:italic;letter-spacing:1px;}
+
+  /* ══════ TRINITY UNIFIED ══════ */
+  .unified-block{background:linear-gradient(160deg,#080A10 0%,#0A0E18 100%);border-top:2px solid #1A2A40;border-bottom:2px solid #1A2A40;}
+  .unified-toggle{width:100%;background:linear-gradient(90deg,rgba(80,140,200,.06),transparent);border:none;border-left:3px solid #4A8ABB;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+  .unified-toggle:hover{background:linear-gradient(90deg,rgba(80,140,200,.1),transparent);}
+  .unified-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#7AADD0;letter-spacing:2px;text-transform:uppercase;flex:1;text-shadow:0 0 12px rgba(80,140,200,.3);}
+  .unified-toggle-arrow{color:#7AADD0;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+  .unified-toggle-arrow.open{transform:rotate(180deg);}
+  .unified-body{display:none;padding:0 44px 28px;}
+  .unified-body.open{display:block;}
+  .unified-intro{background:#080C14;border:1px solid #1A2A40;border-left:3px solid #4A8ABB;padding:14px 18px;margin-bottom:16px;font-size:.8rem;color:#6A8A9A;line-height:1.65;}
+  .unified-intro strong{color:#8AAABB;}
+  .unified-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  .unified-col-title{font-family:'Oswald',sans-serif;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;padding-bottom:8px;display:flex;align-items:center;gap:8px;}
+  .unified-col-title.opt{color:#4AAACC;border-bottom:1px solid #1A3A50;}
+  .unified-col-title.winter{color:#7AADD0;border-bottom:1px solid #1A3060;}
+  .unified-img-block{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+  .unified-img{width:100%;border-radius:3px;border:1px solid #1A3050;box-shadow:0 0 20px rgba(74,138,187,.2);}
+  .unified-modules{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
+  .unified-mod{background:#080C14;border:1px solid #1A2A3A;border-radius:3px;padding:10px 12px;}
+  .unified-mod-num{font-family:'Share Tech Mono','Oswald',monospace;font-size:.65rem;color:#3A6A8A;letter-spacing:1px;margin-bottom:4px;}
+  .unified-mod-name{font-family:'Oswald',sans-serif;font-size:.78rem;color:#7AAABB;letter-spacing:1px;margin-bottom:4px;text-transform:uppercase;}
+  .unified-mod-desc{font-size:.7rem;color:#4A6070;line-height:1.45;}
+  .unified-winter-modes{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0;}
+  .unified-pill{padding:4px 14px;border:1px solid #1A2A40;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;}
+  .unified-pill.frozen{border-color:#2A4A70;color:#6AAADD;}
+  .unified-pill.dead{border-color:#3A2A1A;color:#B08060;}
+  .unified-pill.sunrise{border-color:#2A3A1A;color:#6AAA70;}
+  .unified-features{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-bottom:12px;}
+  .unified-feat{background:#080C14;border:1px solid #131C28;padding:7px 12px;font-size:.72rem;color:#4A6070;display:flex;gap:8px;align-items:flex-start;}
+  .unified-feat span{color:#3A7AAA;font-size:.65rem;margin-top:2px;flex-shrink:0;}
+  .unified-specs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:12px;}
+  .unified-spec{background:#080C14;border:1px solid #131C28;padding:8px 12px;}
+  .unified-spec-label{font-size:.62rem;color:#3A5060;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;}
+  .unified-spec-val{font-family:'Oswald',sans-serif;font-size:.82rem;color:#7AAABB;letter-spacing:1px;}
+  .unified-author{background:#080C14;border:1px solid #1A2A40;border-top:2px solid #4A8ABB;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+  .unified-author-name{font-family:'Oswald',sans-serif;font-size:1rem;color:#AAC4DD;letter-spacing:2px;}
+  .unified-author-name span{color:#7AADD0;}
+  .unified-sig{font-size:.7rem;color:#3A5060;text-align:right;line-height:1.8;}
+  .unified-sig em{color:#4A8ABB;font-style:normal;}
+
+  @media(max-width:900px){
+    .epochs{grid-template-columns:1fr;}
+    .epoch{border-right:none;border-bottom:1px solid #1A2A50;}
+    .col-auth,.col-desc{display:none;}
+    .col-name{flex:1;}
+    .contacts{padding:10px 20px;}
+    .hero-top,.project-desc,.sysreq{padding-left:20px;padding-right:20px;}
+  }
+  @media print{body{background:white;padding:0;}.page{box-shadow:none;}.legend{position:static;}}
+</style>
+
+<style>
+  #lang-switcher {
+    position: fixed;
+    top: 30px;
+    left: 20px;
+    z-index: 9999;
+    display: flex;
+    gap: 0;
+    border: 1px solid #c0392b;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(192, 57, 43, 0.4);
+  }
+  .lang-btn {
+    padding: 7px 14px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #0d1117;
+    color: #888;
+    transition: all 0.2s;
+    font-family: inherit;
+	line-height: 1;
+  }
+  .lang-btn:first-child {
+    border-right: 1px solid #c0392b;
+  }
+  .lang-btn.active {
+    background: #c0392b;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255,100,80,0.8);
+  }
+  .lang-btn:hover:not(.active) {
+    background: #1a1f2e;
+    color: #c0392b;
+  }
+</style>
+</head>
+<body>
+<div id="lang-switcher">
+<button class="lang-btn active">UA</button>
+<button class="lang-btn" onclick="location.href='index-en.html'">ENG</button>
+</div>
+<div class="page">
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="hero-top">
+    <div class="title-block">
+      <h1>☢ S.T.A.L.K.E.R. ANOMALY ☢</h1>
+      <div class="build-name">⚡ Build Trinity</div>
+      <div class="tagline">Три обличчя Зони. Один шлях</div>
+      <div class="edition">[ EXCLUSIVE DX11 EDITION | HARDCORE SURVIVAL ]</div>
+    </div>
+    <p id="total-line" style="display:none;"></p>
+  </div>
+
+  <!-- CONTACTS -->
+  <div class="contacts">
+    <div class="contacts-row contacts-row-top">
+      <div class="contact-item"><span class="ico">🎥</span><span>YouTube:</span><a href="https://www.youtube.com/@STALKERDEADZONE" target="_blank" rel="noopener">STALKER DEAD ZONE</a></div>
+      <div class="contact-item"><span class="ico">📢</span><span>Telegram:</span><a href="https://t.me/stalket_frozen_zone" target="_blank" rel="noopener">STALKER: ZONE EDITION</a></div>
+      <div class="contact-item"><span class="ico">💬</span><span>Discord:</span><a href="https://discord.gg/baQqfVAE" target="_blank" rel="noopener">Dead Zone</a></div>
+    </div>
+    <div class="contacts-row contacts-row-bottom">
+      <div class="contact-item"><span class="ico">💳</span><span>MonoBank:</span><a href="https://send.monobank.ua/jar/5mRV7ZrdxD" target="_blank" rel="noopener">Надіслати донат</a></div>
+      <div class="contact-item"><span class="ico">💳</span><span>Donatello:</span><a href="http://donatello.to/FrozenZone" target="_blank" rel="noopener">Підтримати проєкт</a></div>
+    </div>
+  </div>
+
+  <!-- SYSTEM REQUIREMENTS -->
+  <div class="sysreq">
+    <div class="sysreq-title">🖥️ Системні вимоги (Гарантовано 50+ FPS)</div>
+    <div class="sysreq-grid">
+      <div class="sysreq-item"><span class="label">Процесор</span><span class="value">Intel Core i6-6600 @ 3.60GHz</span></div>
+      <div class="sysreq-item"><span class="label">Оперативна пам'ять</span><span class="value">16,0 ГБ</span></div>
+      <div class="sysreq-item"><span class="label">Відеокарта</span><span class="value">NVIDIA GTX 1080 TI (11 ГБ)</span></div>
+      <div class="sysreq-item"><span class="label">Місце на диску</span><span class="value">130 ГБ</span></div>
+      <div class="sysreq-item"><span class="label">Рендер</span><span class="value">Тільки DX11</span></div>
+      <div class="sysreq-item"><span class="label">Локалізація</span><span class="value">Українська, Англійська</span></div>
+    </div>
+    <div class="sysreq-note">⚠️ Всі моди в MCM меню налаштовані оптимально — не рекомендується змінювати параметри.<br>⚠️ ОБОВ'ЯЗКОВО прочитайте розділ РЕКОМЕНДАЦІЇ перед початком нової гри.</div>
+  </div>
+
+  <!-- PROJECT DESCRIPTION -->
+  <div class="project-desc">
+    <div class="sect-title">Опис проєкту</div>
+    <div class="desc-main">
+      <strong>Головний редактор та автор графічної бази: Ivan Danko</strong><br><br>
+      Build Trinity — це не просто модифікація, а монументальна переробка візуального та геймплейного досвіду. В основі проєкту лежить понад сотня ретельно відібраних та інтегрованих модифікацій, що створюють єдину, безшовно працюючу екосистему. Це світ, де кожна текстура просякнута історією, а кожен крок може стати останнім.
+    </div>
+    <div class="tech-list">
+      <span class="tech-pill hot">DX11 Exclusive</span>
+      <span class="tech-pill hot">SSS Shaders</span>
+      <span class="tech-pill">PBR-текстури</span>
+      <span class="tech-pill">45 погодних циклів</span>
+      <span class="tech-pill">Monolith 64-bit Engine</span>
+      <span class="tech-pill">X-Ray Fork</span>
+      <span class="tech-pill">Anomaly 1.5.3</span>
+    </div>
+
+    <!-- THREE EPOCHS -->
+    <div class="sect-title" style="margin-bottom:0;">🌍 Три Епохи Відчуження</div>
+    <div class="epochs">
+      <div class="epoch frozen">
+        <div class="epoch-icon">❄️</div>
+        <div class="epoch-title">Frozen Zone — Крижаний Полон</div>
+        <div class="epoch-author">✦ Автор: Ivan Danko</div>
+        <p>Час тут застиг разом із подихом. Це світ білого безмовля, де панують люті морози та сліпучі метелі. Завдяки спеціальним налаштуванням шейдерів, лід та іній на занедбаній техніці виглядають фізично відчутними. Виживання перетворюється на боротьбу за кожен ковток теплого повітря.</p>
+      </div>
+      <div class="epoch dead">
+        <div class="epoch-icon">🍂</div>
+        <div class="epoch-title">Dead Zone — Канонічне Омертвіння</div>
+        <div class="epoch-author">✦ Автор: Ivan Danko</div>
+        <p>Класичний дух Зони, де панує вічний листопад. Тут ви не побачите жодного променя сонця — лише важке свинцеве небо, нескінченні зливи, грози та гнітючу сльоту. Глибока корозія та густий туман створюють атмосферу старого доброго «Сталкера».</p>
+      </div>
+      <div class="epoch sunrise">
+        <div class="epoch-icon">🌿</div>
+        <div class="epoch-title">Sun Rise — Оманливий Розквіт</div>
+        <div class="epoch-author">✦ Автор: Ivan Danko</div>
+        <p>Рідкісна мить, коли природа намагається повернути своє. Яскраве літнє сонце підсвічує те, що зазвичай приховано темрявою. Ви почуєте спів птахів та шелест буйної зелені, що поглинає руїни цивілізації.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO PREVIEW -->
+  <div class="video-block">
+    <div class="video-title">🎬 Перегляд збірки</div>
+    <div id="video-container" class="video-frame-wrap"></div>
+  </div>
+  <script>
+  (function(){
+    var container = document.getElementById('video-container');
+    container.innerHTML = '<iframe src="https://drive.google.com/file/d/15eHfudTllMZU3m_qyMcj3I6ODsD8MSzE/preview" title="Build Trinity Preview" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+    container.classList.add('video-iframe-mode');
+  })();
+  </script>
+</div>
+
+<!-- ══ INSTALL GUIDE ══ -->
+<div class="install-block">
+  <div class="install-title">📦 Порядок встановлення та налаштування збірки</div>
+  <div class="install-cols">
+
+    <div>
+      <div class="install-section">
+        <div class="install-section-title">⬇️ Завантаження та встановлення збірки</div>
+		 <div class="install-step"><div class="install-dot"></div><p>Завантажте офіційний інсталятор збірки <strong>Build Trinity</strong> (TrinityInstaller.exe) за допомогою кнопки нижче</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>Запустіть <strong>TrinityInstaller.exe</strong>, виберіть потрібну мову інтерфейсу та місце встановлення на вашому диску</p></div>
+              <div class="install-step"><div class="install-dot"></div><p>Натисніть кнопку встановлення та чекайте, поки інсталятор завершить процес. Якщо у вас не встановлено 7-Zip, інсталятор встановить його автоматично</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>Після встановлення головна папка гри буде називатись <em>Anomaly_build_TRINITY</em> — не змінюйте цю назву</p></div>
+      </div>
+      <div class="install-section" style="margin-top:14px;">
+        <div class="install-section-title">🔧 Завантаження та встановлення фіксу</div>
+        <div class="install-step"><div class="install-dot"></div><p>Завантажте фікс</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>Відкривати та розпаковувати <strong>тільки архіватором 7z</strong></p></div>
+        <div class="install-step"><div class="install-dot"></div><p>Вміст архіву скопіюйте до папки з грою та погодьтесь із заміною файлів</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>Всі патчі та фікси знаходяться в <a href="https://t.me/frozen_zone" target="_blank" rel="noopener" style="color:var(--gold);">телеграм-каналі</a></p></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="install-section">
+        <div class="install-section-title">▶️ Порядок налаштування та запуску</div>
+        <div class="install-step"><div class="install-num">1</div><p>Зайдіть у папку з грою у папку <em>MO</em> та запустіть файл <em>run_mo2.bat</em> — він налаштує вам <strong>Mod Organizer</strong></p></div>
+        <div class="install-step"><div class="install-num">2</div><p>Знайдіть у папці з грою файл <em>Launcher_TRINITY.exe</em> і створіть ярлик на робочому столі для запуску збірки. Гру запускати тільки за допомогою лаунчера. </p></div>
+		<div class="install-step"><div class="install-num">3</div><p>Якщо з якоїсь причини пункт 1 не спрацював, Вам потрібно зайти в папку з грою в папку МО і запустити <em>ModOrganizer.exe</em>, якщо він запросить вказати шлях до папки з грою, вкажіть папку <em>Anomaly_build_TRINITY</em>, якщо у Вас МО не знаходить файл запуску гри <em>AnomalyDX11AVX.exe</em>, Вам потрібно в МО вгорі праворуч, ліворуч від кнопки <em>ЗАПУСТИТИ</em> натиснути на вікно з вибором файлу запуску гри, вище натиснути на редагувати, натиснути вище значка + і вибрати <em>Додати з файлу</em>, вибрати папку з грою, зайти в bin і вибрати <em>AnomalyDX11AVX.exe</em>, після чого праворуч нижче натиснути на ОК.
+
+
+. </p></div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="install-btns">
+    <a class="install-btn" href="https://nx92699.your-storageshare.de/s/g7MwH8Nxgifr8PB" target="_blank" rel="noopener">⬇️&nbsp;Завантажити Інсталятор</a>
+    <a class="install-btn" href="https://t.me/frozen_zone" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#1A4080,#0F2A60);border-color:#2A5090;box-shadow:0 0 20px rgba(26,64,128,.3);">🔧 &nbsp;Завантажити фікс</a>
+  </div>
+</div>
+
+<div class="winprep-block">
+  <button class="winprep-toggle" onclick="var b=document.getElementById('winprep-body');var a=this.querySelector('.winprep-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>🛠️</span>
+    <span class="winprep-toggle-title">Інструкція з підготовки Windows до S.T.A.L.K.E.R.</span>
+    <span class="winprep-toggle-arrow">▼</span>
+  </button>
+  
+  <div class="winprep-body" id="winprep-body">
+    <div class="winprep-item">
+      <div class="winprep-num">1️⃣</div>
+      <div class="winprep-info">
+        <div class="winprep-name">Microsoft Visual C++ Redistributable (2015–2022)</div>
+        <div class="winprep-note">Потрібно встановити обидві версії — двигун гри використовує 32-бітні компоненти навіть на 64-бітних системах.</div>
+        <div class="winprep-links">
+          <a class="winprep-btn" href="https://aka.ms/vs/17/release/vc_redist.x64.exe" target="_blank" rel="noopener">📥 Завантажити x64</a>
+          <a class="winprep-btn" href="https://aka.ms/vs/17/release/vc_redist.x86.exe" target="_blank" rel="noopener">📥 Завантажити x86</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="winprep-item">
+      <div class="winprep-num">2️⃣</div>
+      <div class="winprep-info">
+        <div class="winprep-name">DirectX End-User Runtime</div>
+        <div class="winprep-links">
+          <a class="winprep-btn" href="https://www.microsoft.com/en-us/download/details.aspx?id=35" target="_blank" rel="noopener">📥 Завантажити DirectX Web Installer</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="winprep-item">
+      <div class="winprep-num">3️⃣</div>
+      <div class="winprep-info">
+        <div class="winprep-name">OpenAL (Звуковий рушій)</div>
+        <div class="winprep-note">Після завантаження розпакуйте архів та запустіть файл oalinst.exe.</div>
+        <div class="winprep-links">
+          <a class="winprep-btn" href="https://www.openal.org/downloads/oalinst.zip" target="_blank" rel="noopener">📥 Завантажити OpenAL (Zip-архів)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="winprep-item">
+      <div class="winprep-num">4️⃣</div>
+      <div class="winprep-info">
+        <div class="winprep-name">.NET Framework 4.8</div>
+        <div class="winprep-note">Встановіть для стабільної роботи лаунчера та модифікацій.</div>
+        <div class="winprep-links">
+          <a class="winprep-btn" href="https://go.microsoft.com/fwlink/?linkid=2088631" target="_blank" rel="noopener">📥 Завантажити .NET Framework 4.8</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="winprep-item">
+      <div class="winprep-num">5️⃣</div>
+      <div class="winprep-info">
+        <div class="winprep-name">Архіватор 7z</div>
+        <div class="winprep-links">
+          <a class="winprep-btn" href="https://drive.google.com/file/d/13nzs0EUpIlEv1qDQUICfnUDpMzGfu3UK/view?usp=drive_link" target="_blank" rel="noopener">📥 Завантажити 7z</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="winprep-final">📝 Після встановлення всіх компонентів обов'язково перезавантажте комп'ютер.</div>
+  </div>
+</div>
+
+<!-- ══ SUN RISE ══ -->
+<div class="sun-block">
+  <button class="sun-toggle" onclick="var b=document.getElementById('sun-body');var a=this.querySelector('.sun-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>☀️</span>
+    <span class="sun-toggle-title">Sun Rise: Weather System</span>
+    <span class="sun-toggle-arrow">▼</span>
+  </button>
+  <div class="sun-body" id="sun-body">
+    <div class="sun-img-container">
+      <img class="sun-hero-img" src="Summer.jpg" alt="Sun Rise">
+    </div>
+    <div class="sun-hero">
+      <div class="sun-hero-right">
+        <div class="sun-main-title">☀️ Sun Rise - Weather System</div>
+        <div class="sun-sub">[Глобальна динамічна погода]</div>
+        <div class="sun-authors"><strong>Редактор:</strong> Ivan Danko</div>
+        <div class="sun-intro">Небо намагається бути чистим — хоча б влітку. Більше світла, коротші ночі, важкі грози замість затяжних дощів. Зона не стає добрішою. Вона просто палає інакше.</div>
+        <div class="sun-sections">
+          <div class="sun-section">
+            <div class="sun-section-title">⛅ Літні погодні цикли</div>
+            <div class="sun-row"><div class="sun-row-ico">☀️</div><p><strong>Ясно:</strong> Сонячних днів більше — це справжнє літо Зони.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🌤️</div><p><strong>Мінлива хмарність:</strong> З'являється частіше, ніж в інші сезони.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">☁️</div><p><strong>Хмарно:</strong> Зона не відпускає повністю навіть влітку.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🌧️</div><p><strong>Дощ та гроза:</strong> Без обмежень — важкі й раптові шторми.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🌫️</div><p><strong>Туман:</strong> Став рідкістю — приходить на коротко, ненадовго.</p></div>
+          </div>
+          <div class="sun-section">
+            <div class="sun-section-title">⚡ Передштормові явища</div>
+            <div class="sun-row"><div class="sun-row-ico">🔔</div><p><strong>Викиди:</strong> Система перемикається на передштормовий стан автоматично.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">😰</div><p><strong>Тривога:</strong> Небо стає тривожним ще до сирени.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">☄️</div><p><strong>Метеорити:</strong> Ясних ночей більше — метеорити з'являються частіше.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">⚡</div><p><strong>Далекі блискавки:</strong> На горизонті спалахують у реальному напрямку.</p></div>
+          </div>
+          <div class="sun-section">
+            <div class="sun-section-title">🌬️ Атмосферні ефекти</div>
+            <div class="sun-row"><div class="sun-row-ico">💨</div><p><strong>Постійний туман:</strong> Два шари — атмосферна димка та пилова серпанка.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🌙</div><p><strong>Нічний туман:</strong> З 01:00 до 03:00 — коротка літня ніч.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🍂</div><p><strong>Спокійне листя:</strong> З 10:00 до 19:00 дрейфує повільно у спеку.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🌀</div><p><strong>Вечірнє листя:</strong> З 18:00 до 21:00 тепловий вітер піднімає його вище.</p></div>
+          </div>
+          <div class="sun-section">
+            <div class="sun-section-title">🦟 Літні деталі</div>
+            <div class="sun-row"><div class="sun-row-ico">🦟</div><p><strong>Мошкара:</strong> На болотах — Zatон, Янтар, Болото — з 09:00 до 20:00.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">✨</div><p><strong>Світлячки:</strong> З 18:00 до 05:00 за ясної та мінливої погоди.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">💧</div><p><strong>Вологість:</strong> Передає літню атмосферу болотистих локацій.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🌅</div><p><strong>Літні ранки:</strong> Чисті та яскраві — у них вся суть сезону.</p></div>
+          </div>
+          <div class="sun-section">
+            <div class="sun-section-title">⛈️ Грози та торнадо</div>
+            <div class="sun-row"><div class="sun-row-ico">🌪️</div><p><strong>Пилова буря:</strong> Під час дощу та грози активується серпанка.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🔥</div><p><strong>Гаряче повітря:</strong> Хвиля гарячого повітря під час штормів.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🌀</div><p><strong>Вихор:</strong> На горизонті раз на кілька хвилин — далеко від гравця.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">💥</div><p><strong>Справжня стихія:</strong> Шторм влітку відчувається по-іншому, напруженіше.</p></div>
+          </div>
+          <div class="sun-section">
+            <div class="sun-section-title">🏚️ Підземелля та укриття</div>
+            <div class="sun-row"><div class="sun-row-ico">🕳️</div><p><strong>Під землею:</strong> Густий підземний туман і пил, як завжди.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">💨</div><p><strong>Листя не входить:</strong> Мошкара та світлячки залишаються зовні.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">🏠</div><p><strong>В приміщеннях:</strong> Легкий пиловий ефект затхлого повітря.</p></div>
+            <div class="sun-row"><div class="sun-row-ico">❄️</div><p><strong>Без сезонних змін:</strong> Літо залишається зовні в будь-якій локації.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sun-footer">Палай разом з Зоною, Сталкере. Це сезон Sun Rise. ☀️</div>
+  </div>
+</div>
+
+<style>
+/* ══════ SUN RISE SYSTEM ══════ */
+.sun-block{background:linear-gradient(160deg,#1A140C 0%,#1C1810 100%);border-top:2px solid #5A4A30;border-bottom:3px solid #7A6A40;}
+.sun-toggle{width:100%;background:linear-gradient(90deg,rgba(212,168,96,.06),transparent);border:none;border-left:3px solid #D4A860;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+.sun-toggle:hover{background:linear-gradient(90deg,rgba(212,168,96,.1),transparent);}
+.sun-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#D4A860;letter-spacing:2px;text-transform:uppercase;flex:1;}
+.sun-toggle-arrow{color:#D4A860;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+.sun-toggle-arrow.open{transform:rotate(180deg);}
+.sun-body{display:none;padding:0 44px 28px;}
+.sun-body.open{display:block;}
+.sun-img-container{display:flex;justify-content:center;margin-bottom:20px;}
+.sun-hero-img{max-width:403px;width:100%;border-radius:4px;border:2px solid #5A5040;box-shadow:0 0 30px rgba(212,168,96,.3);}
+.sun-hero{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:20px;align-items:start;}
+.sun-hero-right{}
+.sun-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#D4A860;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;margin-top:12px;text-align:center;}
+.sun-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#665550;letter-spacing:3px;margin-bottom:10px;}
+.sun-authors{font-size:.75rem;color:#665A50;margin-bottom:12px;line-height:1.6;border-left:2px solid #5A5040;padding-left:10px;}
+.sun-authors strong{color:#B4947A;}
+.sun-intro{font-size:.8rem;color:#A49480;line-height:1.65;margin-bottom:14px;font-style:italic;}
+.sun-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.sun-section{background:#12100A;border:1px solid #3A3020;border-radius:3px;padding:12px 14px;}
+.sun-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#9A8060;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #3A3020;}
+.sun-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+.sun-row:last-child{margin-bottom:0;}
+.sun-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+.sun-row p{font-size:.75rem;color:#7A7060;line-height:1.5;}
+.sun-row p strong{color:#B4A490;}
+.sun-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#4A3A2A;font-style:italic;letter-spacing:1px;}
+</style>
+
+<!-- ══ DEAD ZONE ══ -->
+<div class="dead-block">
+  <button class="dead-toggle" onclick="var b=document.getElementById('dead-body');var a=this.querySelector('.dead-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>🌫️</span>
+    <span class="dead-toggle-title">Dead Zone: Weather System</span>
+    <span class="dead-toggle-arrow">▼</span>
+  </button>
+  <div class="dead-body" id="dead-body">
+    <div class="dead-img-container">
+      <img class="dead-hero-img" src="Dead Zone.jpg" alt="Dead Zone">
+    </div>
+    <div class="dead-hero">
+      <div class="dead-hero-right">
+        <div class="dead-main-title">🌫️ Dead Zone - Weather System</div>
+        <div class="dead-sub">[Глобальна динамічна погода]</div>
+        <div class="dead-authors"><strong>Редактор:</strong> Ivan Danko</div>
+        <div class="dead-intro">Забудь про статичне небо. Зона дихає живою, непередбачуваною погодою. Ясні дні — рідкість. Туман, дощ та грози — це норма для Аномальної Зони, де атмосфера сама по собі є частиною території.</div>
+        <div class="dead-sections">
+          <div class="dead-section">
+            <div class="dead-section-title">⛅ Погодні цикли</div>
+            <div class="dead-row"><div class="dead-row-ico">🌤️</div><p><strong>Ясно:</strong> Рідкість у Зоні — сонячні дні обмежені у частоті.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">☁️</div><p><strong>Хмарність:</strong> Мінлива та хмарна погода чергуються природно протягом годин.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🌧️</div><p><strong>Дощ:</strong> Тривалість від кількох до багатьох ігрових годин.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">⛈️</div><p><strong>Гроза:</strong> Шість основних типів погоди з 10-20 унікальними пресетами кожна.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🌫️</div><p><strong>Туман:</strong> Найтривожніший вид — небо стає густим та важким.</p></div>
+          </div>
+          <div class="dead-section">
+            <div class="dead-section-title">⚡ Передштормові явища</div>
+            <div class="dead-row"><div class="dead-row-ico">🔔</div><p><strong>Сирена:</strong> Система перемикається на передштормовий стан автоматично.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">😰</div><p><strong>Атмосфера:</strong> Небо стає тривожним ще до викиду або пси-шторму.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">☄️</div><p><strong>Метеорити:</strong> Видно у ясні ночі з 22:00 до 04:00 на відкритих локаціях.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">💫</div><p><strong>Далекі грози:</strong> Блискавки на горизонті розгортаються у реальному напрямку.</p></div>
+          </div>
+          <div class="dead-section">
+            <div class="dead-section-title">🌫️ Атмосферні частинки</div>
+            <div class="dead-row"><div class="dead-row-ico">💨</div><p><strong>Постійний туман:</strong> Два шари атмосфери — задимка та пилова серпанка.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🌙</div><p><strong>Нічний туман:</strong> З 00:00 до 04:00 третій густіший шар тумана.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🍂</div><p><strong>Листя:</strong> Літає у вечірні години (17:00-20:00) на відкритих локаціях.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🔥</div><p><strong>Вогники:</strong> Torchbugs з'являються з 17:00 до 05:00 за безхмарної погоди.</p></div>
+          </div>
+          <div class="dead-section">
+            <div class="dead-section-title">🌧️ Дощ та грози</div>
+            <div class="dead-row"><div class="dead-row-ico">💧</div><p><strong>Пилова серпанка:</strong> Активується під час дощу та грози від граупелю.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🔥☁️</div><p><strong>Гарячий туман:</strong> Під час грози додається ефект, що підкреслює напругу.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">💦</div><p><strong>Турбулентне листя:</strong> Під час шторму листя рухається хаотично.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">⚡🌪️</div><p><strong>Динаміка:</strong> Кожна гроза унікальна завдяки множині варіантів.</p></div>
+          </div>
+          <div class="dead-section">
+            <div class="dead-section-title">🏚️ Підземелля та будівлі</div>
+            <div class="dead-row"><div class="dead-row-ico">🕳️</div><p><strong>Бункери:</strong> Атмосферні частинки замінюються на підземні шари.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">💨</div><p><strong>Підземний смог:</strong> Кілька рівнів густого пилового туману в лабораторіях.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🏠</div><p><strong>Приміщення:</strong> Легкий пиловий ефект передає затхле повітря закритих просторів.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🔒</div><p><strong>Локації:</strong> Листя та вогники не з'являються під землею або в приміщеннях.</p></div>
+          </div>
+          <div class="dead-section">
+            <div class="dead-section-title">🎨 Яскравість та рендерер</div>
+            <div class="dead-row"><div class="dead-row-ico">⚙️</div><p><strong>Автоматична корекція:</strong> Система підлаштовує яскравість залежно від погоди.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🌙</div><p><strong>Нічні сцени:</strong> Власні параметри для R4 рендерера.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🕳️</div><p><strong>Підземелля:</strong> Окремі налаштування яскравості для закритих просторів.</p></div>
+            <div class="dead-row"><div class="dead-row-ico">🎭</div><p><strong>Атмосфера:</strong> Час доби та місцезнаходження впливають на рендеринг сцени.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dead-footer">Живи з погодою, Сталкере. Зона диктує правила. 🌫️</div>
+  </div>
+</div>
+
+<style>
+/* ══════ DEAD ZONE SYSTEM ══════ */
+.dead-block{background:linear-gradient(160deg,#0A0806 0%,#100C08 100%);border-top:2px solid #3A2010;border-bottom:3px solid #4A3020;}
+.dead-toggle{width:100%;background:linear-gradient(90deg,rgba(200,100,30,.06),transparent);border:none;border-left:3px solid #C06020;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+.dead-toggle:hover{background:linear-gradient(90deg,rgba(200,100,30,.1),transparent);}
+.dead-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#E08040;letter-spacing:2px;text-transform:uppercase;flex:1;text-shadow:0 0 12px rgba(200,100,30,.4);}
+.dead-toggle-arrow{color:#E08040;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+.dead-toggle-arrow.open{transform:rotate(180deg);}
+.dead-body{display:none;padding:0 44px 28px;}
+.dead-body.open{display:block;}
+.dead-img-container{display:flex;justify-content:center;margin-bottom:20px;}
+.dead-hero-img{max-width:403px;width:100%;border-radius:4px;border:2px solid #3A2010;box-shadow:0 0 30px rgba(200,100,30,.3);}
+.dead-hero{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:20px;align-items:start;}
+.dead-hero-right{}
+.dead-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#E08040;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;margin-top:12px;text-align:center;}
+.dead-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#504030;letter-spacing:3px;margin-bottom:10px;}
+.dead-authors{font-size:.75rem;color:#504030;margin-bottom:12px;line-height:1.6;border-left:2px solid #6A3010;padding-left:10px;}
+.dead-authors strong{color:#A06030;}
+.dead-intro{font-size:.8rem;color:#7A5A40;line-height:1.65;margin-bottom:14px;font-style:italic;}
+.dead-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.dead-section{background:#0A0806;border:1px solid #2A1808;border-radius:3px;padding:12px 14px;}
+.dead-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#C06830;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #2A1808;}
+.dead-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+.dead-row:last-child{margin-bottom:0;}
+.dead-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+.dead-row p{font-size:.75rem;color:#6A5040;line-height:1.5;}
+.dead-row p strong{color:#A07050;}
+.dead-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#3A2810;font-style:italic;letter-spacing:1px;}
+</style>
+
+<!-- ══ TRINITY UNIFIED ══ -->
+<div class="unified-block">
+  <button class="unified-toggle" onclick="var b=document.getElementById('unified-body');var a=this.querySelector('.unified-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>⚙️</span>
+    <span class="unified-toggle-title">Frozen Zone: Weather System</span>
+    <span class="unified-toggle-arrow">▼</span>
+  </button>
+  <div class="unified-body" id="unified-body">
+
+    <div class="unified-intro">
+      Скрипт додає <strong>динамічні візуальні ефекти снігу, туману та пилу</strong>, які змінюються в реальному часі залежно від погоди, часу доби та напрямку вітру. Усі ефекти прив'язані до позиції персонажа та <strong>зникають одразу після входу в приміщення або укриття</strong>. Тільки зовні. Тільки коли варто.
+    </div>
+
+    <div class="unified-hero" style="display:grid;grid-template-columns:280px 1fr;gap:20px;margin-bottom:16px;align-items:start;">
+     <img style="width:100%;border-radius:4px;border:2px solid #1A3050;box-shadow:0 0 30px rgba(74,138,187,.25);" src="Winter.jpg">
+      <div>
+
+        <div class="unified-col-title opt" style="margin-bottom:8px;">🌨 Поведінка по погоді</div>
+        <div style="background:#080C14;border:1px solid #1A2A3A;border-radius:3px;margin-bottom:10px;overflow:hidden;">
+          <table style="width:100%;border-collapse:collapse;font-size:.73rem;">
+            <thead><tr style="background:#0A1020;border-bottom:1px solid #1A2A40;">
+              <th style="padding:6px 12px;text-align:left;color:#4A8ABB;font-family:Oswald,sans-serif;letter-spacing:1px;font-weight:600;">ПОГОДА</th>
+              <th style="padding:6px 12px;text-align:left;color:#4A8ABB;font-family:Oswald,sans-serif;letter-spacing:1px;font-weight:600;">ЕФЕКТИ</th>
+            </tr></thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #111820;"><td style="padding:5px 12px;color:#5A7080;">Ясно / Мінливо</td><td style="padding:5px 12px;color:#4A6070;">Легкий сніг</td></tr>
+              <tr style="border-bottom:1px solid #111820;background:#09111A;"><td style="padding:5px 12px;color:#5A7080;">Туман</td><td style="padding:5px 12px;color:#4A6070;">Легкий сніг + туманний пил + пил при вітрі</td></tr>
+              <tr style="border-bottom:1px solid #111820;"><td style="padding:5px 12px;color:#5A7080;">Хмарно</td><td style="padding:5px 12px;color:#4A6070;">Середній снігопад + туман + бічний вітер</td></tr>
+              <tr style="border-bottom:1px solid #111820;background:#09111A;"><td style="padding:5px 12px;color:#5A7080;">Дощ / Мокрий сніг</td><td style="padding:5px 12px;color:#4A6070;">Косий сніг зліва і справа + туман</td></tr>
+              <tr><td style="padding:5px 12px;color:#5A7080;">Буря</td><td style="padding:5px 12px;color:#4A6070;">Буран + пил + тепловий туман + вітрові порухи</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div class="unified-mod">
+            <div class="unified-mod-name" style="color:#7AAABB;">🌙 Нічні ефекти</div>
+            <div class="unified-mod-desc">00:00–04:00 — нічний туман над землею</div>
+            <div class="unified-mod-desc">17:00–05:00 — світлячки ввечері та вночі</div>
+          </div>
+          <div class="unified-mod">
+            <div class="unified-mod-name" style="color:#7AAABB;">📦 Вимоги</div>
+            <div class="unified-mod-desc">Пакети частинок: <strong style="color:#7AAABB;">YAWM, GRAUPEL, Expedition</strong></div>
+            <div class="unified-mod-desc" style="margin-top:4px;">Без них ефекти не відображаються — краш виключено.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="unified-col-title opt" style="margin-bottom:8px;">▸ Технічні особливості</div>
+    <div class="unified-features">
+      <div class="unified-feat"><span>&gt;&gt;</span>Оновлення позиції частинок — не частіше ніж раз на 200 мс</div>
+      <div class="unified-feat"><span>&gt;&gt;</span>Лише якщо персонаж реально зрушив більш ніж на 5 см</div>
+      <div class="unified-feat"><span>&gt;&gt;</span>Перевірка погоди та часу — раз на тік оновлення актора</div>
+      <div class="unified-feat"><span>&gt;&gt;</span>Важкі функції захищені кешем — без зайвого навантаження</div>
+      <div class="unified-feat"><span>&gt;&gt;</span>Безпечне завантаження файлів — відсутній файл не спричинює краш</div>
+      <div class="unified-feat"><span>&gt;&gt;</span>Сумісний з 60+ пресетами погоди: YAWM, GRAUPEL, Expedition, Misery, Paradox, NLC та іншими</div>
+      <div class="unified-feat"><span>&gt;&gt;</span>Зникає при вході в приміщення, підземелля або укриття</div>
+      <div class="unified-feat"><span>&gt;&gt;</span>Не впливає на NPC, предмети або геймплей — лише візуальний рівень</div>
+    </div>
+
+    <div class="unified-author">
+      <div>
+        <div style="font-size:.65rem;color:#3A5060;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;">// Автор модифікації</div>
+        <div class="unified-author-name"><span>Ivan</span> Danko</div>
+        <div style="font-size:.72rem;color:#3A5060;margin-top:2px;">Build Trinity — збірка для STALKER Anomaly 1.5.3</div>
+      </div>
+      <div class="unified-sig">
+        <div><em>COMPAT</em> 60+ weather presets</div>
+        <div><em>RENDER</em> R4 DX11 + SSS</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ COLD SYSTEM ══ -->
+<div class="cold-block">
+  <button class="cold-toggle" onclick="var b=document.getElementById('cold-body');var a=this.querySelector('.cold-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>❄️</span>
+    <span class="cold-toggle-title">Cold System: Life and Death — Система холоду</span>
+    <span class="cold-toggle-arrow">▼</span>
+  </button>
+  <div class="cold-body" id="cold-body">
+    <div class="cold-hero">
+     <img class="cold-hero-img" src="Cold System.jpg">
+      <div class="cold-hero-right">
+        <div class="cold-main-title">❄️ Cold System: Life and Death</div>
+        <div class="cold-sub">[ Життя та смерть у Зоні під нулем ]</div>
+        <div class="cold-authors"><strong>Автори:</strong> bvcx, arti, RavenAscendant<br><strong>Доповнення Ivan Danko:</strong> Додано звук клацання зубами, ефект тряски та інею коли герой замерзає.</div>
+        <div class="cold-intro">Забудь про теплі вечори біля ПДА. Тепер Зона дихає морозом тобі в потилицю. Холод став такою ж реальною загрозою, як і куля снайпера або засідка Моноліту.</div>
+        <div class="cold-sections">
+          <div class="cold-section">
+            <div class="cold-section-title">🌡️ Термодинаміка</div>
+            <div class="cold-row"><div class="cold-row-ico">☢️</div><p><strong>Клімат:</strong> Вітер, дощ та ніч висмоктують тепло.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">☀️</div><p><strong>Сонце:</strong> Прямі промені — твій безкоштовний обігрівач.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">💧</div><p><strong>Вода:</strong> Мокрі ноги — прямий крок до зустрічі з прабатьками.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">🔥</div><p><strong>Тепло:</strong> Шукай вогонь. Він відокремлює тебе від вічного сну.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">🏃</div><p><strong>Рух — це життя:</strong> Біг прискорює метаболізм. Стояти в мороз — смертельно.</p></div>
+          </div>
+          <div class="cold-section">
+            <div class="cold-section-title">🧥 Екіпірування</div>
+            <div class="cold-row"><div class="cold-row-ico">🛡️</div><p><strong>Броня:</strong> Тільки екзоскелети та «СЕВИ» мають належну теплоізоляцію.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">✨</div><p><strong>Артефакти:</strong> «Кристал» або «Око» зігріють навіть у найлютішу негоду.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">🎒</div><p><strong>Метаболізм:</strong> Ситий сталкер чинить опір холоду набагато краще.</p></div>
+          </div>
+          <div class="cold-section">
+            <div class="cold-section-title">🍲 Харчування</div>
+            <div class="cold-row"><div class="cold-row-ico">🥘</div><p><strong>Гаряча їжа:</strong> Їж одразу після казанка — тільки гарячa зігріє зсередини.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">📱</div><p><strong>Індикація:</strong> Червона іконка — гаряча, жовта — тепла, без кольору — крижана.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">☕</div><p><strong>Допінг:</strong> Чай і горілка — план «Б». Але алкоголь дає лише тимчасовий ефект.</p></div>
+          </div>
+          <div class="cold-section">
+            <div class="cold-section-title">☣️ Наслідки переохолодження</div>
+            <div class="cold-row"><div class="cold-row-ico">🥶</div><p><strong>Симптоми:</strong> Стукіт зубів, тремтіння, іній на шоломі — терміново шукай вогонь.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">📉</div><p><strong>Стійкість:</strong> Межа обмороження — 4000 одиниць. Наслідки тривалі.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">🤒</div><p><strong>Хвороба:</strong> Лихоманка: витривалість нуль, здоров'я тане.</p></div>
+            <div class="cold-row"><div class="cold-row-ico">💤</div><p><strong>Реабілітація:</strong> Ліжко, ковдра, сон. Антибіотики не зайві.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cold-footer">Щастиі, Сталкере. І не дай собі замерзнути! ❄️</div>
+  </div>
+</div>
+
+<!-- ══ CAMPFIRE SYSTEM ══ -->
+<div class="fire-block">
+  <button class="fire-toggle" onclick="var b=document.getElementById('fire-body');var a=this.querySelector('.fire-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>🪓</span>
+    <span class="fire-toggle-title">Campfire & Woodcutting System — Система багаття та рубки дров</span>
+    <span class="fire-toggle-arrow">▼</span>
+  </button>
+  <div class="fire-body" id="fire-body">
+    <div class="fire-hero">
+      <img class="fire-hero-img" src="camp.jpg">
+      <div>
+        <div class="fire-main-title">🪓 Campfire & Woodcutting System</div>
+        <div class="fire-sub">[ Мистецтво виживання: Від видобутку до вогню ]</div>
+        <div class="fire-authors"><strong>Автори:</strong> bvcx, arti, RavenAscendant<br><strong>Доповнення Ivan Danko:</strong> Реалізовано механіку видобутку дров ударами сокири та динамічний знос інструментів.</div>
+        <div class="fire-intro">Тепер багаття — це не просто предмет у рюкзаку, а результат твоєї праці. Хочеш зігрітися? Бери сокиру і готуйся попрацювати руками.</div>
+        <div class="fire-sections">
+          <div class="fire-section">
+            <div class="fire-section-title">🌲 Видобуток дров</div>
+            <div class="fire-row"><div class="fire-row-ico">🪓</div><p><strong>Ручна робота:</strong> Знайди дерево або пень і влупи по ньому. Магічної появи дров немає.</p></div>
+            <div class="fire-row"><div class="fire-row-ico">🎯</div><p><strong>Точність удару:</strong> 10 влучних ударів — і оберемок дров у руках.</p></div>
+            <div class="fire-row"><div class="fire-row-ico">🔧</div><p><strong>Знос інструменту:</strong> Кожен удар виснажує зброю. Лагодь сокиру та обирай правильний інструмент!</p></div>
+          </div>
+          <div class="fire-section">
+            <div class="fire-section-title">🔥 Розпалювання багаття</div>
+            <div class="fire-row"><div class="fire-row-ico">📐</div><p><strong>Рівна поверхня:</strong> 5-точкове сканування ландшафту. На схилі вогонь не розпалити.</p></div>
+            <div class="fire-row"><div class="fire-row-ico">⏳</div><p><strong>Час:</strong> Від 5 до 10 ігрових хвилин на облаштування та розпалювання.</p></div>
+            <div class="fire-row"><div class="fire-row-ico">⚠️</div><p><strong>Очищення зони:</strong> Стара фурнітура та покинуті багаття прибираються (якщо увімкнено в MCM).</p></div>
+          </div>
+          <div class="fire-section">
+            <div class="fire-section-title">🎒 Інструменти (ефективність)</div>
+            <div class="fire-row"><div class="fire-row-ico">🪓</div><p><strong>Томагавк:</strong> Найгірший вибір — величезний знос.</p></div>
+            <div class="fire-row"><div class="fire-row-ico">🪓</div><p><strong>Туристична сокира:</strong> Середня надійність для звичайних сталкерів.</p></div>
+            <div class="fire-row"><div class="fire-row-ico">⚔️</div><p><strong>Важка сокира:</strong> Мінімальний знос, максимальний результат.</p></div>
+          </div>
+          <div class="fire-section">
+            <div class="fire-section-title">📱 Система повідомлень</div>
+            <div class="fire-row"><div class="fire-row-ico">🔔</div><p>Коли назбираєш достатньо дров — ПДА подасть сигнал: <strong>«Ви зібрали достатньо дров для багаття»</strong>. Тепер можна відпочити.</p></div>
+          </div>
+        </div>
+        <div class="fire-tip">
+          <span>💡</span>
+          <p>Порада виживальника: Слідкуй за станом сокири! Якщо доведеш її до критичного стану під час рубки — вона може стати непридатною для бою в найневідповідніший момент.</p>
+        </div>
+      </div>
+    </div>
+    <div class="fire-footer">🔥 Щасти в лісах, Сталкере. Хай твій вогонь ніколи не згасає! 🔥</div>
+  </div>
+</div>
+
+<!-- ══ GRASS STEALTH MOD ══ -->
+<div class="grass-block">
+  <button class="grass-toggle" onclick="var b=document.getElementById('grass-body');var a=this.querySelector('.grass-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>🌿</span>
+    <span class="grass-toggle-title">Grass Stealth Mod: Реалістична механіка стелсу</span>
+    <span class="grass-toggle-arrow">▼</span>
+  </button>
+  <div class="grass-body" id="grass-body">
+    <div class="grass-img-container">
+      <img class="grass-hero-img" src="Grass Stealth Mod.jpg" alt="Grass Stealth Mod">
+    </div>
+    <div class="grass-hero">
+      <div class="grass-hero-right">
+        <div class="grass-main-title">🌿 Grass Stealth Mod</div>
+        <div class="grass-sub">[ Реалістична механіка стелсу для Build Trinity ]</div>
+        <div class="grass-authors"><strong>Автор:</strong> Ivan Danko</div>
+        <div class="grass-intro">Забудь про грубі засідки в порожнячих кімнатах. Тепер висока трава — твій найкращий союзник у виживанні. Присядь, чекай та спостерігай. Враг не матиме жодного шансу.</div>
+        <div class="grass-sections">
+          <div class="grass-section">
+            <div class="grass-section-title">👤 Динамічне маскування</div>
+            <div class="grass-row"><div class="grass-row-ico">🧍</div><p><strong>На повний зріст:</strong> Видимість максимальна — ворог легко помітить твій силует.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🤐</div><p><strong>Присідання в траві:</strong> Помітність кардинально падає — ти стаєш частиною ландшафту.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">📊</div><p><strong>Градієнт видимості:</strong> Чим нижче ти присідаєш, тим менше шансів бути виявленим.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">⏱️</div><p><strong>Адаптація:</strong> Ворог потребує часу, щоб акліматизуватись до твоєї позиції.</p></div>
+          </div>
+          <div class="grass-section">
+            <div class="grass-section-title">🧠 Логіка ШІ</div>
+            <div class="grass-row"><div class="grass-row-ico">🎯</div><p><strong>Угруповання НПС:</strong> Снайпери помічають краще, розвідники стежать активніше, гарнізони — тупіші.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🐺</div><p><strong>Види мутантів:</strong> Псевдопси нюхають через траву, але м'ясоїди покладаються на зір.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🌙</div><p><strong>Час доби:</strong> Ніч краще на 40% — враги менш уважні при низькій видимості.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">💨</div><p><strong>Вітер:</strong> Попутний вітер розносить твій запах далі — будь обережним.</p></div>
+          </div>
+          <div class="grass-section">
+            <div class="grass-section-title">📡 Зворотний зв'язок</div>
+            <div class="grass-row"><div class="grass-row-ico">✅</div><p><strong>Успіх:</strong> Зелена іконка на ПДА — трава приховала тебе від ворога.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">⚠️</div><p><strong>Увага:</strong> Жовта іконка — ворог шукає, але ще не знайшов точну позицію.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">❌</div><p><strong>Виявлено:</strong> Червона іконка — вороги знайшли тебе, потрібно рухатись або стріляти.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🔔</div><p><strong>Сповіщення:</strong> Опціональні PDA алерти дадуть про зміну статусу маскування.</p></div>
+          </div>
+          <div class="grass-section">
+            <div class="grass-section-title">⚙️ Налаштування MCM</div>
+            <div class="grass-row"><div class="grass-row-ico">📏</div><p><strong>Дистанція маскування:</strong> Регулюй від 20 до 150 метрів в залежності від складності.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🎛️</div><p><strong>Множник маскування:</strong> Від 0.5× (майже неможливо) до 2.0× (надто легко) — обери свій рівень.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🌾</div><p><strong>Висота трави:</strong> Мод врахує щільність рослинності на кожній ділянці території.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🎮</div><p><strong>Меню гри:</strong> Усі налаштування доступні прямо в MCM без перезавантаження.</p></div>
+          </div>
+          <div class="grass-section">
+            <div class="grass-section-title">🎯 Тактичні поради</div>
+            <div class="grass-row"><div class="grass-row-ico">🏹</div><p><strong>Засідка:</strong> Прихований у траві снайпер — це смертельна зброя в правильних руках.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🤫</div><p><strong>Безшумність:</strong> Крадій в траві + тихий пістолет = безпроблемне завдання.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🚀</div><p><strong>Прорив:</strong> Якщо виявлено — піди в наступ з місця або шукай наступного укриття.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🧑‍🤝‍🧑</div><p><strong>Групова тактика:</strong> Кілька сталкерів у траві розосередять вогонь противника.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grass-footer">Успіхів, Сталкере. І не дай себе виявити! 🌿</div>
+  </div>
+</div>
+
+<style>
+/* ══════ GRASS STEALTH SYSTEM ══════ */
+.grass-block{background:linear-gradient(160deg,#0C1420 0%,#0E1828 100%);border-top:2px solid #2A4A50;border-bottom:3px solid #2A7060;}
+.grass-toggle{width:100%;background:linear-gradient(90deg,rgba(100,180,140,.06),transparent);border:none;border-left:3px solid #5ABB88;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+.grass-toggle:hover{background:linear-gradient(90deg,rgba(100,180,140,.1),transparent);}
+.grass-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#5ABB88;letter-spacing:2px;text-transform:uppercase;flex:1;}
+.grass-toggle-arrow{color:#5ABB88;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+.grass-toggle-arrow.open{transform:rotate(180deg);}
+.grass-body{display:none;padding:0 44px 28px;}
+.grass-body.open{display:block;}
+.grass-img-container{display:flex;justify-content:center;margin-bottom:20px;}
+.grass-hero-img{max-width:575px;width:100%;border-radius:4px;border:2px solid #2A5A40;box-shadow:0 0 30px rgba(42,150,100,.4);}
+.grass-hero{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:20px;align-items:start;}
+.grass-hero-right{}
+.grass-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#5ABB88;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;margin-top:12px;text-align:center;}
+.grass-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#445560;letter-spacing:3px;margin-bottom:10px;}
+.grass-authors{font-size:.75rem;color:#445A60;margin-bottom:12px;line-height:1.6;border-left:2px solid #2A5060;padding-left:10px;}
+.grass-authors strong{color:#6A9A8B;}
+.grass-intro{font-size:.8rem;color:#6A9A80;line-height:1.65;margin-bottom:14px;font-style:italic;}
+.grass-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.grass-section{background:#0A0E18;border:1px solid #1A3A30;border-radius:3px;padding:12px 14px;}
+.grass-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#5A9A80;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #1A3A30;}
+.grass-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+.grass-row:last-child{margin-bottom:0;}
+.grass-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+.grass-row p{font-size:.75rem;color:#5A7070;line-height:1.5;}
+.grass-row p strong{color:#7AAAA0;}
+.grass-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#2A4A50;font-style:italic;letter-spacing:1px;}
+</style>
+
+<style>
+/* ══════ PET COMPANION SYSTEM ══════ */
+.pet-block{background:linear-gradient(160deg,#0E0A18 0%,#120E20 100%);border-top:2px solid #3A2A5A;border-bottom:3px solid #5A3A8A;}
+.pet-toggle{width:100%;background:linear-gradient(90deg,rgba(160,100,220,.06),transparent);border:none;border-left:3px solid #A064DC;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+.pet-toggle:hover{background:linear-gradient(90deg,rgba(160,100,220,.1),transparent);}
+.pet-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#C090F0;letter-spacing:2px;text-transform:uppercase;flex:1;}
+.pet-toggle-arrow{color:#C090F0;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+.pet-toggle-arrow.open{transform:rotate(180deg);}
+.pet-body{display:none;padding:0 44px 28px;}
+.pet-body.open{display:block;}
+.pet-img-container{display:flex;justify-content:center;margin-bottom:20px;}
+.pet-hero-img{max-width:575px;width:100%;border-radius:4px;border:2px solid #4A2A70;box-shadow:0 0 30px rgba(120,60,200,.4);}
+.pet-hero{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:20px;align-items:start;}
+.pet-hero-right{}
+.pet-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#C090F0;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;margin-top:12px;text-align:center;}
+.pet-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#504060;letter-spacing:3px;margin-bottom:10px;}
+.pet-authors{font-size:.75rem;color:#504060;margin-bottom:12px;line-height:1.6;border-left:2px solid #4A2A70;padding-left:10px;}
+.pet-authors strong{color:#9A70B0;}
+.pet-intro{font-size:.8rem;color:#8A6AA0;line-height:1.65;margin-bottom:14px;font-style:italic;}
+.pet-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.pet-section{background:#0A0814;border:1px solid #2A1A40;border-radius:3px;padding:12px 14px;}
+.pet-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#9060C0;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #2A1A40;}
+.pet-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+.pet-row:last-child{margin-bottom:0;}
+.pet-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+.pet-row p{font-size:.75rem;color:#605070;line-height:1.5;}
+.pet-row p strong{color:#9A80B0;}
+.pet-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#3A2A50;font-style:italic;letter-spacing:1px;}
+</style>
+
+<div class="pet-block">
+  <button class="pet-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.pet-toggle-arrow').classList.toggle('open')">
+    <span class="pet-toggle-title">🐾 Personal Pet — Особистий Компаньйон</span>
+    <span class="pet-toggle-arrow">▼</span>
+  </button>
+  <div class="pet-body">
+
+    <div class="pet-img-container">
+      <img class="pet-hero-img" src="dog.jpg" alt="Personal Pet">
+    </div>
+
+    <div class="pet-hero">
+      <div class="pet-hero-right">
+        <div class="pet-main-title">🐾 Personal Pet</div>
+        <div class="pet-sub">COMPANION SYSTEM · ANOMALY · STALKER</div>
+
+        <div class="pet-authors">
+          <strong>Автор:</strong> Leer &nbsp;·&nbsp;
+          <strong>Версія:</strong> 1.0 &nbsp;·&nbsp;
+          <strong>Підтримка:</strong> Anomaly 1.5.2+
+        </div>
+
+        <div class="pet-intro">
+          Зона — жорстоке місце. Але навіть тут можна знайти вірного друга. Personal Pet додає у гру справжнього компаньйона — собаку, псевдособаку або кота, який супроводжує тебе у кожному рейді, підкоряється командам і стає невід'ємною частиною твого виживання.
+        </div>
+
+        <div class="pet-sections">
+
+          <div class="pet-section">
+            <div class="pet-section-title">🐕 Доступні компаньйони</div>
+            <div class="pet-row"><div class="pet-row-ico">🐩</div><p><strong>Собаки:</strong> біла, руда, коричнева, бультер'єр, чорна</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🐺</div><p><strong>Псевдособаки:</strong> варіант A та B</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🐱</div><p><strong>Коти:</strong> п'ять різних варіантів забарвлення</p></div>
+            <div class="pet-row"><div class="pet-row-ico">⚙️</div><p>Вибір компаньйона та його ім'я — через <strong>MCM меню</strong></p></div>
+          </div>
+
+          <div class="pet-section">
+            <div class="pet-section-title">🎮 Керування (клавіші MCM)</div>
+            <div class="pet-row"><div class="pet-row-ico">📍</div><p><strong>Виклик / телепорт</strong> — покликати компаньйона до себе</p></div>
+            <div class="pet-row"><div class="pet-row-ico">❌</div><p><strong>Відпустити</strong> — прибрати компаньйона зі світу</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🚩</div><p><strong>Патруль</strong> — вказати точку охорони</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🔕</div><p><strong>Ігнорувати загрози</strong> — пасивний режим</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🎯</div><p><strong>Атакувати ціль</strong> — вказати конкретного ворога</p></div>
+            <div class="pet-row"><div class="pet-row-ico">📦</div><p><strong>Принести предмет</strong> — підібрати лут з землі</p></div>
+          </div>
+
+          <div class="pet-section">
+            <div class="pet-section-title">🧠 Поведінка компаньйона</div>
+            <div class="pet-row"><div class="pet-row-ico">🏃</div><p>Автоматично <strong>слідує за гравцем</strong>, біжить або йде залежно від дистанції</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🌀</div><p><strong>Телепортується</strong> поруч, якщо відстав і не в зоні видимості</p></div>
+            <div class="pet-row"><div class="pet-row-ico">💤</div><p><strong>Сідає / лягає</strong> поруч з гравцем у спокійні моменти</p></div>
+            <div class="pet-row"><div class="pet-row-ico">⚔️</div><p>Атакує ворогів актора, <strong>ігнорує дружніх</strong> НПС</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🛡️</div><p><strong>Не активує аномалії</strong> — захищений від зонових пасток</p></div>
+          </div>
+
+          <div class="pet-section">
+            <div class="pet-section-title">📦 Система доставки лута</div>
+            <div class="pet-row"><div class="pet-row-ico">👁️</div><p>Вкажи предмет поглядом — пет <strong>підбіжить і принесе</strong> його до тебе</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🗂️</div><p>Якщо предмет не вказаний — <strong>збере всі предмети</strong> в радіусі 20м</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🚫</div><p>Ігнорує болти, артефакти з рангом та предмети з <strong>can_take = false</strong></p></div>
+            <div class="pet-row"><div class="pet-row-ico">💬</div><p>Сповіщення в HUD про <strong>статус доставки</strong></p></div>
+          </div>
+
+          <div class="pet-section">
+            <div class="pet-section-title">🏷️ Мітка імені</div>
+            <div class="pet-row"><div class="pet-row-ico">✏️</div><p>Над головою пета відображається <strong>його ім'я</strong>, задане в MCM</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🌫️</div><p>Мітка <strong>плавно зникає</strong> з відстанню (налаштовується)</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🖥️</div><p>Можна відображати навіть <strong>без HUD</strong> (окрема опція)</p></div>
+          </div>
+
+          <div class="pet-section">
+            <div class="pet-section-title">💾 Збереження стану</div>
+            <div class="pet-row"><div class="pet-row-ico">🔄</div><p>Стан компаньйона <strong>зберігається між сесіями</strong> — патруль, ціль, лут</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🗺️</div><p>При зміні рівня — <strong>автоматично переноситься</strong> на нову локацію</p></div>
+            <div class="pet-row"><div class="pet-row-ico">🔧</div><p>Зміна типу пета в MCM — <strong>автоматично замінює</strong> поточного</p></div>
+          </div>
+
+        </div>
+
+        <div class="pet-footer">🐾 Один раз знайшов друга в Зоні — і Зона вже не така самотня · Personal Pet by Leer 🐾</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+/* ══════ NEP SYSTEM ══════ */
+.nep-block{background:linear-gradient(160deg,#0A1014 0%,#0C1418 100%);border-top:2px solid #1A3A4A;border-bottom:3px solid #1A6070;}
+.nep-toggle{width:100%;background:linear-gradient(90deg,rgba(60,160,200,.06),transparent);border:none;border-left:3px solid #3CA0C8;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+.nep-toggle:hover{background:linear-gradient(90deg,rgba(60,160,200,.1),transparent);}
+.nep-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#60C0E0;letter-spacing:2px;text-transform:uppercase;flex:1;}
+.nep-toggle-arrow{color:#60C0E0;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+.nep-toggle-arrow.open{transform:rotate(180deg);}
+.nep-body{display:none;padding:0 44px 28px;}
+.nep-body.open{display:block;}
+.nep-img-container{display:flex;justify-content:center;margin-bottom:20px;}
+.nep-hero-img{max-width:575px;width:100%;border-radius:4px;border:2px solid #1A4A60;box-shadow:0 0 30px rgba(30,120,160,.4);}
+.nep-hero{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:20px;align-items:start;}
+.nep-hero-right{}
+.nep-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#60C0E0;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;margin-top:12px;text-align:center;}
+.nep-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#304050;letter-spacing:3px;margin-bottom:10px;text-align:center;}
+.nep-authors{font-size:.75rem;color:#405060;margin-bottom:12px;line-height:1.6;border-left:2px solid #1A4A60;padding-left:10px;}
+.nep-authors strong{color:#5A90A0;}
+.nep-intro{font-size:.8rem;color:#507080;line-height:1.65;margin-bottom:14px;font-style:italic;}
+.nep-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.nep-section{background:#080C10;border:1px solid #142830;border-radius:3px;padding:12px 14px;}
+.nep-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#3A90B0;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #142830;}
+.nep-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+.nep-row:last-child{margin-bottom:0;}
+.nep-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+.nep-row p{font-size:.75rem;color:#405060;line-height:1.5;}
+.nep-row p strong{color:#6AAABB;}
+.nep-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#1A3A4A;font-style:italic;letter-spacing:1px;}
+</style>
+
+<div class="nep-block">
+  <button class="nep-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.nep-toggle-arrow').classList.toggle('open')">
+    <span class="nep-toggle-title">🏥 NEP — NPC Enhancement Project</span>
+    <span class="nep-toggle-arrow">▼</span>
+  </button>
+  <div class="nep-body">
+
+    <div class="nep-img-container">
+      <img class="nep-hero-img" src="people.jpg" alt="NEP — NPC Enhancement Project">
+    </div>
+
+    <div class="nep-hero">
+      <div class="nep-hero-right">
+        <div class="nep-main-title">🏥 NPC Enhancement Project</div>
+        <div class="nep-sub">STALKER ANOMALY · NPC OVERHAUL · IMMERSION</div>
+
+        <div class="nep-authors">
+          <strong>Автори:</strong> explorerbee, Longreed, bvcx, VodoXleb &nbsp;·&nbsp;
+          <strong>Версія:</strong> 2024 &nbsp;·&nbsp;
+          <strong>Ліцензія:</strong> Proprietary
+        </div>
+
+        <div class="nep-intro">
+          Зона живе — і тепер це відчувається по-справжньому. NEP розселяє по всіх куточках світу живих персонажів: медиків, що лікують поранених, і механіків, що ремонтують спорядження. Кожен НПС має своє місце, свою фракцію і свою роль у виживанні сталкерів.
+        </div>
+
+        <div class="nep-sections">
+
+          <div class="nep-section">
+            <div class="nep-section-title">🗺️ Локації та НПС</div>
+            <div class="nep-row"><div class="nep-row-ico">🔵</div><p><strong>Кордон</strong> — медик сталкерів біля smart terrain 5_7</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🔵</div><p><strong>Темна Долина</strong> — медик сталкерів + укриття для пораненого</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🔵</div><p><strong>Звалище</strong> — медик сталкерів та механік у своєму куті</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🔴</div><p><strong>Янтар</strong> — медик найманців (нічна зміна)</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🟡</div><p><strong>Цвинтар Технік</strong> — медик бандитів</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🟡</div><p><strong>Юпітер</strong> — медики бандитів та екологів</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🔴</div><p><strong>Затон</strong> — медик найманців</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🔵</div><p><strong>Передмістя</strong> — медики сталкерів та найманців</p></div>
+          </div>
+
+          <div class="nep-section">
+            <div class="nep-section-title">⚙️ Технічна система</div>
+            <div class="nep-row"><div class="nep-row-ico">🧩</div><p><strong>Динамічні smart covers</strong> — укриття спавняться скриптом при першому завантаженні</p></div>
+            <div class="nep-row"><div class="nep-row-ico">📦</div><p>На Звалищі спавниться <strong>верстак (тиски)</strong> для механіка через окремий скрипт</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🔗</div><p>Інтеграція через <strong>DXML</strong> — діалоги додаються без перезапису оригінальних файлів</p></div>
+            <div class="nep-row"><div class="nep-row-ico">💾</div><p>Стан спавну зберігається через <strong>alife_info</strong> — НПС не дублюються між сесіями</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🛡️</div><p>Перевизначення <strong>se_smart_cover</strong> через метатаблицю для сумісності з іншими модами</p></div>
+          </div>
+
+          <div class="nep-section">
+            <div class="nep-section-title">💊 Медик — квест та діалог</div>
+            <div class="nep-row"><div class="nep-row-ico">🗣️</div><p>Медик у Темній Долині має <strong>унікальні діалоги</strong> та завдання для гравця</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🎒</div><p>Квест вимагає принести <strong>аптечку (itm_drugkit)</strong> для пораненого</p></div>
+            <div class="nep-row"><div class="nep-row-ico">✅</div><p>Після виконання — <strong>завдання закривається</strong> з окремим діалогом завершення</p></div>
+            <div class="nep-row"><div class="nep-row-ico">📋</div><p>Діалоги додані через <strong>DXML</strong> до персонажа <em>dasc_trade_mlr</em></p></div>
+          </div>
+
+          <div class="nep-section">
+            <div class="nep-section-title">🪑 Анімації та поведінка</div>
+            <div class="nep-row"><div class="nep-row-ico">🧍</div><p><strong>animpoint_stay_wall</strong> — стоїть біля стіни (Темна Долина, Затон)</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🪑</div><p><strong>animpoint_sit_normal</strong> — сидить у природній позі (більшість медиків)</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🛋️</div><p><strong>animpoint_sit_low / sit_high</strong> — варіації сидіння для механіка та медиків</p></div>
+            <div class="nep-row"><div class="nep-row-ico">🎭</div><p>Кожен НПС прив'язаний до <strong>конкретного smart terrain</strong> своєї фракції</p></div>
+          </div>
+
+        </div>
+
+        <div class="nep-footer">🏥 Зона стає живішою з кожним медиком і механіком у ній · NPC Enhancement Project by explorerbee & team 🔧</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+/* ══════ SOULSLIKE SYSTEM ══════ */
+.soul-block{background:linear-gradient(160deg,#120808 0%,#180A0A 100%);border-top:2px solid #4A1A1A;border-bottom:3px solid #8A2020;}
+.soul-toggle{width:100%;background:linear-gradient(90deg,rgba(200,40,40,.06),transparent);border:none;border-left:3px solid #C03030;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+.soul-toggle:hover{background:linear-gradient(90deg,rgba(200,40,40,.1),transparent);}
+.soul-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#E05050;letter-spacing:2px;text-transform:uppercase;flex:1;}
+.soul-toggle-arrow{color:#E05050;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+.soul-toggle-arrow.open{transform:rotate(180deg);}
+.soul-body{display:none;padding:0 44px 28px;}
+.soul-body.open{display:block;}
+.soul-img-container{display:flex;justify-content:center;margin-bottom:20px;}
+.soul-hero-img{max-width:575px;width:100%;border-radius:4px;border:2px solid #4A1A1A;box-shadow:0 0 30px rgba(180,30,30,.4);}
+.soul-hero{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:20px;align-items:start;}
+.soul-hero-right{}
+.soul-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#E05050;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;margin-top:12px;text-align:center;}
+.soul-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#503030;letter-spacing:3px;margin-bottom:10px;text-align:center;}
+.soul-authors{font-size:.75rem;color:#503030;margin-bottom:12px;line-height:1.6;border-left:2px solid #6A2020;padding-left:10px;}
+.soul-authors strong{color:#A05050;}
+.soul-intro{font-size:.8rem;color:#7A4040;line-height:1.65;margin-bottom:14px;font-style:italic;}
+.soul-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.soul-section{background:#0E0606;border:1px solid #2A1010;border-radius:3px;padding:12px 14px;}
+.soul-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#B03A3A;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #2A1010;}
+.soul-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+.soul-row:last-child{margin-bottom:0;}
+.soul-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+.soul-row p{font-size:.75rem;color:#604040;line-height:1.5;}
+.soul-row p strong{color:#A06060;}
+.soul-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#3A1A1A;font-style:italic;letter-spacing:1px;}
+</style>
+
+<div class="soul-block">
+  <button class="soul-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.soul-toggle-arrow').classList.toggle('open')">
+    <span class="soul-toggle-title">💀 Soulslike — Смерть має ціну</span>
+    <span class="soul-toggle-arrow">▼</span>
+  </button>
+  <div class="soul-body">
+
+    <div class="soul-img-container">
+      <img class="soul-hero-img" src="soul.jpg" alt="Soulslike для STALKER Anomaly">
+    </div>
+
+    <div class="soul-hero">
+      <div class="soul-hero-right">
+        <div class="soul-main-title">💀 Soulslike Death System</div>
+        <div class="soul-sub">STALKER ANOMALY · HARDCORE · DEATH OVERHAUL</div>
+
+    <div class="soul-authors">
+    	<strong>Автор:</strong> Jabbers &nbsp;·&nbsp;
+		<strong>Підтримка:</strong> Anomaly 1.5.2+ &nbsp;·&nbsp;
+        <strong>MCM:</strong> Так, повністю налаштовується &nbsp;·&nbsp;
+		<strong>Сумісність:</strong> item_parts, arszi_psy, magazine_binder
+	</div>
+
+        <div class="soul-intro">
+          Зона більше не прощає помилок. Soulslike перетворює кожну смерть на подію: ти втрачаєш спорядження, ранг і репутацію — а твої речі опиняються у тайнику, оточені ворогами, що чекають на тебе. Надихнувшись серією Dark Souls, цей мод робить виживання справжнім випробуванням.
+        </div>
+
+        <div class="soul-sections">
+
+          <div class="soul-section">
+            <div class="soul-section-title">☠️ Що відбувається при смерті</div>
+            <div class="soul-row"><div class="soul-row-ico">🎒</div><p>Речі гравця <strong>переносяться у тайник</strong> на місці загибелі</p></div>
+            <div class="soul-row"><div class="soul-row-ico">📉</div><p>Втрата <strong>рангу та репутації</strong> — відсоток налаштовується в MCM</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🔧</div><p>Знаряддя <strong>деградує</strong> — зброя, броня та інші предмети погіршують стан</p></div>
+            <div class="soul-row"><div class="soul-row-ico">💊</div><p>Гравець <strong>відроджується з частковим здоров'ям</strong> та знятим радіаційним зараженням</p></div>
+            <div class="soul-row"><div class="soul-row-ico">💰</div><p>Можлива <strong>втрата грошей</strong> — шанс та відсоток налаштовуються</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🌙</div><p>Опція <strong>заборони нічного відродження</strong> — час автоматично переноситься на ранок</p></div>
+          </div>
+
+          <div class="soul-section">
+            <div class="soul-section-title">📦 Сценарії тайників</div>
+            <div class="soul-row"><div class="soul-row-ico">📍</div><p><strong>Default</strong> — рюкзак падає на місці смерті, позначається на КПК</p></div>
+            <div class="soul-row"><div class="soul-row-ico">📻</div><p><strong>RF Detector</strong> — речі потрапляють у <strong>прихований тайник</strong>, знайти можна лише радіочастотним детектором</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🗺️</div><p><strong>Hidden Stash</strong> — тайник ховається поруч, але <strong>позначка на КПК</strong> дається одразу</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🛡️</div><p><strong>No Loss</strong> — усі речі повертаються без втрат (режим легкої складності)</p></div>
+          </div>
+
+          <div class="soul-section">
+            <div class="soul-section-title">⚔️ Система засідок</div>
+            <div class="soul-row"><div class="soul-row-ico">🐺</div><p>Якщо тебе вбив <strong>мутант</strong> — на місці смерті може заспавнитись зграя нових мутантів</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🔫</div><p>Якщо вбив <strong>сталкер</strong> — з'являється загін тієї ж фракції, що чекає на тебе</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🎲</div><p>Шанс та тип засідки визначаються <strong>зваженою випадковістю</strong> з таблиць спавну</p></div>
+            <div class="soul-row"><div class="soul-row-ico">⚙️</div><p>Кожен тип ворога <strong>вмикається або вимикається окремо</strong> через MCM</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🗂️</div><p>Підтримуються усі фракції: <strong>Сталкери, Бандити, Монолітівці, Армія, Свобода, Борг, Гріх, ЮНІСГ</strong> та інші</p></div>
+          </div>
+
+          <div class="soul-section">
+            <div class="soul-section-title">🎛️ Налаштування MCM</div>
+            <div class="soul-row"><div class="soul-row-ico">🔩</div><p>Окремий <strong>шанс втрати</strong> для зброї, броні, артефактів, шоломів, інструментів та інших предметів</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🛡️</div><p>Опції <strong>зберегти екіпіровані предмети</strong> при смерті</p></div>
+            <div class="soul-row"><div class="soul-row-ico">📋</div><p>Ігнор-список для <strong>болтів, ножів, КПК, бинтів, аптечок</strong> та ключових предметів</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🏅</div><p>Можливість <strong>враховувати або ігнорувати ранг</strong> при розрахунку втрат</p></div>
+            <div class="soul-row"><div class="soul-row-ico">💾</div><p>Хардкор-режим: <strong>примусове збереження</strong> після відродження</p></div>
+          </div>
+
+          <div class="soul-section">
+            <div class="soul-section-title">🧟 Мародерство ворогів</div>
+            <div class="soul-row"><div class="soul-row-ico">🔪</div><p><strong>Сталкер-мародер</strong> — забирає предмети собі в інвентар та позначається на КПК</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🐗</div><p><strong>Мутант-мародер</strong> — з'їдає їжу, м'ясо мутантів та пояси як <strong>«приманку»</strong></p></div>
+            <div class="soul-row"><div class="soul-row-ico">🎰</div><p><strong>Tarkov-мародер</strong> — 1% шанс: ворог виламує <strong>випадкову деталь зброї</strong></p></div>
+            <div class="soul-row"><div class="soul-row-ico">📌</div><p>Мародер може бути <strong>позначений на карті</strong> для помсти</p></div>
+          </div>
+
+          <div class="soul-section">
+            <div class="soul-section-title">🔗 Сумісність та технічне</div>
+            <div class="soul-row"><div class="soul-row-ico">🧩</div><p>Підтримка <strong>item_parts</strong> — деградація по частинах зброї</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🧠</div><p>Підтримка <strong>arszi_psy</strong> — скидання психічного здоров'я при відродженні</p></div>
+            <div class="soul-row"><div class="soul-row-ico">📎</div><p>Підтримка <strong>magazine_binder</strong> — переддемонтаж магазинів перед смертю</p></div>
+            <div class="soul-row"><div class="soul-row-ico">⏱️</div><p>Система <strong>таймерів (demonized_time_events)</strong> для коректного спавну схованки</p></div>
+            <div class="soul-row"><div class="soul-row-ico">🌊</div><p>Смерть у воді: <strong>жодних втрат предметів</strong> — окрема логіка обробки</p></div>
+          </div>
+
+        </div>
+
+        <div class="soul-footer">💀 Кожна смерть — це урок. Кожне відродження — новий шанс · Soulslike Death System for STALKER Anomaly 💀</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ RE:D MOON ══ -->
+<div class="moon-block">
+  <button class="moon-toggle" onclick="var b=document.getElementById('moon-body');var a=this.querySelector('.moon-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <span>🌕</span>
+    <span class="moon-toggle-title">RE:D Moon: Blood Moon Event</span>
+    <span class="moon-toggle-arrow">▼</span>
+  </button>
+  <div class="moon-body" id="moon-body">
+    <div class="moon-img-container">
+      <img class="moon-hero-img" src="moon.jpg" alt="RE:D Moon">
+    </div>
+    <div class="moon-hero">
+      <div class="moon-hero-right">
+        <div class="moon-main-title">🌕 RE:D Moon — Кривавий Місяць</div>
+        <div class="moon-sub">[Новий глобальний івент Зони]</div>
+        <div class="moon-authors">
+          <strong>Автор:</strong> EtongSayo &nbsp;|&nbsp;
+          <strong>Співавтор:</strong> DrSergei &nbsp;|&nbsp;
+          <strong>Тестування:</strong> Sanguiynaire &nbsp;|&nbsp;
+          <strong>Зомбі:</strong> Hades@DK &nbsp;|&nbsp;
+          <strong>Організатор:</strong> eAkman
+        </div>
+        <div class="moon-intro">Від творців RE:Done, RE:Spawn, RE:Pack, RE:Tune та RE:Bound — новий жах під кривавим небом Аномальної Зони. Кривавий місяць сходить, і разом з ним — орди мерців. Готуйся витримати найтемнішу ніч у Зоні.</div>
+        <div class="moon-sections">
+          <div class="moon-section">
+            <div class="moon-section-title">🌕 Кривавий місяць</div>
+            <div class="moon-row"><div class="moon-row-ico">🌑</div><p><strong>Новий івент:</strong> Кривавий місяць — окрема подія поряд з викидами та пси-штормами.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🔴</div><p><strong>Небо:</strong> Горизонт заливається багряним сяйвом, а яскравий червоний місяць піднімається над Зоною.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">⏱️</div><p><strong>Динаміка:</strong> Івент відбувається природнім чином, без прив'язки до розкладу.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">📻</div><p><strong>Новини:</strong> Система динамічних новин попередить тебе про наближення кривавого місяця.</p></div>
+          </div>
+          <div class="moon-section">
+            <div class="moon-section-title">🧟 Ексклюзивні зомбі</div>
+            <div class="moon-row"><div class="moon-row-ico">💀</div><p><strong>Унікальні типи:</strong> Кілька видів зомбі, створених спеціально для цього моду — більше ніде не зустрінеш.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🧠</div><p><strong>Автор моделей:</strong> Ексклюзивні зомбі розроблені Hades@DK особисто для RE:D Moon.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🩸</div><p><strong>Спаун:</strong> Мерці з'являються саме під час івенту кривавого місяця.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">👁️</div><p><strong>Поведінка:</strong> Зомбі відчувають твою присутність і невпинно рухаються до тебе.</p></div>
+          </div>
+          <div class="moon-section">
+            <div class="moon-section-title">⚔️ Динамічні атаки</div>
+            <div class="moon-row"><div class="moon-row-ico">🌊</div><p><strong>Хвилі:</strong> Безперервні хвилі мерців переслідують тебе протягом усього івенту.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🎯</div><p><strong>Агресія:</strong> Зомбі цілеспрямовано атакують гравця — відсидітись не вийде.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">📈</div><p><strong>Інтенсивність:</strong> Тиск наростає з кожною хвилею — виживання стає справжнім випробуванням.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🏃</div><p><strong>Тактика:</strong> Рухайся, стріляй, виживай — стояти на місці смерті подібно.</p></div>
+          </div>
+          <div class="moon-section">
+            <div class="moon-section-title">⚙️ Налаштування та сумісність</div>
+            <div class="moon-row"><div class="moon-row-ico">🎛️</div><p><strong>MCM підтримка:</strong> Налаштуй івент під себе — частота, інтенсивність, параметри спауну.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🤝</div><p><strong>RE:Bound:</strong> Встанови разом з RE:Bound Encounters для додаткових можливостей.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🏠</div><p><strong>Система укриттів:</strong> У безпечних зонах зомбі не переслідують тебе під час місяця.</p></div>
+            <div class="moon-row"><div class="moon-row-ico">🔗</div><p><strong>Сумісність:</strong> Розроблено як частина екосистеми RE: модів для Anomaly.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="moon-footer">Місяць сходить. Мерці прокидаються. Сталкере — це твоя остання ніч. 🌕</div>
+  </div>
+</div>
+
+<style>
+/* ══════ RE:D MOON SYSTEM ══════ */
+.moon-block{background:linear-gradient(160deg,#0A0608 0%,#100810 100%);border-top:2px solid #4A1020;border-bottom:3px solid #6A1830;}
+.moon-toggle{width:100%;background:linear-gradient(90deg,rgba(180,20,50,.08),transparent);border:none;border-left:3px solid #C01840;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+.moon-toggle:hover{background:linear-gradient(90deg,rgba(180,20,50,.14),transparent);}
+.moon-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#E03050;letter-spacing:2px;text-transform:uppercase;flex:1;text-shadow:0 0 12px rgba(200,20,50,.5);}
+.moon-toggle-arrow{color:#E03050;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+.moon-toggle-arrow.open{transform:rotate(180deg);}
+.moon-body{display:none;padding:0 44px 28px;}
+.moon-body.open{display:block;}
+.moon-img-container{display:flex;justify-content:center;margin-bottom:20px;}
+.moon-hero-img{max-width:403px;width:100%;border-radius:4px;border:2px solid #4A1020;box-shadow:0 0 30px rgba(180,20,50,.4);}
+.moon-hero{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:20px;align-items:start;}
+.moon-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#E03050;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;margin-top:12px;text-align:center;text-shadow:0 0 20px rgba(200,20,50,.6);}
+.moon-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#502030;letter-spacing:3px;margin-bottom:10px;text-align:center;}
+.moon-authors{font-size:.75rem;color:#502030;margin-bottom:12px;line-height:1.6;border-left:2px solid #7A1030;padding-left:10px;}
+.moon-authors strong{color:#A02040;}
+.moon-intro{font-size:.8rem;color:#7A3040;line-height:1.65;margin-bottom:14px;font-style:italic;}
+.moon-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.moon-section{background:#0A0608;border:1px solid #2A0818;border-radius:3px;padding:12px 14px;}
+.moon-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#C01840;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #2A0818;}
+.moon-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+.moon-row:last-child{margin-bottom:0;}
+.moon-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+.moon-row p{font-size:.75rem;color:#6A2030;line-height:1.5;}
+.moon-row p strong{color:#A04050;}
+.moon-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#3A1020;font-style:italic;letter-spacing:1px;}
+</style>
+
+
+<!-- ══ LEGEND ══ -->
+<!-- ══ TIPS BLOCK ══ -->
+<div class="tips-block">
+  <div class="tips-main-title">❄️ Рекомендації при початку нової гри</div>
+
+  <div class="tips-grid">
+
+    <!-- COLD -->
+    <div class="tips-card cold">
+      <div class="tips-card-title">🧤 Як не замерзнути в Зоні</div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Спорядження:</strong> Обов'язково візьміть дрова та сокиру. Не допускайте критичного переохолодження!</p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Джерела тепла:</strong> Регулярно грійтеся біля багаття — це ваш основний шанс вижити.</p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Сон:</strong> Відпочилий організм краще опирається холоду. Сон — головне для сталкера.</p></div>
+    </div>
+
+    <!-- MEDICINE -->
+    <div class="tips-card med">
+      <div class="tips-card-title">💊 Медицина та харчування</div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Лікування застуди:</strong> Використовуйте спеціалізовані медикаменти, але без надмірності — надлишок ліків накопичує токсини.</p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Їжа:</strong> У зимових умовах їжа зігріває лише гарячою. Готуйте стільки, скільки з'їсте за раз.</p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Інтоксикація від ліків:</strong> Усунути можна трьома способами:</p></div>
+      <div class="tips-sub">
+        <div class="tips-item"><div class="tips-dot"></div><p><em>Напої:</em> чиста вода, гарячий чай або детокс-напої</p></div>
+        <div class="tips-item"><div class="tips-dot"></div><p><em>Медичні засоби:</em> сорбенти (активоване вугілля) або антидоти</p></div>
+        <div class="tips-item"><div class="tips-dot"></div><p><em>Час:</em> припиніть препарати та дайте організму відпочити</p></div>
+      </div>
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="tips-card ctrl">
+      <div class="tips-card-title">🛠 Керування та обладнання</div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Стан кінцівок:</strong> Натисніть <span class="tips-kbd">H</span> або зайдіть в інвентар</p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Лазерний цілевказівник:</strong> <span class="tips-kbd">B</span></p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Зміна маркера прицілу:</strong> <span class="tips-kbd">Z</span></p></div>
+	  <div class="tips-item"><div class="tips-dot"></div><p><strong>Якщо клин зброї, швидко натиснути 2 рази:</strong> <span class="tips-kbd">F</span></p></div>
+      <div class="tips-item"><div class="tips-dot"></div><p><strong>Перевірка токсинів:</strong> <span class="tips-kbd">⌫back space</span></p></div>
+	  <div class="tips-item"><div class="tips-dot"></div><p><strong>Швидкий удар:</strong> <span class="tips-kbd">V</span></p></div>
+	  <div class="tips-item"><div class="tips-dot"></div><p><strong>Швидке перемикання приладів</strong> — стрілки праворуч на клавіатурі:</p></div>
+      <div class="tips-sub">
+        <div class="tips-item"><div class="tips-dot"></div><p>↑ Дозиметр &nbsp;|&nbsp; ↓ Детектор аномалій</p></div>
+        <div class="tips-item"><div class="tips-dot"></div><p>← Радіоресивер &nbsp;|&nbsp; → Детектор активності</p></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tips-grid-2">
+
+    <!-- CONTACTS -->
+    <div class="tips-card contact">
+      <div class="tips-card-title">🛰 Робота з контактами</div>
+      <div class="tips-item"><div class="tips-dot"></div><p>Не обов'язково бігати до кожного персонажа! Завдання можна брати <strong>дистанційно через КПК</strong>, якщо персонаж знаходиться в радіусі вашої дії.</p></div>
+    </div>
+  </div>
+
+  <div class="tips-footer"><span>☢</span> &nbsp;Вдалого полювання, сталкере! Намагайся не перетворитися на бурульку.&nbsp; <span>☢</span></div>
+</div>
+
+<!-- ══ LEGEND ══ -->
+<div class="legend">
+  <div class="lc lc-num">#</div>
+  <div class="lc lc-name">Назва моду</div>
+  <div class="lc lc-auth">Автор (нік)</div>
+  <div class="lc lc-desc">Опис</div>
+</div>
+
+<div id="mod-list"></div>
+
+<!-- ══ FOOTER ══ -->
+<div class="footer">
+  <p>☢ Всі права на моди належать їхнім авторам. Список складено виключно для опису збірки Build Trinity.</p>
+  <p>Редактор збірки: <strong>Ivan Danko</strong> &nbsp;|&nbsp; 📢 Telegram: <strong><a href="https://t.me/stalket_frozen_zone" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;">STALKER: ZONE EDITION</a></strong> &nbsp;|&nbsp; YouTube: <strong><a href="https://www.youtube.com/@STALKERDEADZONE" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;">STALKER DEAD ZONE</a></strong> &nbsp;|&nbsp; 2025–2026</p>
+</div>
+
+</div><!-- .page -->
+<script>
+const CATS = [
+  {
+    icon:'🔧', name:'ОСНОВНІ / СИСТЕМНІ МОДИ',
+    mods:[
+      {n:'MCM — Mod Configuration Menu',         a:'RavenAscendant',        req:true,  d:'Централізоване меню конфігурації для всіх сумісних аддонів. Обов\'язкова основа більшості модів збірки.'},
+      {n:'DLTX — Dynamic LTX Patcher',            a:'nltp_ashes',            req:true,  d:'Система динамічного патчингу конфігів. Дозволяє кільком модам змінювати одні й ті самі файлы без конфліктів.'},
+      {n:'DLTX JSRS 4.0 (патч сумісності)',       a:'Solarint / адаптація',             d:'DLTX-сумісна версія звукового пакету JSRS 4.0 для усунення конфліктів між аддонами.'},
+      {n:'DLTX MiniMod Pack (Demonized)',          a:'Demonized',                   d:'Великий пак дрібних DLTX-сумісних мінімодів: фікси A-Life, балансування лутки, радіоактивного повітря тощо.'},
+      {n:'Trinity Launcher',                        a:'Ivan Danko',            own:true,  d:'Авторська розробка. Лаунчер для запуску гри з вибором сезону: автоматично активує потрібні моди в MO, очищає кеш шейдерів та застосовує відповідний конфіг графічних налаштувань — заходити в Mod Organizer перед кожним запуском більше не потрібно.'},
+      {n:'Trinity Installer',                       a:'Ivan Danko',            own:true,  d:'Авторська розробка. Автоматичний інсталятор збірки Build Trinity. Просто завантажте TrinityInstaller.exe, запустіть його, вкажіть місце на диску — інсталятор самостійно завантажить архіви збірки та встановить усе у вибраний каталог. Не потрібно вручну завантажувати файли або розпаковувати архіви.'},
+      {n:'Автоматизація запуску Mod Organizer 2',      a:'Serhii Olasiuk',                       d:'Автоматично підключає папку з модами, незалежно від того, куди ви встановили збірку.'},
+    ]
+  },
+  {
+    icon:'🌦', name:'ПОГОДА ТА АТМОСФЕРА',
+    mods:[
+      {n:'Winter Atmosphere',   				   a:'Daedalus-Prime, Ivan Danko ',		 d:'Редактор Ivan Danko. Скриптова частина. Живі погодні частки для Зони — тільки зовні, тільки коли варто. Сніг, туман, пил та світлячки змінюються в реальному часі залежно від погоди, часу доби та вітру. Зникають при вході в приміщення. Сумісний з 35+ пресетами погоди.'},
+      {n:'Sun Rise',                               a:'Ivan Danko',            own:true,  d:'Авторська текстурна модифікація. Повна заміна текстур оточення (крім NPC, монстрів та неба): кінематографічні світанки та заходи сонця.'},
+      {n:'Dead Zone',                              a:'Ivan Danko',            own:true,  d:'Авторська текстурна модифікація. Повна заміна текстур оточення (крім NPC, монстрів та неба): вічний листопад, свинцеве небо, нескінченні зливи, гнітюча сльота.'},
+      {n:'Frozen Zone',                            a:'Ivan Danko',            own:true,  d:'Авторська текстурна модифікація. Повна заміна текстур оточення (крім NPC, монстрів та неба): люті морози, сліпучі метелі, лід та іній на техніці.'},
+      {n:'Grass And trees by PanceRide',           a:'PanceRide',                        d:'Повна заміна текстур крон дерев та гілок з листям для Sun Rise. Редактор: Ivan Danko — використані деякі текстури трави та крони дерев, додано авторські напрацювання та текстури з проекту. Тектури були зменьшені до 4к, цього достатньо.'},
+      {n:'Atmospherics',                           a:'Hipp_0',                         d:'Професійний погодний мод, налаштований на кольороточному моніторі. Природна та атмосферна подача погоди.'},
+      {n:'Weather Expansion',                      a:'Screwed_up',                       d:'Розширення для Atmospherics: 14 вручну створених погодних циклів. Разом 36 унікальних погод. <em>Редактор збірки: Ivan Danko</em> — адаптація трьох погодних модів в один, налаштування для кожного сезону окремо.'},
+      {n:'C Consciousness Grass & Trees v0.71', a:'Huh_?',      		     d:'Заміна деяких текстур трави для трьох сезонів. Редактор: Ivan Danko — використані файли level.details, змінені текстури трави, додано авторські напрацювання та текстури з проекту. Крони дерев запозичені із Dead Zone. Нові текстури води для Dead Zone і Sun Rise.'},
+      {n:'Trees Winter INVERNO (Optional)',        a:'Aiden',                d:'Опціональний компонент зимового режиму. Зимові текстури дерев і рослинності Зони.'},
+    ]
+  },
+  {
+    icon:'🖥', name:'ШЕЙДЕРИ ТА ГРАФІКА',
+    mods:[
+      {n:'Screen Space Shaders (SSS)',             a:'Ascii1457',                        d:'Революційна колекція шейдерів: Ambient Occlusion, SSR-відбиття, інтерактивна трава (реагує на гравця/NPC/вибухи), дощові калюжі, Depth of Field, TAA, паралакс-ефекти. Основа графіки збірки.'},
+      {n:'Enhanced Shaders and Color Grading',    a:'KennShade',                        d:'Гамма-коректне освітлення, PBR-спекулярні ефекти, ACES tone-mapping. Якість картинки рівня ReShade без втрат FPS.'},
+      {n:'ShaderLens',                             a:'Anonimiet',                d:'Шейдерні ефекти для оптики: блиски, хроматична аберація, віньєтування в прицілах.'},
+      {n:"Grok's Masks & Reflections",            a:'Grok',                             d:'Реалістичні відбиття та маски для шоломів і протигазів — ефект мокрого скла.'},
+      {n:"Beef's NVGs",                           a:'Beef',                             d:'Шейдерні прилади нічного бачення з реалістичним ефектом підсилення зображення та характерним зеленим світінням.'},
+      {n:'Dynamic Zoom Enabler',                  a:'Anomaly Team',                d:'Динамічне масштабування камери при прицілюванні для сумісних прицілів.'},
+      {n:'XENON Light',                           a:'Xenon',                d:'Ксенонове освітлення для ліхтариків — яскравий холодний блакитний тон.'},
+      {n:'Heat Vision v1.3',                      a:'Screwed_up',                d:'Тепловізійний режим для сумісних прицілів і пристроїв.'},
+      {n:'Blood Pools',                           a:'Spuchel',                          d:'Реалістичні калюжі крові на землі після загибелі персонажів і мутантів.'},
+      {n:'Realistic Blood HQ Redone',             a:'Spuchel',                          d:'HD-текстури крові з реалістичними бризками та патьоками.'},
+      {n:'ShaderDriven Scopes',                   a:'party_50',                         d:'Прицільні шейдери — реалістичні ефекти паралаксу та оптичного збільшення.'},
+    ]
+  },
+  {
+    icon:'🎵', name:'ЗВУК',
+    mods:[
+      {n:'JSRS Sound Mod 4.0',                    a:'Solarint',                         d:'Повний звуковий ремейк стрільби. 8 аудіошарів на кожну зброю, нові дистанційні звуки, об\'ємне звучання. Порт легендарного JSRS з ARMA 3.'},
+      {n:'JSRS Cracks & Impacts Patch',           a:'Solarint',                         d:'Доповнення до JSRS: реалістичні звуки свисту куль поряд із гравцем і звуки влучань в різні поверхні.'},
+      {n:'Dark signal Amplified footsteps v5 Extended',  a:'Shr¡ke',                  d:'Dark Signal Amplified — це оновлення 2.0 оригінального аудіопакета Dark Signal.'},
+      {n:'Dark Signal Audio Pack',                a:'Shrike',                           d:'Авторський звуковий пак: унікальні звуки пострілів і перезарядки для сумісної зброї.'},
+    ]
+  },
+  {
+    icon:'🔫', name:'ЗБРОЯ ТА БАЛІСТИКА',
+    mods:[
+      {n:'Boomsticks and Sharpsticks (BaS)',      a:'Mich_Cartman',                     d:'Найбільший зброярський мод для Anomaly. Десятки нових стволів, ножів, прицілів та аксесуарів з унікальними HD-анімаціями. Великий внесок Mortan, Blindside, Ghost_Neverbloom.'},
+      {n:'Grok Ballistics Overhaul',              a:'Grok',                             d:'Повна переробка балістики: реалістична кінетична енергія куль, пробиття броні, падіння швидкості снаряда на дистанції.'},
+      {n:'WPO — Weapon Parts Overhaul',           a:'Solarint',                d:'Розширена система деталей і модифікацій зброї.'},
+      {n:'Modular Attachment System',             a:'Solarint',                d:'Модульна система кріплення аксесуарів — гнучке налаштування спорядження.'},
+      {n:'MarkSwitch',                            a:'Demonized',                d:'Перемикання режимів прицілювання (денний/нічний/тепловий) однією кнопкою.'},
+      {n:"Pizza's Ultimate Sight",               a:'Pizza',                            d:'Пак якісних текстур прицілів та покращена система прицілювання.'},
+      {n:'RWAP — Real Weapon Attachment Pack',    a:'Borer',                d:'Реалістичні моделі та текстури для навісного обладнання зброї.'},
+      {n:'3DSS RWAP',                             a:'Borer',                d:'Тривимірні тіні та покращений рендер аксесуарів із RWAP.'},
+      {n:'Anomaly Tacticool Scopes',              a:'jaymorrow',                        d:'Набір тактичних прицілів із реалістичними сітками та оверлеями.'},
+      {n:'ToggleScope',                           a:'Ishmaeel',                d:'Перемикання кратності прицілу (x1/xN) без відкриття інвентарю.'},
+      {n:'Knife, Pistol & Binoculars Slots',      a:'Anomaly Team',                d:'Окремі слоти інвентарю для ножа, пістолета та бінокля.'},
+      {n:'Quick Melee Reworked',                  a:'Anomaly Team',                d:'Переробка швидкої атаки в ближньому бою — покращені анімації та тайминги ударів.'},
+    ]
+  },
+  {
+    icon:'🎬', name:'АНІМАЦІЇ',
+    mods:[
+      {n:'Camera Reanimation — I.N.E.R.T.I.A.',  a:'Borer',                            d:'Кінематографічна інерція камери при русі, стрибках і стрільбі.'},
+      {n:'1st Person Visible Body',               a:'Anomaly-спільнота',                d:'Відображення тіла персонажа від першої особи — ноги та торс видно при погляді вниз.'},
+      {n:'STALKER 2 Backpack Anim',               a:'Feel_there',                d:'Анімація рюкзака в дусі S.T.A.L.K.E.R. 2 — реакція спорядження на рух гравця.'},
+      {n:'Food, Drug & Drink Animations (FDDA)', a:'Feel_there',         d:'Анімоване вживання їжі, медикаментів та напоїв від першої особи.'},
+      {n:'FDDA Enhanced',                         a:'Feel_there',                       d:'Розширення FDDA: балістичні пластини, ПНБ, ліхтарик — нові анімації.'},
+      {n:'FDDA Redone',                           a:'Feel_there',                       d:'Повна переробка скриптів FDDA — краща стабільність і плавніші переходи.'},
+      {n:'Enhanced Animations Food & Drinks',    a:'BarryBogs',                d:'Додатковий пак покращених анімацій їжі та напоїв.'},
+      {n:'Animations STALKER 2',                  a:'Anomaly-спільнота',                d:'Порт анімацій із S.T.A.L.K.E.R. 2 для NPC та оточення.'},
+      {n:'Reanimation Actor',                     a:'Anomaly-спільнота',                d:'Перероблені анімації персонажа: ходьба, біг, присідання.'},
+      {n:'Torch Reanimation',                     a:'Ishtar',                           d:'Нові плавні анімації для ліхтарика.'},
+      {n:'Lowered Weapon Sprint Animation',      a:'Bordhard',                d:'Анімація опускання зброї під час спринту.'},
+      {n:'New Medkits & Exo Animations',          a:'Anomaly-спільнота',                d:'Нові анімації використання аптечок та екзоскелетних костюмів.'},
+      {n:'Cooking Animation System',              a:'Feel_there',                d:'Анімоване приготування їжі біля вогнища.'},
+      {n:'Glowsticks',                            a:'Trokair',                d:'Світні палички як джерело портативного освітлення.'},
+      {n:'Glowsticks Reanimated',                 a:'Trokair',                d:'Покращені анімації для світних паличок.'},
+      {n:'NPC Art Anim Light',                    a:'Demonized',                d:'Покращені анімації NPC при використанні зброї та взаємодії з оточенням.'},
+    ]
+  },
+  {
+    icon:'🗺', name:'СВІТ, ЛОКАЦІЇ ТА СХОВОК',
+    mods:[
+      {n:'ReDone North Maps',                     a:'ReDone Team',                      d:'Перероблені північні локації: покращена розстановка об\'єктів і деталізація.'},
+      {n:'ReDone South Maps',                     a:'ReDone Team',                      d:'Перероблені південні локації з оновленим наповненням.'},
+      {n:'Furniture',                             a:'Anomaly-спільнота',                d:'Додаткові меблі в існуючих будівлях — більше деталей і духу населеності.'},
+      {n:'Hideout Furniture',                     a:'Anomaly-спільнота',                d:'Меблі та предмети інтер\'єру для особистого сховку.'},
+      {n:'Hideout Furniture Expansion',           a:'Balmo',                d:'Розширення асортименту меблів сховку.'},
+      {n:'HFE Ammo Box Patch',                    a:'Balmo',                            d:'Патч сумісності ящиків із набоями для HFE.'},
+      {n:'Even More Hideout Furniture',           a:'Sclera',                d:'Ще більше варіантів декору та меблів для сховку.'},
+      {n:'Hideout Furniture Crafting Sandbox',    a:'Sclera',                d:'Система крафту і розстановки меблів у режимі вільного будівництва.'},
+    ]
+  },
+  {
+    icon:'👾', name:'AI, A-LIFE ТА БОЙОВА СИСТЕМА',
+    mods:[
+      {n:'Performance A-Life',                    a:'Anomaly-спільнота',                d:'Оптимізація A-Life для стабільного FPS при великій кількості активних NPC.'},
+      {n:'REBOUND A-Life',                        a:'Skelote',                d:'Переробка A-Life: реалістична поведінка сталкерів, маршрути, реакції на події Зони.'},
+      {n:'ReDone Combat Semi-Radiant',            a:'ReDone Team',                      d:'Покращена бойова система з елементами процедурної генерації бойових подій.'},
+      {n:'ReDone Combat AI',                      a:'Radiantby',                      d:'Переробка ШІ в бою: тактика, укриття, флангові маневри.'},
+      {n:'Stealth',                               a:'xcvb',                             d:'Переробка прихованості: виявлення залежить від освітлення, дистанції та руху. Стелс нарешті працює.'},
+      {n:'NPC Vision Through Vegetation Fix',    a:'Rama',                d:'NPC більше не бачать гравця наскрізь крізь кущі й рослинність.'},
+      {n:"Arszi's Controller Overhaul",          a:'Arszi',                            d:'Повна переробка контролера — нові механіки атак, психічний вплив, устрашаюча аура.'},
+      {n:'Night Mutants',                         a:'TDLemon',                d:'Мутанти агресивніші вночі — підвищує небезпеку нічних вилазок.'},
+      {n:'Mutant Replacement Pack (REPACK)',      a:'Anomaly-спільнота',                d:'Заміна моделей мутантів на детальніші та страшніші версії.'},
+      {n:'The Walking Dead',                      a:'Anomaly-спільнота',                d:'Зомбі-режим — підвищена агресія зомбі-мутантів.'},
+    ]
+  },
+  {
+    icon:'🧪', name:'АНОМАЛІЇ ТА АРТЕФАКТИ',
+    mods:[
+      {n:'Spatial Anomalies 1.0',                 a:'Anomaly-спільнота',                d:'Нові типи просторових аномалій з унікальними ефектами.'},
+      {n:'Anomaly Arrival',                       a:'Solarint',                d:'Переробка появи аномалій — динамічніша та непередбачувана розстановка.'},
+      {n:'Artefact Renovation',                   a:'Deanon',            d:'Переробка характеристик артефактів, властивості для "сміттєвих" артефактів.'},
+      {n:'Fixed Artefacts Visual',                a:'Deanon',                            d:'Виправлення візуальних багів артефактів — коректне відображення та свічення.'},
+      {n:'Fixed Artifact (Strogglet15)',          a:'Strogglet15',                      d:'Патч для артефактів із непрацюючими ефектами.'},
+      {n:"Deanon's Artefact Pack",               a:'Deanon',                           d:'Авторський пак нових артефактів із унікальними механіками та балансом.'},
+      {n:'Devices of Anomaly Redone',             a:'BarryBogs',                d:'Перероблені детектори аномалій — покращена механіка та візуалізація.'},
+      {n:'Anomaly Lootboxes',                     a:'Anomaly-спільнота',                d:'Скрині з видобутком у аномальних зонах — ризик та нагорода.'},
+    ]
+  },
+  {
+    icon:'📋', name:'КВЕСТИ, ЗАВДАННЯ ТА ДІАЛОГИ',
+    mods:[
+      {n:'Storylines v3 (Lost to the Zone)',      a:'DoctorX (DRX) / Anomaly Team',    d:'Сюжетні лінії "Lost to the Zone": 4 частини — Living Legend, Mortal Sin, Operation Afterglow, Hollow Boundaries. Вбудовано в Anomaly 1.5.'},
+      {n:'New Tasks — iTheon',                    a:'iTheon',                           d:'Великий пак нових завдань із різноманітним контентом та цікавими історіями.'},
+      {n:'iTheon PDA Taskboard',                  a:'iTheon',                           d:'Покращена дошка завдань у КПК — зручний інтерфейс активних квестів.'},
+      {n:'RF Receiver Tasks',                     a:'Anomaly-спільнота',                d:'Завдання через радіоприймач — перехоплення сигналів, пошук схованок.'},
+      {n:'Dynamic Dialog UI',                     a:'Demonized',                   d:'Переробка інтерфейсу діалогів: список вправо, плавні переходи, фокус на NPC.'},
+    ]
+  },
+  {
+    icon:'💊', name:'ВИЖИВАННЯ ТА ЗДОРОВ\'Я',
+    mods:[
+      {n:'Grok Body Health System Redux (BHS)',   a:'Grok',                             d:'Ранення по частинах тіла: переломи, кровотечі, контузії. Кожна кінцівка лікується окремо.'},
+      {n:'EFT Interface for BHS',                 a:'Anomaly-спільнота',                d:'Інтерфейс у стилі Escape from Tarkov для BHS.'},
+      {n:'Food Degradation',                      a:'Arszi',                d:'Продукти псуються з часом — стимулює реалістичне управління припасами.'},
+      {n:'Fillable Canteens',                     a:'RavenAscendant',                d:'Багаторазові фляги — набирати воду з водойм Зони.'},
+      {n:'System of Toxins (Optional)',           a:'Arszi',                d:'Система отрут і токсинів: заражена місцевість, хімічні загрози, антидоти.'},
+      {n:'Radioactive & Toxic Air',               a:'Arszi',                d:'Радіоактивне та токсичне повітря в певних локаціях — потрібен захист дихання.'},
+      {n:'Drunks Enhanced Toxic',                 a:'Anomaly-спільнота',                d:'Покращена система сп\'яніння з токсичними ефектами від алкоголю та наркотиків.'},
+    ]
+  },
+  {
+    icon:'🎒', name:'ІНВЕНТАР ТА СПОРЯДЖЕННЯ',
+    mods:[
+      {n:'Backpacks of the Zone',                 a:'BarryBogs',                d:'Різні типи рюкзаків із різними характеристиками місткості.'},
+      {n:'Larger Consumables',                    a:'Anomaly-спільнота',                d:'Збільшені іконки витратних матеріалів у інвентарі.'},
+      {n:'Larger Devices',                        a:'Anomaly-спільнота',                d:'Збільшені іконки пристроїв та детекторів у інвентарі.'},
+      {n:'Vanilla Models',                        a:'Anomaly Team',                     d:'Оригінальні моделі предметів із покращеними текстурами.'},
+      {n:'HD Models',                             a:'Azetrix / спільнота',              d:'Висококякісні 3D-іконки предметів у інвентарі.'},
+      {n:'Icons',                                 a:'Anomaly-спільнота',                d:'Перероблені іконки предметів — чіткіші та інформативніші.'},
+      {n:'Icons Ammo',                            a:'Anomaly-спільнота',                d:'Нові іконки боєприпасів із відмінністю за типом і калібром.'},
+      {n:"Cr3pi's Icons",                        a:'Cr3pi',                            d:'Авторський пак іконок від Cr3pi в єдиному детальному стилі.'},
+      {n:'New Mutant Icons & Parts',              a:'TDLemon',                          d:'Нові іконки для частин тіл мутантів та трофеїв.'},
+      {n:'Armor Nosorog Monolith Backpack',       a:'Anomaly-спільнота',                d:'Модель рюкзака для екзоскелета «Носоріг» Моноліта.'},
+      {n:'Lockpicking Skill for Lootboxes',       a:'ahuyn',                d:'Навик зламування замків: відкривати закриті скрині з видобутком.'},
+    ]
+  },
+  {
+    icon:'📱', name:'КПК ТА ІНТЕРФЕЙС',
+    mods:[
+      {n:'Reners PDA Renewed',                    a:'Rener',                            d:'Повна переробка інтерфейсу КПК — зручний, інформативний дизайн.'},
+      {n:'Rener PDA Sounds & Vibrate',            a:'Rener',                            d:'Звуки сповіщень та імітація вібрації для подій у КПК.'},
+      {n:'PDA Hacking',                           a:'Demonized',                d:'Міні-гра зламу КПК ворогів — розвіддані, координати схованок.'},
+    ]
+  },
+  {
+    icon:'🏃', name:'МЕХАНІКИ ГРАВЦЯ',
+    mods:[
+      {n:'Soulslike Gamemode',                    a:'Jabbers',                d:'Новий тип гри. Замість простої смерті вас підбирає випадковий сталкер із Зони і лікує ваші поранення — але ви залишаєтесь в борзі перед ним. Механіка натхненна серіями Dark Souls.'},
+      {n:'Ledge Grabbing / Mantling',             a:'Demonized',   d:'Система захоплення виступів — карабкання на підвищення руками.'},
+      {n:'Anomaly Skill System',                  a:'Haru',                d:'Система прокачки навичок: досвід від дій, розблокування перків.'},
+      {n:'Skills Expansion',                      a:'Haru',                d:'Розширення дерева навичок — нові гілки та унікальні здібності.'},
+      {n:'Limited (And Paid) Fast Travel',        a:'Utjan',                d:'Обмежене швидке переміщення за гроші — більший реалізм.'},
+      {n:'THAP Rework',                           a:'The_Un_Known',           d:'Переробка THAP: ~90% моделей рук замінено, нові камуфляжі, 2K/4K текстури.'},
+      {n:'Dismemberment',                         a:'Ghen Tuong',                d:'Система розчленування — реалістичні пошкодження кінцівок мутантів.'},
+      {n:'Mugging Squads',                        a:'Mp_p',                   d:'Банди мародерів, що нападають із метою пограбування.'},
+    ]
+  },
+  {
+    icon:'⚖', name:'БАЛАНС, ФРАКЦІЇ ТА ІНШЕ',
+    mods:[
+      {n:'Duty Expansion',                        a:'Anomaly Team',                d:'Розширення фракції «Борг» — нові квести, діалоги, NPC.'},
+      {n:"Desman's Horror Overhaul",             a:'Desman',                           d:'Переробка атмосфери жаху: лякаючі звуки, випадкові події, психічні ефекти.'},
+      {n:'Ukrainian Voices (Radio & Text)',       a:'Anomaly-спільнота',                d:'Україномовні голоси для радіопереговорів і текстових повідомлень.'},
+      {n:'English Voices Complete',               a:'Anomaly-спільнота',                d:'Повне англійське озвучення для всіх NPC та радіопереговорів.'},
+    ]
+  },
+];
+
+let num = 1;
+const container = document.getElementById('mod-list');
+CATS.forEach(cat => {
+  const sec = document.createElement('div');
+  sec.className = 'category';
+  const cnt = cat.mods.length;
+  const suffix = cnt===1?'мод':cnt<5?'моди':'модів';
+  const hdr = document.createElement('div');
+  hdr.className = 'cat-header';
+  hdr.innerHTML = `<span>${cat.icon}&nbsp;&nbsp;${cat.name}</span><span class="cat-count">${cnt} ${suffix}</span>`;
+  sec.appendChild(hdr);
+  cat.mods.forEach(mod => {
+    const row = document.createElement('div');
+    row.className = 'mod-row';
+    let tags = '';
+    if(mod.own) tags += '<span class="tag tag-own">✦ Авторський</span>';
+    if(mod.req) tags += '<span class="tag tag-req">Обов\'язковий</span>';
+    row.innerHTML = `
+      <div class="col col-num">${num++}</div>
+      <div class="col col-name">${mod.n}${tags?'<div>'+tags+'</div>':''}</div>
+      <div class="col col-auth">${mod.a}</div>
+      <div class="col col-desc">${mod.d}</div>`;
+    sec.appendChild(row);
+  });
+  container.appendChild(sec);
+});
+const total = num - 1;
+document.getElementById('total-line').innerHTML =
+  `Усього модів: <strong>${total}</strong> | Категорій: <strong>${CATS.length}</strong>`;
+
+// Додаємо текст про авторів
+const creditsText = document.createElement('div');
+creditsText.style.marginTop = '32px';
+creditsText.style.padding = '20px 24px';
+creditsText.style.background = '#f5f5f5';
+creditsText.style.borderLeft = '4px solid var(--red)';
+creditsText.style.fontSize = '0.9rem';
+creditsText.style.color = '#333';
+creditsText.style.lineHeight = '1.6';
+creditsText.innerHTML = `<strong>Подяка:</strong> Друзі, створення Build Trinity — це результат роботи величезної спільноти. Якщо я випадково пропустив ваше ім'я або вказав невірне авторство для вашого мода, прошу вибачення та запрошую до діалогу в Discord. Напишіть мені, і я обов'язково додам вас до переліку авторів та розділу подяк. Разом ми робимо Зону кращою!.`;
+container.parentElement.appendChild(creditsText);
+</script>
+</body>
+</html>
