@@ -469,6 +469,7 @@
     <div>
       <div class="install-section">
         <div class="install-section-title">⬇️ Завантаження та встановлення збірки</div>
+		 <div class="install-step"><div class="install-dot"></div><p>Для встановлення збірки потрібно 220 гігабайт вільного місця: 80 гігабайт для інсталятора та 130 гігабайт для збірки</p></div>
 		 <div class="install-step"><div class="install-dot"></div><p>Завантажте офіційний інсталятор збірки <strong>Build Trinity</strong> (TrinityInstaller.exe) за допомогою кнопки нижче</p></div>
         <div class="install-step"><div class="install-dot"></div><p>Запустіть <strong>TrinityInstaller.exe</strong>, виберіть потрібну мову інтерфейсу та місце встановлення на вашому диску</p></div>
               <div class="install-step"><div class="install-dot"></div><p>Натисніть кнопку встановлення та чекайте, поки інсталятор завершить процес. Якщо у вас не встановлено 7-Zip, інсталятор встановить його автоматично</p></div>
@@ -568,6 +569,91 @@
     <div class="winprep-final">📝 Після встановлення всіх компонентів обов'язково перезавантажте комп'ютер.</div>
   </div>
 </div>
+
+<!-- ══ UA LOCALIZATION MOD ══ -->
+<div class="ua-block">
+  <button class="ua-toggle" onclick="var b=document.getElementById('ua-body');var a=this.querySelector('.ua-toggle-arrow');b.classList.toggle('open');a.classList.toggle('open');">
+    <div class="ua-flag-css"></div><span class="ua-toggle-title">UA Localization: Локалізація та озвучення</span>
+    <span class="ua-toggle-arrow">▼</span>
+  </button>
+  <div class="ua-body" id="ua-body">
+    <div class="ua-img-container">
+      <img class="ua-hero-img" src="ua.jpg" alt="UA Localization">
+    </div>
+    <div class="ua-hero">
+      <div class="ua-hero-right">
+        <div class="ua-main-title">UA Localization</div>
+        <div class="ua-sub">[ Локалізація та озвучення проекту Build Trinity ]</div>
+        <div class="ua-authors">
+          <strong>Локалізація:</strong> Ivan Danko &nbsp;|&nbsp; <strong>Озвучення:</strong> Yurii2321,Trend_RF
+        </div>
+        <div class="ua-intro">Зона нарешті заговорила рідною мовою. Кожен діалог, кожна фраза в бою, кожен текст у меню — все звучить природно та професійно. Це не просто переклад — це повне занурення для українського гравця.</div>
+        <div class="ua-sections">
+          <div class="ua-section">
+            <div class="ua-section-title">📜 Текстова локалізація</div>
+            <div class="ua-row"><div class="ua-row-ico">⚙️</div><p><strong>Технічна реалізація:</strong> Кропітка робота зі скриптами та структурою сотень аддонів.</p></div>
+            <div class="ua-row"><div class="ua-row-ico">📦</div><p><strong>Масштаб:</strong> Близько 80% усіх модифікацій збірки перекладено та адаптовано вручну.</p></div>
+            <div class="ua-row"><div class="ua-row-ico">🔤</div><p><strong>Шрифт та кодування:</strong> Стабільна робота з українським шрифтом та коректне відображення текстів.</p></div>
+            <div class="ua-row"><div class="ua-row-ico">🛠️</div><p><strong>Сумісність:</strong> Усі переклади адаптовані під технічні особливості кожного мода збірки.</p></div>
+          </div>
+          <div class="ua-section">
+            <div class="ua-section-title">🎙️ Озвучення фракцій</div>
+            <div class="ua-row"><div class="ua-row-ico">🗣️</div><p><strong>Всі угруповання:</strong> Повноцінне українське озвучення усіх угруповань, крім «Моноліту», «Реннегатів» та «Бандитів».</p></div>
+            <div class="ua-row"><div class="ua-row-ico">🎭</div><p><strong>Емоційна глибина:</strong> Голоси додають грі зовсім іншого характеру та атмосфери.</p></div>
+            <div class="ua-row"><div class="ua-row-ico">🎬</div><p><strong>Режим стримера:</strong> Спеціальний мод для контент-мейкерів без проблем з авторськими правами.</p></div>
+            <div class="ua-row"><div class="ua-row-ico">📺</div><p><strong>Для ютуберів:</strong> Створюй контент з українським озвученням без обмежень платформ.</p></div>
+          </div>
+          <div class="ua-section">
+            <div class="ua-section-title">👥 Команда</div>
+            <div class="ua-row"><div class="ua-row-ico">💻</div><p><strong>Ivan Danko</strong> — технічна реалізація локалізації, переклад 80% модифікацій збірки.</p></div>
+            <div class="ua-row"><div class="ua-row-ico">🎤</div><p><strong>Yurii2321,Trend_RF</strong> — голос угруповань, автори звукових модів та режиму для стримерів.</p></div>
+          </div>
+          <div class="ua-section">
+            <div class="ua-section-title">📦 Склад пакету</div>
+            <div class="ua-row"><div class="ua-row-ico">🌐</div><p><strong>Основна локалізація:</strong> Повний переклад інтерфейсу, діалогів та текстів завдань.</p></div>
+            <div class="ua-row"><div class="ua-row-ico">🔊</div><p><strong>UA озвучення:</strong> Звуковий пакет для всіх угруповань гри.</p></div>
+            <div class="ua-row"><div class="ua-row-ico">🎙️</div><p><strong>Streamer Mode:</strong> <code>UA_Localization_Trend_sounds_STREAMER_MODE</code> — окремий мод для стримерів.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+   <div class="ua-footer">Зона говорить українською. Слава Україні! <div class="ua-flag-css" style="display:inline-block;margin-left:6px;vertical-align:middle;"></div></div>
+  </div>
+</div>
+
+<style>
+/* ══════ UA LOCALIZATION SYSTEM ══════ */
+.ua-block{background:linear-gradient(160deg,#0D1520 0%,#101828 100%);border-top:2px solid #2A3A60;border-bottom:3px solid #1A3A80;}
+.ua-toggle{width:100%;background:linear-gradient(90deg,rgba(90,120,220,.06),transparent);border:none;border-left:3px solid #5A7FCC;padding:16px 44px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;}
+.ua-toggle:hover{background:linear-gradient(90deg,rgba(90,120,220,.1),transparent);}
+.ua-flag-css{display:inline-block;width:24px;height:16px;margin-right:8px;border-radius:2px;background:linear-gradient(to bottom,#005BBB 50%,#FFD500 50%);vertical-align:middle;flex-shrink:0;}.ua-toggle-title{font-family:'Oswald',sans-serif;font-size:.95rem;color:#5A7FCC;letter-spacing:2px;text-transform:uppercase;flex:1;}
+.ua-toggle-arrow{color:#5A7FCC;font-size:1rem;transition:transform .3s;font-family:'Oswald',sans-serif;}
+.ua-toggle-arrow.open{transform:rotate(180deg);}
+.ua-body{display:none;padding:0 44px 28px;}
+.ua-body.open{display:block;}
+.ua-img-container{display:flex;justify-content:center;margin-bottom:20px;}
+.ua-hero-img{max-width:575px;width:100%;border-radius:4px;border:2px solid #1A2A60;box-shadow:0 0 30px rgba(42,80,200,.4);}
+.ua-hero{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:20px;align-items:start;}
+.ua-hero-right{}
+.ua-main-title{font-family:'Oswald',sans-serif;font-size:1.3rem;color:#5A7FCC;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;margin-top:12px;text-align:center;}
+.ua-sub{font-family:'Oswald',sans-serif;font-size:.8rem;color:#6A5A20;letter-spacing:3px;margin-bottom:10px;text-align:center;}
+.ua-authors{font-size:.75rem;color:#3A5070;margin-bottom:12px;line-height:1.6;border-left:2px solid #1A3060;padding-left:10px;}
+.ua-authors strong{color:#D4A820;}
+.ua-intro{font-size:.8rem;color:#5A7A9A;line-height:1.65;margin-bottom:14px;font-style:italic;}
+.ua-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.ua-section{background:#090D18;border:1px solid #1A2A50;border-radius:3px;padding:12px 14px;}
+.ua-section-title{font-family:'Oswald',sans-serif;font-size:.78rem;color:#D4A820;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #3A3010;}
+.ua-row{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start;}
+.ua-row:last-child{margin-bottom:0;}
+.ua-row-ico{flex:0 0 16px;font-size:.75rem;margin-top:1px;}
+.ua-row p{font-size:.75rem;color:#4A6070;line-height:1.5;}
+.ua-row p strong{color:#D4A820;}
+.ua-row p code{font-size:.7rem;color:#5A7AAA;background:#0A1020;padding:1px 4px;border-radius:2px;}
+.ua-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#5A4A10;font-style:italic;letter-spacing:1px;}
+</style>
+
+
+
 
 <!-- ══ SUN RISE ══ -->
 <div class="sun-block">
@@ -958,42 +1044,49 @@
         <div class="grass-main-title">🌿 Grass Stealth Mod</div>
         <div class="grass-sub">[ Реалістична механіка стелсу для Build Trinity ]</div>
         <div class="grass-authors"><strong>Автор:</strong> Ivan Danko</div>
-        <div class="grass-intro">Забудь про грубі засідки в порожнячих кімнатах. Тепер висока трава — твій найкращий союзник у виживанні. Присядь, чекай та спостерігай. Враг не матиме жодного шансу.</div>
+        <div class="grass-intro">Присів у траві — і патруль пройшов повз. Не помітив. Трава тепер не просто декорація — це твій щит, якщо вмієш ним користуватись.</div>
         <div class="grass-sections">
           <div class="grass-section">
             <div class="grass-section-title">👤 Динамічне маскування</div>
-            <div class="grass-row"><div class="grass-row-ico">🧍</div><p><strong>На повний зріст:</strong> Видимість максимальна — ворог легко помітить твій силует.</p></div>
-            <div class="grass-row"><div class="grass-row-ico">🤐</div><p><strong>Присідання в траві:</strong> Помітність кардинально падає — ти стаєш частиною ландшафту.</p></div>
-            <div class="grass-row"><div class="grass-row-ico">📊</div><p><strong>Градієнт видимості:</strong> Чим нижче ти присідаєш, тим менше шансів бути виявленим.</p></div>
-            <div class="grass-row"><div class="grass-row-ico">⏱️</div><p><strong>Адаптація:</strong> Ворог потребує часу, щоб акліматизуватись до твоєї позиції.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🧍</div><p><strong>На повний зріст:</strong> Ти на виду — ворог помітить тебе одразу.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🤐</div><p><strong>Присідання в траві:</strong> Помітність різко падає — ти зливаєшся з ландшафтом.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">📊</div><p><strong>Дистанція має значення:</strong> Чим далі ворог — тим менший шанс що він тебе помітить.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🔄</div><p><strong>Синхронізація з індикатором:</strong> Датчик стелсу 83-Stealth відображає реальний рівень твого маскування.</p></div>
           </div>
           <div class="grass-section">
-            <div class="grass-section-title">🧠 Логіка ШІ</div>
-            <div class="grass-row"><div class="grass-row-ico">🎯</div><p><strong>Угруповання НПС:</strong> Снайпери помічають краще, розвідники стежать активніше, гарнізони — тупіші.</p></div>
-            <div class="grass-row"><div class="grass-row-ico">🐺</div><p><strong>Види мутантів:</strong> Псевдопси нюхають через траву, але м'ясоїди покладаються на зір.</p></div>
-            <div class="grass-row"><div class="grass-row-ico">🌙</div><p><strong>Час доби:</strong> Ніч краще на 40% — враги менш уважні при низькій видимості.</p></div>
-            <div class="grass-row"><div class="grass-row-ico">💨</div><p><strong>Вітер:</strong> Попутний вітер розносить твій запах далі — будь обережним.</p></div>
+            <div class="grass-section-title">🧠 Логіка виявлення</div>
+            <div class="grass-row"><div class="grass-row-ico">👁️</div><p><strong>Кут зору:</strong> Зайди ззаду — не побачать навіть впритул. Спереду — є межа.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🐺</div><p><strong>Різні фракції:</strong> Монолітівці пильніші за бандитів, вчені гірші за військових.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🌙</div><p><strong>Час доби:</strong> Вночі зона виявлення впритул скорочується вдвічі.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🧠</div><p><strong>Пам'ять НПС:</strong> Якщо тебе помітили — 15 секунд вони пам'ятають де ти. Не ховайся одразу.</p></div>
           </div>
           <div class="grass-section">
-            <div class="grass-section-title">📡 Зворотний зв'язок</div>
-            <div class="grass-row"><div class="grass-row-ico">✅</div><p><strong>Успіх:</strong> Зелена іконка на ПДА — трава приховала тебе від ворога.</p></div>
-            <div class="grass-row"><div class="grass-row-ico">⚠️</div><p><strong>Увага:</strong> Жовта іконка — ворог шукає, але ще не знайшов точну позицію.</p></div>
-            <div class="grass-row"><div class="grass-row-ico">❌</div><p><strong>Виявлено:</strong> Червона іконка — вороги знайшли тебе, потрібно рухатись або стріляти.</p></div>
-            <div class="grass-row"><div class="grass-row-ico">🔔</div><p><strong>Сповіщення:</strong> Опціональні PDA алерти дадуть про зміну статусу маскування.</p></div>
+            <div class="grass-section-title">⚡ Коли стелс вимикається</div>
+            <div class="grass-row"><div class="grass-row-ico">🔫</div><p><strong>Постріл без глушника:</strong> 3 секунди — і ти на виду. Глушник зберігає маскування.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🔪</div><p><strong>Удар холодною зброєю:</strong> Ніж чи сокира — теж розкривають позицію на 3 секунди.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🔦</div><p><strong>Ліхтарик:</strong> Увімкнув — світишся як маяк. Стелс миттєво вимикається.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🌾</div><p><strong>Низька трава:</strong> Якщо трава занадто низька — маскування не працює, гра повідомить тебе.</p></div>
+          </div>
+          <div class="grass-section">
+            <div class="grass-section-title">🌦️ Погода та час</div>
+            <div class="grass-row"><div class="grass-row-ico">🌧️</div><p><strong>Дощ та шторм:</strong> Вороги бачать гірше — зона виявлення впритул 3 метри замість 7.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🌫️</div><p><strong>Туман:</strong> Ті самі умови що й дощ — ідеальний час для тихої роботи.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">☁️</div><p><strong>Темна хмарність:</strong> Проміжний варіант — зона виявлення 5 метрів.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">☀️</div><p><strong>Ясний день:</strong> Найгірші умови для стелсу — повний радіус виявлення 7 метрів.</p></div>
           </div>
           <div class="grass-section">
             <div class="grass-section-title">⚙️ Налаштування MCM</div>
-            <div class="grass-row"><div class="grass-row-ico">📏</div><p><strong>Дистанція маскування:</strong> Регулюй від 20 до 150 метрів в залежності від складності.</p></div>
-            <div class="grass-row"><div class="grass-row-ico">🎛️</div><p><strong>Множник маскування:</strong> Від 0.5× (майже неможливо) до 2.0× (надто легко) — обери свій рівень.</p></div>
-            <div class="grass-row"><div class="grass-row-ico">🌾</div><p><strong>Висота трави:</strong> Мод врахує щільність рослинності на кожній ділянці території.</p></div>
-            <div class="grass-row"><div class="grass-row-ico">🎮</div><p><strong>Меню гри:</strong> Усі налаштування доступні прямо в MCM без перезавантаження.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">📏</div><p><strong>Дистанція виявлення:</strong> Від 20 до 150 метрів — обери свій рівень складності.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🎛️</div><p><strong>Множник маскування:</strong> Наскільки сильно трава знижує видимість (за замовчуванням 96%).</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🌾</div><p><strong>Мінімальна висота трави:</strong> Нижче порогу — стелс не активується.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🌙</div><p><strong>Нічний режим:</strong> Окремий множник маскування для нічного часу.</p></div>
           </div>
           <div class="grass-section">
             <div class="grass-section-title">🎯 Тактичні поради</div>
-            <div class="grass-row"><div class="grass-row-ico">🏹</div><p><strong>Засідка:</strong> Прихований у траві снайпер — це смертельна зброя в правильних руках.</p></div>
-            <div class="grass-row"><div class="grass-row-ico">🤫</div><p><strong>Безшумність:</strong> Крадій в траві + тихий пістолет = безпроблемне завдання.</p></div>
-            <div class="grass-row"><div class="grass-row-ico">🚀</div><p><strong>Прорив:</strong> Якщо виявлено — піди в наступ з місця або шукай наступного укриття.</p></div>
-            <div class="grass-row"><div class="grass-row-ico">🧑‍🤝‍🧑</div><p><strong>Групова тактика:</strong> Кілька сталкерів у траві розосередять вогонь противника.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🏹</div><p><strong>Глушник — твій друг:</strong> Зі зброєю з глушителем стелс не переривається після пострілу.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🤫</div><p><strong>Заходь ззаду:</strong> Навіть впритул ззаду тебе не помітять — використовуй це.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">🌧️</div><p><strong>Чекай погоди:</strong> Дощ і туман — найкращий час для проникнення на базу.</p></div>
+            <div class="grass-row"><div class="grass-row-ico">⏱️</div><p><strong>Після виявлення:</strong> Не ховайся одразу — зачекай 15 секунд поки НПС забуде де ти.</p></div>
           </div>
         </div>
       </div>
@@ -1031,6 +1124,7 @@
 .grass-row p strong{color:#7AAAA0;}
 .grass-footer{text-align:center;margin-top:14px;font-size:.78rem;color:#2A4A50;font-style:italic;letter-spacing:1px;}
 </style>
+
 
 <style>
 /* ══════ PET COMPANION SYSTEM ══════ */
