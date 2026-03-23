@@ -48,10 +48,10 @@
   .contacts-row-top{border-bottom:1px solid #1E2A50;padding-bottom:8px;margin-bottom:8px;}
   .sysreq{background:linear-gradient(90deg,#0D0D20 0%,#111830 100%);padding:20px 44px;border-bottom:2px solid #1E2A50;}
   .sysreq-title{font-family:'Oswald',sans-serif;font-size:.85rem;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
-  .sysreq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px 20px;}
-  .sysreq-item{display:flex;flex-direction:column;gap:2px;}
-  .sysreq-item .label{font-size:.68rem;color:#556688;text-transform:uppercase;letter-spacing:1.5px;}
-  .sysreq-item .value{font-size:.82rem;color:#99AACC;font-weight:600;}
+  .sysreq-grid{display:grid;grid-template-columns:1.6fr 1fr 1.8fr 1fr 1fr 1.6fr;gap:10px 20px;}
+  .sysreq-item{display:flex;flex-direction:column;gap:2px;align-items:center;text-align:center;}
+  .sysreq-item .label{font-size:.68rem;color:#556688;text-transform:uppercase;letter-spacing:1.5px;white-space:nowrap;}
+  .sysreq-item .value{font-size:.82rem;color:#99AACC;font-weight:600;white-space:nowrap;}
   .sysreq-note{margin-top:12px;font-size:.75rem;color:#445577;font-style:italic;line-height:1.5;}
   .project-desc{background:linear-gradient(160deg,#0E0E22 0%,#12182E 100%);padding:28px 44px 32px;border-bottom:3px solid var(--blue);}
   .project-desc .sect-title{font-family:'Oswald',sans-serif;font-size:1rem;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
@@ -423,30 +423,30 @@
 <div class="install-block">
   <div class="install-title">📦 Installation and Setup Guide</div>
   <div class="install-cols">
+
     <div>
       <div class="install-section">
         <div class="install-section-title">⬇️ Downloading and Installing the Pack</div>
+        <div class="install-step"><div class="install-dot"></div><p>To install the build you need 220 GB of free space: 80 GB for the installer and 130 GB for the build</p></div>
         <div class="install-step"><div class="install-dot"></div><p>Download the official <strong>Build Trinity</strong> installer (TrinityInstaller.exe) using the button below</p></div>
         <div class="install-step"><div class="install-dot"></div><p>Run <strong>TrinityInstaller.exe</strong>, select your preferred interface language and installation directory</p></div>
         <div class="install-step"><div class="install-dot"></div><p>Click the install button and wait for the installer to finish. If 7-Zip is not installed, the installer will install it automatically</p></div>
         <div class="install-step"><div class="install-dot"></div><p>After installation, the main game folder will be named <em>Anomaly_build_TRINITY</em> — do not rename it</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>The installer will automatically install all the latest fixes and updates; follow the news for future updates</p></div>
       </div>
-      <div class="install-section" style="margin-top:14px;">
+    </div>
+
+    <div>
+      <div class="install-section">
         <div class="install-section-title">🔧 Downloading and Installing the Fix</div>
-        <div class="install-step"><div class="install-dot"></div><p>Download the fix</p></div>
-        <div class="install-step"><div class="install-dot"></div><p>Open and extract <strong>using 7z archiver only</strong></p></div>
-        <div class="install-step"><div class="install-dot"></div><p>Copy the archive contents to the game folder and confirm file replacement</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>Download the Patch and Fix Installer</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>Select the path to your build folder (<em>Anomaly_build_TRINITY</em>)</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>The installer will ask if you have installed the global patch. If you have <strong>not</strong> downloaded the global patch, answer <strong>NO</strong> — it will install all patches and fixes for you. If you have installed the global patch, answer <strong>YES</strong> — it will install only the necessary fixes</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>Wait for the installation to complete</p></div>
         <div class="install-step"><div class="install-dot"></div><p>All patches and fixes are available in the <a href="https://t.me/frozen_zone" target="_blank" rel="noopener" style="color:var(--gold);">Telegram channel</a></p></div>
       </div>
     </div>
-    <div>
-      <div class="install-section">
-        <div class="install-section-title">▶️ Launch Configuration Order</div>
-        <div class="install-step"><div class="install-num">1</div><p>Go to the game folder, open the <em>MO</em> subfolder and run <em>run_mo2.bat</em> — it will configure <strong>Mod Organizer</strong> for you</p></div>
-        <div class="install-step"><div class="install-num">2</div><p>Find <em>Launcher_TRINITY.exe</em> in the game folder and create a desktop shortcut for launching the pack. Always launch the game through the launcher.</p></div>
-        <div class="install-step"><div class="install-num">3</div><p>If step 1 did not work, go to the game folder's MO subfolder and run <em>ModOrganizer.exe</em>. If it asks for the game path, point it to <em>Anomaly_build_TRINITY</em>. If MO cannot find <em>AnomalyDX11AVX.exe</em>, click the executable selector at the top right next to the <em>RUN</em> button, choose Edit, click the + icon and select <em>Add from file</em>, navigate to the game folder, open bin and select <em>AnomalyDX11AVX.exe</em>, then click OK.</p></div>
-      </div>
-    </div>
+
   </div>
   <div class="install-btns">
     <a class="install-btn" href="https://nx92699.your-storageshare.de/s/g7MwH8Nxgifr8PB" target="_blank" rel="noopener">⬇️&nbsp;Download Installer</a>
@@ -1417,6 +1417,7 @@ const CATS = [
       {n:'DLTX MiniMod Pack (Demonized)',          a:'Demonized',                   d:'Large pack of small DLTX-compatible minimods: A-Life fixes, loot balancing, radioactive air tweaks, etc.'},
       {n:'Trinity Launcher',                        a:'Ivan Danko',            own:true,  d:'Original development. Launcher for starting the game with season selection: automatically activates the required mods in MO, clears shader cache and applies the corresponding graphics config — no need to enter Mod Organizer before each launch.'},
       {n:'Trinity Installer',                       a:'Ivan Danko',            own:true,  d:'Original development. Automatic installer for the Build Trinity pack. Simply download TrinityInstaller.exe, run it, specify the install location — the installer will automatically download the pack archives and install everything to the selected directory. No need to manually download files or extract archives.'},
+      {n:'Trinity Installer Fix',                   a:'Ivan Danko',            own:true,  d:'Original development. Automatic installer for patches and fixes for the Build Trinity pack. Download the installer, point it to your Anomaly_build_TRINITY folder — it will automatically install all the latest fixes.'},
       {n:'Mod Organizer 2 Launch Automation',      a:'Serhii Olasiuk',                       d:'Automatically connects the mods folder regardless of where you installed the pack.'},
     ]
   },

@@ -57,10 +57,10 @@
   /* ══════ SYSTEM REQ ══════ */
   .sysreq{background:linear-gradient(90deg,#0D0D20 0%,#111830 100%);padding:20px 44px;border-bottom:2px solid #1E2A50;}
   .sysreq-title{font-family:'Oswald',sans-serif;font-size:.85rem;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
-  .sysreq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px 20px;}
-  .sysreq-item{display:flex;flex-direction:column;gap:2px;}
-  .sysreq-item .label{font-size:.68rem;color:#556688;text-transform:uppercase;letter-spacing:1.5px;}
-  .sysreq-item .value{font-size:.82rem;color:#99AACC;font-weight:600;}
+  .sysreq-grid{display:grid;grid-template-columns:1.6fr 1fr 1.8fr 1fr 1fr 1.6fr;gap:10px 20px;}
+  .sysreq-item{display:flex;flex-direction:column;gap:2px;align-items:center;text-align:center;}
+  .sysreq-item .label{font-size:.68rem;color:#556688;text-transform:uppercase;letter-spacing:1.5px;white-space:nowrap;}
+  .sysreq-item .value{font-size:.82rem;color:#99AACC;font-weight:600;white-space:nowrap;}
   .sysreq-note{margin-top:12px;font-size:.75rem;color:#445577;font-style:italic;line-height:1.5;}
 
   /* ══════ PROJECT DESCRIPTION ══════ */
@@ -471,33 +471,25 @@
         <div class="install-section-title">⬇️ Завантаження та встановлення збірки</div>
 		 <div class="install-step"><div class="install-dot"></div><p>Для встановлення збірки потрібно 220 гігабайт вільного місця: 80 гігабайт для інсталятора та 130 гігабайт для збірки</p></div>
 		 <div class="install-step"><div class="install-dot"></div><p>Завантажте офіційний інсталятор збірки <strong>Build Trinity</strong> (TrinityInstaller.exe) за допомогою кнопки нижче</p></div>
-        <div class="install-step"><div class="install-dot"></div><p>Запустіть <strong>TrinityInstaller.exe</strong>, виберіть потрібну мову інтерфейсу та місце встановлення на вашому диску</p></div>
-              <div class="install-step"><div class="install-dot"></div><p>Натисніть кнопку встановлення та чекайте, поки інсталятор завершить процес. Якщо у вас не встановлено 7-Zip, інсталятор встановить його автоматично</p></div>
-        <div class="install-step"><div class="install-dot"></div><p>Після встановлення головна папка гри буде називатись <em>Anomaly_build_TRINITY</em> — не змінюйте цю назву</p></div>
-      </div>
-      <div class="install-section" style="margin-top:14px;">
-        <div class="install-section-title">🔧 Завантаження та встановлення фіксу</div>
-        <div class="install-step"><div class="install-dot"></div><p>Завантажте фікс</p></div>
-        <div class="install-step"><div class="install-dot"></div><p>Відкривати та розпаковувати <strong>тільки архіватором 7z</strong></p></div>
-        <div class="install-step"><div class="install-dot"></div><p>Вміст архіву скопіюйте до папки з грою та погодьтесь із заміною файлів</p></div>
-        <div class="install-step"><div class="install-dot"></div><p>Всі патчі та фікси знаходяться в <a href="https://t.me/frozen_zone" target="_blank" rel="noopener" style="color:var(--gold);">телеграм-каналі</a></p></div>
-      </div>
+         <div class="install-step"><div class="install-dot"></div><p>Запустіть <strong>TrinityInstaller.exe</strong>, виберіть потрібну мову інтерфейсу та місце встановлення на вашому диску</p></div>
+         <div class="install-step"><div class="install-dot"></div><p>Натисніть кнопку встановлення та чекайте, поки інсталятор завершить процес. Якщо у вас не встановлено 7-Zip, інсталятор встановить його автоматично</p></div>
+         <div class="install-step"><div class="install-dot"></div><p>Після встановлення головна папка гри буде називатись <em>Anomaly_build_TRINITY</em> — не змінюйте цю назву</p></div>
+         <div class="install-step"><div class="install-dot"></div><p>Інсталятор автоматично встановить усі останні виправлення та оновлення; надалі слідкуйте за новинами</p></div>
+	  </div>
     </div>
 
     <div>
       <div class="install-section">
-        <div class="install-section-title">▶️ Порядок налаштування та запуску</div>
-        <div class="install-step"><div class="install-num">1</div><p>Зайдіть у папку з грою у папку <em>MO</em> та запустіть файл <em>run_mo2.bat</em> — він налаштує вам <strong>Mod Organizer</strong></p></div>
-        <div class="install-step"><div class="install-num">2</div><p>Знайдіть у папці з грою файл <em>Launcher_TRINITY.exe</em> і створіть ярлик на робочому столі для запуску збірки. Гру запускати тільки за допомогою лаунчера. </p></div>
-		<div class="install-step"><div class="install-num">3</div><p>Якщо з якоїсь причини пункт 1 не спрацював, Вам потрібно зайти в папку з грою в папку МО і запустити <em>ModOrganizer.exe</em>, якщо він запросить вказати шлях до папки з грою, вкажіть папку <em>Anomaly_build_TRINITY</em>, якщо у Вас МО не знаходить файл запуску гри <em>AnomalyDX11AVX.exe</em>, Вам потрібно в МО вгорі праворуч, ліворуч від кнопки <em>ЗАПУСТИТИ</em> натиснути на вікно з вибором файлу запуску гри, вище натиснути на редагувати, натиснути вище значка + і вибрати <em>Додати з файлу</em>, вибрати папку з грою, зайти в bin і вибрати <em>AnomalyDX11AVX.exe</em>, після чого праворуч нижче натиснути на ОК.
-
-
-. </p></div>
+        <div class="install-section-title">🔧 Завантаження та встановлення фіксу</div>
+        <div class="install-step"><div class="install-dot"></div><p>Завантажте Інсталятор патчів та виправлень</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>Вкажіть шлях до вашої збірки (Anomaly_build_TRINITY)</strong></p></div>
+        <div class="install-step"><div class="install-dot"></div><p>Інсталятор запитає вас, чи встановлювали ви глобальний патч. Якщо ви не завантажували глобальний патч, відповідайте «НІ», і він встановить для вас усі патчі та виправлення. Якщо ви встановлювали глобальний патч, відповідайте «ТАК», і тоді він встановить для вас лише необхідні виправлення.</p></div>
+        <div class="install-step"><div class="install-dot"></div><p>Дочекайтеся завершення встановлення</strong></p></div>
+		<div class="install-step"><div class="install-dot"></div><p>Всі патчі та фікси знаходяться в <a href="https://t.me/frozen_zone" target="_blank" rel="noopener" style="color:var(--gold);">телеграм-каналі</a></p></div>
       </div>
-
     </div>
 
-  </div>
+    </div>
   <div class="install-btns">
     <a class="install-btn" href="https://nx92699.your-storageshare.de/s/g7MwH8Nxgifr8PB" target="_blank" rel="noopener">⬇️&nbsp;Завантажити Інсталятор</a>
     <a class="install-btn" href="https://t.me/frozen_zone" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#1A4080,#0F2A60);border-color:#2A5090;box-shadow:0 0 20px rgba(26,64,128,.3);">🔧 &nbsp;Завантажити фікс</a>
@@ -1642,6 +1634,7 @@ const CATS = [
       {n:'DLTX MiniMod Pack (Demonized)',          a:'Demonized',                   d:'Великий пак дрібних DLTX-сумісних мінімодів: фікси A-Life, балансування лутки, радіоактивного повітря тощо.'},
       {n:'Trinity Launcher',                        a:'Ivan Danko',            own:true,  d:'Авторська розробка. Лаунчер для запуску гри з вибором сезону: автоматично активує потрібні моди в MO, очищає кеш шейдерів та застосовує відповідний конфіг графічних налаштувань — заходити в Mod Organizer перед кожним запуском більше не потрібно.'},
       {n:'Trinity Installer',                       a:'Ivan Danko',            own:true,  d:'Авторська розробка. Автоматичний інсталятор збірки Build Trinity. Просто завантажте TrinityInstaller.exe, запустіть його, вкажіть місце на диску — інсталятор самостійно завантажить архіви збірки та встановить усе у вибраний каталог. Не потрібно вручну завантажувати файли або розпаковувати архіви.'},
+      {n:'Trinity Installer Fix',           		 a:'Ivan Danko',            own:true,  d:'Авторська розробка. Автоматичний інсталятор патчів та фіксів для збірки Build Trinity. Завантажте інсталятор, вкажіть шлях до папки Anomaly_build_TRINITY — і він сам встановить усі актуальні виправлення.'},
       {n:'Автоматизація запуску Mod Organizer 2',      a:'Serhii Olasiuk',                       d:'Автоматично підключає папку з модами, незалежно від того, куди ви встановили збірку.'},
     ]
   },
